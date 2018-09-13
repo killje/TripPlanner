@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
 RewriteRule ^api(.*)$ /BackEnd$1 [END,NE,QSA]
-RewriteRule ^((?!frontend|backend).*)$ frontend/dist/frontend/$1 [END,NE,QSA]
-RewriteRule ^frontend/dist/frontend(.*)$ $1 [L,R,NE,QSA]
-RewriteRule ^backend(.*)$ api/$1 [L,R,NE,QSA]
+RewriteRule ^((?!FrontEnd|BackEnd).*)$ FrontEnd/dist/$1 [END,NE,QSA]
+RewriteRule ^FrontEnd/dist(.*)$ $1 [L,R,NE,QSA]
+RewriteRule ^BackEnd(.*)$ api/$1 [L,R,NE,QSA]
 </IfModule>
