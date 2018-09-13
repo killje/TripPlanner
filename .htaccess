@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^api(.*)$ /BackEnd$1 [END,NE,QSA]
+RewriteRule ^((?!FrontEnd|BackEnd).*)$ /FrontEnd/$1 [END,NE,QSA]
+RewriteRule ^FrontEnd(.*)$ $1 [L,R,NE,QSA]
+</IfModule>
