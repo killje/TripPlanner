@@ -7,6 +7,8 @@
  */
 
 namespace App\ContentProviders;
+use App\Venue;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 
 
@@ -58,15 +60,49 @@ class FourSquare implements ContentProvider
     }
 
     /**
+     * Turns a FourSquare object into a generic Venue Object
+     * @param $object
+     * @return Venue
+     */
+    public function createVenueFromAPIListing($object): Venue
+    {
+        $venue = new Venue();
+        $venue->setId($object->id);
+        $venue->setName($object->name);
+        $venue->setAddressHumanReadable($object->location->formattedAddress);
+        $venue->setLatitude($object->location->lat);
+        $venue->setLongitude($object->location->lng);
+        return $venue;
+    }
+
+    /**
      * Obtain a number of collections, from a given long-latitude
      * @param float $longitude
      * @param float $latitude
-     * @return Illuminate\Database\Eloquent\Collection
+     * @param int $radius
+     * @return array
      */
-    public function getVenuesByLongLatitude(double $longitude, double $latitude): Illuminate\Database\Eloquent\Collection
+    public function getVenuesByLongLatitude(float $longitude, float $latitude, int $radius): array
     {
-        // TODO: Implement getVenuesByLongLatitude() method.
-        return null;
+        $endpoint = "venues/search";
+        $result = $this->get($endpoint, "GET", [
+            'll' => $latitude . "," . $longitude,
+            'intent' => "browse",
+            'radius' => $radius
+            ]);
+
+        if($this->checkResponse($endpoint, $result) == false)
+            return [];
+
+        // For each venue we obtain, create a venue object
+        //dd($result);
+        $venues = [];
+        foreach ($result->response->venues as $venue) {
+            $venue = $this->createVenueFromAPIListing($venue);
+            array_push($venues,  $venue->getAsSimpleArray());
+        }
+
+        return $venues;
     }
 
     /**
@@ -76,15 +112,28 @@ class FourSquare implements ContentProvider
     public function isAvailable(): bool
     {
         // Make a default request
-        $request = $this->get('venues/explore', 'GET', ['ll' => '40.7243,-74.0018']);
+        $endpoint = "venues/explore";
+        $request = $this->get($endpoint, 'GET', ['ll' => '40.7243,-74.0018']);
 
+        return $this->checkResponse($endpoint, $request);
+
+    }
+
+    /**
+     * Check if the call to the API was successful.
+     * @param $endpoint string The endpoint the API was connected to
+     * @param $request mixed The result of $this::get();
+     * @return bool whether the api request was successful
+     */
+    private function checkResponse($endpoint, $request): bool
+    {
         // Good Response
-        if($request->meta->code == 200)
+        if($request->meta->code == 200) {
             return true;
+        }
 
         // Bad Response
-        Log::critical("FourSquare API is not available. Information on line below. \r\n" . $request->meta->errorDetail);
+        Log::critical("FourSquare API call to endpoint: " . $endpoint . " failed. Information on line below. \r\n" . $request->meta->errorDetail);
         return false;
-
     }
 }
