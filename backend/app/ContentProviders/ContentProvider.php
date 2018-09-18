@@ -7,6 +7,8 @@
  */
 
 namespace App\ContentProviders;
+use Illuminate\Support\Collection;
+
 
 /**
  * Interface ContentProvider
@@ -20,9 +22,10 @@ interface ContentProvider
      * Obtain a number of collections, from a given long-latitude
      * @param float $longitude
      * @param float $latitude
-     * @return Illuminate\Database\Eloquent\Collection
+     * @param int $radius
+     * @return array
      */
-    public function getVenuesByLongLatitude(double $longitude, double $latitude): Illuminate\Database\Eloquent\Collection;
+    public function getVenuesByLongLatitude(float $longitude, float $latitude, int $radius): array ;
 
     /**
      * Will return whether the API is available
