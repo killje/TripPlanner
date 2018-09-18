@@ -7,8 +7,11 @@ If it runs on one machine, it'll run everywhere.
 
 1. Install Laravel's Homestead (essentially a virtual machine to run the application in) using https://laravel.com/docs/5.7/homestead#first-steps
 2. Go to the folder of where you installed Homestead, and configure the Homestead.yaml file according to the documentation: https://laravel.com/docs/5.7/homestead#configuring-homestead. Note that the path to the server files should be the path to your laravel installation, (probably in your RepositoryFolder/TripPlanner/backend/
+
 Guideline for folder mapping: this maps your own folder, to a folder on the Virtual Machine.
+
 Guideline for website mapping: Use this to map a website domain like tripplanner.test to the public folder of the laravel application on your virtual machine
+
 3. Run _vagrant ssh_, browse to your laravel installation, and run _composer install_ to install all packages. Please run _composer update_ each time you're having issues, to update your libraries.
 
 # Configuration
