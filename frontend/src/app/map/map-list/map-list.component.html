@@ -1,0 +1,12 @@
+<div id="mapListContainer" [class.hideMenu]="isMenuHidden">
+    <div id="mapListGroup" class="list-group">
+        <h1 class="mapListHeader">
+            Places <button id="closeMapListButton" class="btn btn-outline-primary" type="button" (click)="closeMenu()">X</button>
+        </h1>
+        <button class="btn mapPointItem list-group-item" *ngFor="let mapPoint of mapPoints" [class.active]="mapPoint.isActive()" [class.list-group-item-hover]="mapPoint.isHoverd() && !mapPoint.isActive()" (mouseenter)="mapPoint.setHoverdState(true)" (mouseleave)="mapPoint.setHoverdState(false)" (click)="setActive(mapPoint)" type="button">
+            <h1>{{mapPoint.getName()}}</h1>
+            <p>{{mapPoint.getDescription()}}</p>
+        </button>
+    </div>
+</div>
+<button id="openMapListButton"  [class.hideMenu]="!isMenuHidden" class="btn btn-outline-primary" type="button" (click)="openMenu()">&gt;</button>
