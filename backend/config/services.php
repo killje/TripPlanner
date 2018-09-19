@@ -36,4 +36,15 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'contentproviders' => [
+        'default' => env('CONTENTPROVIDERS_DEFAULT'),
+    ],
+
+    'foursquare' => [
+        'base_url' => env('FOURSQUARE_BASE_URL'),
+        'client_id' => env('FOURSQUARE_CLIENT_ID'),
+        'client_secret' => env('FOURSQUARE_CLIENT_SECRET'),
+        'version' => env('FOURSQUARE_VERSION'),
+    ],
+
 ];

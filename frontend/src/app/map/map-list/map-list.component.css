@@ -1,0 +1,44 @@
+
+#mapListContainer {
+    flex-grow: 0;
+    width: 300px;
+    overflow-y: auto;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+#openMapListButton {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+}
+#closeMapListButton {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right:10px;
+}
+.mapListHeader {
+    position: relative;
+    padding-left:16px;
+}
+
+.list-group-item-hover {
+    background-color: yellow;
+}
+
+@media (max-width: 767.98px) { 
+    
+    #openMapListButton, #closeMapListButton {
+        display: block;
+    }
+    .hideMenu {
+        display: none !important;
+    }
+    #mapListContainer {
+        position: absolute;
+        width: 100%;
+        z-index: 9998;
+    }
+}

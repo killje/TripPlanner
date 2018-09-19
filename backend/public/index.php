@@ -1,16 +1,6 @@
 <?php
 
 /**
- * Request fixer for diffrences between production and development
- *
- * To be exact, the api calls for the backend are done from the front end to http://<server address>/api/
- *
- * In the backend this is just done to root. So with this regex we remove the api part if and only if
- * It is the first part of the request
- */
-$_SERVER['REQUEST_URI'] = preg_replace('/^\/api/', '', $_SERVER['REQUEST_URI']);
-
-/**
  * Laravel - A PHP Framework For Web Artisans
  *
  * @package  Laravel
