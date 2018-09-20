@@ -14,3 +14,27 @@ aol-map {
     height:100%;
     width:100%;
 }
+
+::ng-deep div.ol-attribution{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #FFFFFF;
+}
+
+::ng-deep .ol-attribution ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+::ng-deep .ol-attribution li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+::ng-deep .ol-attribution button {
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
