@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932ae40d-e1fe-423f-82fb-1346340fba44" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/TripPlanner.iml" afterPath="$PROJECT_DIR$/.idea/TripPlanner.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/backend/app/ContentProviders/ContentProvider.php" afterPath="$PROJECT_DIR$/backend/app/ContentProviders/ContentProvider.php" />
       <change beforePath="$PROJECT_DIR$/backend/app/ContentProviders/FourSquare.php" afterPath="$PROJECT_DIR$/backend/app/ContentProviders/FourSquare.php" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/API/VenuesController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/API/VenuesController.php" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Venue.php" afterPath="$PROJECT_DIR$/backend/app/Venue.php" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" afterPath="$PROJECT_DIR$/backend/routes/api.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +23,8 @@
       <file leaf-file-name="ContentProviderProvider.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Providers/ContentProviderProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+            <state relative-caret-position="510">
+              <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
               <folding>
                 <element signature="e#33#74#0#PHP" expanded="true" />
               </folding>
@@ -36,21 +35,19 @@
       <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/config/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3621">
-              <caret line="213" column="73" lean-forward="false" selection-start-line="213" selection-start-column="73" selection-end-line="213" selection-end-column="73" />
+            <state relative-caret-position="2737">
+              <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FourSquare.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/app/ContentProviders/FourSquare.php">
+      <file leaf-file-name="ContentProvider.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/app/ContentProviders/ContentProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="104" column="23" lean-forward="true" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
-              <folding>
-                <element signature="e#120#134#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="323">
+              <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,8 +55,8 @@
       <file leaf-file-name="VenuesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/API/VenuesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+            <state relative-caret-position="425">
+              <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
               <folding>
                 <element signature="e#125#166#0#PHP" expanded="true" />
               </folding>
@@ -70,8 +67,8 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+            <state relative-caret-position="306">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,8 +77,8 @@
       <file leaf-file-name="Venue.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Venue.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="117" column="7" lean-forward="true" selection-start-line="117" selection-start-column="7" selection-end-line="117" selection-end-column="7" />
+            <state relative-caret-position="1904">
+              <caret line="117" column="7" lean-forward="false" selection-start-line="117" selection-start-column="7" selection-end-line="117" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -92,16 +89,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContentProvider.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/app/ContentProviders/ContentProvider.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -120,8 +107,8 @@
       <file leaf-file-name=".env.example" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/.env.example">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -237,9 +224,18 @@
       <path value="$PROJECT_DIR$/backend/vendor/psr/log" />
       <path value="$PROJECT_DIR$/backend/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/backend/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/backend/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/backend/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/backend/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/backend/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/backend/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/dbal" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -259,6 +255,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -340,8 +338,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,11 +348,12 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/soelm/Desktop/Repositories/TripPlanner/backend/app/Http/Controllers/API/VenuesController.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\soelm\Desktop\Repositories\TripPlanner\backend\app\Providers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\soelm\Desktop\Repositories\TripPlanner\backend\app\ContentProviders" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\soelm\Desktop\Repositories\TripPlanner\backend\app\ContentProviders" />
+      <recent name="C:\Users\soelm\Desktop\Repositories\TripPlanner\backend\app\Providers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -392,11 +389,12 @@
       <workItem from="1537255828283" duration="2891000" />
       <workItem from="1537286104983" duration="361000" />
       <workItem from="1537286639604" duration="2952000" />
+      <workItem from="1537472685657" duration="191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18397000" />
+    <option name="totallyTimeSpent" value="18588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -433,26 +431,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/app/ContentProviders/FourSquare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="106" column="81" lean-forward="false" selection-start-line="106" selection-start-column="73" selection-end-line="106" selection-end-column="81" />
-          <folding>
-            <element signature="e#120#134#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Providers/ContentProviderProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding>
-            <element signature="e#33#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3621">
@@ -466,7 +444,7 @@
         <state relative-caret-position="1530">
           <caret line="96" column="32" lean-forward="true" selection-start-line="96" selection-start-column="32" selection-end-line="96" selection-end-column="32" />
           <folding>
-            <element signature="e#120#134#0#PHP" expanded="true" />
+            <element signature="e#120#134#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -576,7 +554,7 @@
         <state relative-caret-position="1360">
           <caret line="85" column="71" lean-forward="false" selection-start-line="85" selection-start-column="71" selection-end-line="85" selection-end-column="71" />
           <folding>
-            <element signature="e#120#134#0#PHP" expanded="true" />
+            <element signature="e#120#134#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -604,7 +582,7 @@
         <state relative-caret-position="391">
           <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding>
-            <element signature="e#120#134#0#PHP" expanded="true" />
+            <element signature="e#120#134#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -765,8 +743,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3621">
-          <caret line="213" column="73" lean-forward="false" selection-start-line="213" selection-start-column="73" selection-end-line="213" selection-end-column="73" />
+        <state relative-caret-position="2737">
+          <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -781,8 +759,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/.env.example">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -797,34 +775,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Providers/ContentProviderProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        <state relative-caret-position="510">
+          <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
           <folding>
             <element signature="e#33#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/ContentProviders/ContentProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/API/VenuesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+        <state relative-caret-position="425">
+          <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
           <folding>
             <element signature="e#125#166#0#PHP" expanded="true" />
           </folding>
@@ -833,8 +803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Venue.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="117" column="7" lean-forward="true" selection-start-line="117" selection-start-column="7" selection-end-line="117" selection-end-column="7" />
+        <state relative-caret-position="1904">
+          <caret line="117" column="7" lean-forward="false" selection-start-line="117" selection-start-column="7" selection-end-line="117" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -842,9 +812,9 @@
     <entry file="file://$PROJECT_DIR$/backend/app/ContentProviders/FourSquare.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="573">
-          <caret line="104" column="23" lean-forward="true" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
+          <caret line="104" column="23" lean-forward="false" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
           <folding>
-            <element signature="e#120#134#0#PHP" expanded="true" />
+            <element signature="e#120#134#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -853,7 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -861,6 +830,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/ContentProviders/ContentProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding />
         </state>
       </provider>
