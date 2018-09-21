@@ -27,7 +27,7 @@ class FourSquare implements ContentProvider
      * @param array $parameters Associative array with the arguments
      * @return mixed
      */
-    public function get(String $endpoint, String $method, array $parameters)
+    public function get(String $endpoint, String $method, array $parameters): mixed
     {
         // The Requesting URL consists of the base API url, with the endpoint added
         $requestURL = config('services.foursquare.base_url') . $endpoint;
@@ -125,7 +125,7 @@ class FourSquare implements ContentProvider
      * @param $request mixed The result of $this::get();
      * @return bool whether the api request was successful
      */
-    private function checkResponse($endpoint, $request): bool
+    public function checkResponse($endpoint, $request): bool
     {
         // Good Response
         if($request->meta->code == 200) {
