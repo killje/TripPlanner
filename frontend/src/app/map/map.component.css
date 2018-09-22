@@ -1,7 +1,20 @@
 #mapContainer {
+    display:flex;
+    flex-direction: column;    
+    height: 100%;
+}
+
+#flexContainer {
+    height:100%;
+    flex-grow: 1;
+    overflow-x: auto;
+}
+
+#viewContainer {
     height:100%;
     display:flex;
     flex-direction: row;
+    position: relative;
 }
 app-map-view {
     flex-grow: 1;
