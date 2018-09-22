@@ -1,0 +1,29 @@
+
+
+#frontPageContainer {
+    background-color: #CCCCCC;
+    padding: 16px;
+}
+
+#frontPageContent {
+    max-width:850px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    padding: 26px;
+    -webkit-box-shadow: -10px -5px 22px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: -10px -5px 22px -6px rgba(0,0,0,0.75);
+    box-shadow: -10px -5px 22px -6px rgba(0,0,0,0.75);
+}
+
+#mapButtonContainer {
+    margin-bottom: 26px;
+}
+
+#mapButtonContainer button {
+    width:100%;
+}
+
+#title {
+    margin-bottom: 26px;
+    text-align: center;
+}

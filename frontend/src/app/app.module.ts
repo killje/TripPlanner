@@ -8,15 +8,15 @@ import {AppComponent} from './app.component';
 import {MapComponent} from './map/map.component';
 import {MapViewComponent} from './map/map-view/map-view.component';
 import {MapListComponent} from './map/map-list/map-list.component';
+import { FrontPageComponent } from './front-page/front-page.component';
 
 const appRoutes: Routes = [
     {path: 'map', component: MapComponent},
     {
         path: '',
-        redirectTo: '/map',
-        pathMatch: 'full'
+        component: FrontPageComponent
     },
-    {path: '**', component: MapComponent}
+    {path: '**', component: FrontPageComponent}
 ];
 
 @NgModule({
@@ -24,7 +24,8 @@ const appRoutes: Routes = [
         AppComponent,
         MapComponent,
         MapViewComponent,
-        MapListComponent
+        MapListComponent,
+        FrontPageComponent
     ],
     imports: [
         RouterModule.forRoot(
