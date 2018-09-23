@@ -8,7 +8,7 @@
 }
 #openMapListButton {
     display: none;
-    position: fixed;
+    position: absolute;
     top: 10px;
     left: 10px;
     z-index: 9999;
