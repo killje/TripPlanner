@@ -27,7 +27,7 @@ class FourSquare implements ContentProvider
      * @param array $parameters Associative array with the arguments
      * @return mixed
      */
-    public function get(String $endpoint, String $method, array $parameters): mixed
+    public function get(String $endpoint, String $method, array $parameters)
     {
         // The Requesting URL consists of the base API url, with the endpoint added
         $requestURL = config('services.foursquare.base_url') . $endpoint;

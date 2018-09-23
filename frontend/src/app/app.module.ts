@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AngularOpenlayersModule} from 'ngx-openlayers';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule, NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
 import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
@@ -9,6 +9,7 @@ import {MapComponent} from './map/map.component';
 import {MapViewComponent} from './map/map-view/map-view.component';
 import {MapListComponent} from './map/map-list/map-list.component';
 import { FrontPageComponent } from './front-page/front-page.component';
+import {NavBarComponent} from './nav-bar/nav-bar.component';
 
 const appRoutes: Routes = [
     {path: 'map', component: MapComponent},
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
         MapComponent,
         MapViewComponent,
         MapListComponent,
-        FrontPageComponent
+        FrontPageComponent,
+        NavBarComponent
     ],
     imports: [
         RouterModule.forRoot(
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
         ),
         BrowserModule,
         NgbModule,
-        AngularOpenlayersModule
+        AngularOpenlayersModule,
+        NgbCollapseModule
     ],
     providers: [],
     bootstrap: [AppComponent]

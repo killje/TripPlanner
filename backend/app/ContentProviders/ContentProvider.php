@@ -56,5 +56,5 @@ interface ContentProvider
      * @param array $parameters All parameters to include to the request
      * @return mixed A PHP object, with the contents of what the API returned
      */
-    public function get(String $endpoint, String $method, array $parameters): mixed;
+    public function get(String $endpoint, String $method, array $parameters);
 }

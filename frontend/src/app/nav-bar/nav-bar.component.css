@@ -1,0 +1,16 @@
+.navbar {
+    padding: 0;
+    position: relative;
+}
+
+#navbarNav {
+    padding: .5rem 1rem;
+}
+
+.navbar-toggler {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 9999;
+    background-color: #343a40;
+}
