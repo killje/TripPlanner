@@ -19,11 +19,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TripVenue extends Model
 {
+
     /**
      * Get the trip that this venue belongs to
      */
     public function trip()
     {
-        return $this->belongsTo('App\Trip');
+        return $this->belongsTo('App\Trip', 'uuid', 'trip_uuid');
     }
 }

@@ -22,3 +22,4 @@ Route::get('/venues/details', 'API\VenuesController@getDetails')->name('venues.d
 
 Route::post('/trips/store', 'API\TripController@store')->name('trips.store');
 Route::post('/trips/destroy', 'API\TripController@destroy')->name('trips.destroy');
+Route::post('/trips/venues/add', 'API\TripController@add')->name('trips.add');

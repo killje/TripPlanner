@@ -30,6 +30,6 @@ class Trip extends Model
      */
     public function venues()
     {
-        return $this->hasMany('App\TripVenue');
+        return $this->hasMany('App\TripVenue', 'trip_uuid', 'uuid');
     }
 }
