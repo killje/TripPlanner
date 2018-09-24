@@ -25,7 +25,7 @@ class TripVenue extends Model
      */
     public function trip()
     {
-        return $this->belongsTo('App\Trip', 'uuid', 'trip_uuid');
+        return $this->belongsTo('App\Trip');
     }
 
     /**
@@ -33,6 +33,8 @@ class TripVenue extends Model
      */
     public function getDetailedVenue(): DetailedVenue
     {
-        
+        $contentProvider = resolve('App\ContentProviders\ContentProvider');
+        $detailedVenue = $contentProvider->getVenueDetailsById($this->venue_id);
+        return $detailedVenue;
     }
 }

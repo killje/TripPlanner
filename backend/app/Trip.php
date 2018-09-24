@@ -27,9 +27,10 @@ class Trip extends Model
 {
     /**
      * Get all the venues that belong to this trip
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function venues()
     {
-        return $this->hasMany('App\TripVenue', 'trip_uuid', 'uuid');
+        return $this->hasMany('App\TripVenue');
     }
 }
