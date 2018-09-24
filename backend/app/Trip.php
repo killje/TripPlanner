@@ -21,8 +21,15 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Trip whereUpdatedAt($value)
  * @mixin \Eloquent
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Trip whereUuid($value)
+ * @property int $id
  */
 class Trip extends Model
 {
-    //
+    /**
+     * Get all the venues that belong to this trip
+     */
+    public function venues()
+    {
+        return $this->hasMany('App\TripVenue');
+    }
 }
