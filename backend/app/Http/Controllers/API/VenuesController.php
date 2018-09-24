@@ -33,4 +33,17 @@ class VenuesController extends Controller
         return response()->json($venues);
     }
 
+    /**
+     * Return more detailed venue object
+     * @param ContentProvider $contentProvider Currect content provider
+     * @param Request $request Web Request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getDetails(ContentProvider $contentProvider, Request $request) {
+        $id = $request->input('id');
+
+        $venueDetails = $contentProvider->getVenueDetailsById($id);
+    }
+
+
 }

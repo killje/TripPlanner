@@ -7,7 +7,9 @@
  */
 
 namespace App\ContentProviders;
+use App\DetailedVenue;
 use App\Venue;
+use App\VenueCategory;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 
@@ -67,11 +69,15 @@ class FourSquare implements ContentProvider
     public function createVenueFromAPIListing($object): Venue
     {
         $venue = new Venue();
-        $venue->setId($object->id);
-        $venue->setName($object->name);
-        $venue->setAddressHumanReadable($object->location->formattedAddress);
-        $venue->setLatitude($object->location->lat);
-        $venue->setLongitude($object->location->lng);
+        $this->setBasicVenueItems($object, $venue);
+        return $venue;
+    }
+
+    public function createDetailedVenueFromAPIListing($object): Venue
+    {
+        $venue = new DetailedVenue();
+        $this->setBasicVenueItems($object, $venue);
+        $this->setDetailedVenueItems($object, $venue);
         return $venue;
     }
 
@@ -135,5 +141,62 @@ class FourSquare implements ContentProvider
         // Bad Response
         Log::critical("FourSquare API call to endpoint: " . $endpoint . " failed. Information on line below. \r\n" . $request->meta->errorDetail);
         return false;
+    }
+
+    /**
+     * @param $object
+     * @param $venue
+     */
+    private function setBasicVenueItems($object, Venue $venue): void
+    {
+        $venue->setId($object->id);
+        $venue->setName($object->name);
+        $venue->setAddressHumanReadable($object->location->formattedAddress);
+        $venue->setLatitude($object->location->lat);
+        $venue->setLongitude($object->location->lng);
+    }
+
+    /**
+     * Add categories to the actual venue
+     * @param $object
+     * @param DetailedVenue $venue
+     */
+    private function setDetailedVenueItems($object, DetailedVenue $venue)
+    {
+        $this->setDetailedVenueCategories($object->categories, $venue);
+        $venue->setURL($object->url);
+        $venue->setOpeningHours($object->hours->status);
+        if(isset($object->popular->status)) $venue->setPopularHours($object->popular->status);
+        if(isset($object->price)) $venue->setPriceClass($object->price->message);
+        $venue->setRating($object->rating);
+        $venue->setRatingColor($object->ratingColor);
+        $venue->setPeopleNow($object->hereNow->count);
+        $venue->setLikes($object->likes->count);
+    }
+
+    /**
+     * Obtain a DetailedVenue object by id
+     * @param string $id
+     * @return mixed
+     */
+    public function getVenueDetailsById(string $id)
+    {
+        $endpoint = 'venues/' . $id;
+        $result = $this->get($endpoint, "GET", []);
+
+        $detailedVenue = $this->createDetailedVenueFromAPIListing($result->response->venue);
+        dd($detailedVenue->getAsSimpleArray());
+        return $detailedVenue;
+    }
+
+    private function setDetailedVenueCategories($categories, DetailedVenue $venue)
+    {
+        foreach($categories as $category) {
+            $newCategory = new VenueCategory();
+            $newCategory->setIcon($category->icon->prefix . "64" . $category->icon->suffix);
+            $newCategory->setName($category->name);
+            $newCategory->setPluralName($category->pluralName);
+            array_push($venue->categories, $newCategory);
+        }
     }
 }
