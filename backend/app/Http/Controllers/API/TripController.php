@@ -43,7 +43,7 @@ class TripController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'created_id' => $trip->uuid,
+            'uuid' => $trip->uuid,
         ]);
 
     }
@@ -85,11 +85,31 @@ class TripController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Trip  $trip
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Trip $trip)
+    public function destroy(Request $request)
     {
-        // TODO
+        // validate input
+        $validatedData = $request->validate([
+            'uuid' => 'required',
+        ]);
+
+        // Delete the item from the database
+        try {
+            $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
+            $trip->delete();
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'fail',
+                'response' => 'No Trip exists for this ID',
+            ], 422);
+        }
+
+        // Send positive response
+        return response()->json([
+            'status' => 'success',
+        ]);
+
     }
 }
