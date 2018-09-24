@@ -185,7 +185,6 @@ class FourSquare implements ContentProvider
         $result = $this->get($endpoint, "GET", []);
 
         $detailedVenue = $this->createDetailedVenueFromAPIListing($result->response->venue);
-        dd($detailedVenue->getAsSimpleArray());
         return $detailedVenue;
     }
 

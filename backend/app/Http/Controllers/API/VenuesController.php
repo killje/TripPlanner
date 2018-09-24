@@ -43,6 +43,7 @@ class VenuesController extends Controller
         $id = $request->input('id');
 
         $venueDetails = $contentProvider->getVenueDetailsById($id);
+        return response()->json($venueDetails->getAsSimpleArray());
     }
 
 
