@@ -128,7 +128,7 @@ class TripController extends Controller
             'venue_id' => 'required',
         ]);
 
-        // Delete the item from the database
+        // Find the current trip
         try {
             $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
         } catch (\Exception $e) {
@@ -148,11 +148,11 @@ class TripController extends Controller
     }
 
     /**
-     * Remove a venue from the trip
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
+ * Remove a venue from the trip
+ *
+ * @param \Illuminate\Http\Request $request
+ * @return \Illuminate\Http\Response
+ */
     public function removeVenue(Request $request)
     {
         // Validate input
@@ -161,7 +161,7 @@ class TripController extends Controller
             'venue_id' => 'required',
         ]);
 
-        // Delete the item from the database
+        // Delete the venue from the trip
         try {
             $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
             $venue = $trip->venues()->where('venue_id', '=', $validatedData['venue_id'])->delete();
@@ -175,6 +175,38 @@ class TripController extends Controller
 
         return response()->json([
             'status' => 'success'
+        ]);
+    }
+
+    /**
+     * List all venues for a certain trip
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function listVenues(Request $request)
+    {
+        // Validate input
+        $validatedData = $request->validate([
+            'uuid' => 'required'
+        ]);
+
+        // Find the venues
+        try {
+            $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
+        } catch (\Exception $e) {
+            dd($e);
+            return response()->json([
+                'status' => 'fail',
+                'response' => 'Could not delete this venue from a certain trip',
+            ], 422);
+        }
+
+        $venues = $trip->venues();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $venues
         ]);
     }
 }

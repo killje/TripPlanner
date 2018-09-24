@@ -27,4 +27,12 @@ class TripVenue extends Model
     {
         return $this->belongsTo('App\Trip', 'uuid', 'trip_uuid');
     }
+
+    /**
+     * Return the DetailedVenue object
+     */
+    public function getDetailedVenue(): DetailedVenue
+    {
+        
+    }
 }
