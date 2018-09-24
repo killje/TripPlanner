@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/venues/lookupbycoords', 'API\VenuesController@lookUpByCoords')->name('venues.lookupbycoords');
 Route::get('/venues/details', 'API\VenuesController@getDetails')->name('venues.details');
 
-Route::get('/trips/store', 'API\TripController@store')->name('trips.store');
+Route::post('/trips/store', 'API\TripController@store')->name('trips.store');
+Route::post('/trips/destroy', 'API\TripController@destroy')->name('trips.destroy');

@@ -14,13 +14,14 @@ class CreateTripsTable extends Migration
     public function up()
     {
         Schema::create('trips', function (Blueprint $table) {
+            $table->increments('id');
             $table->uuid('uuid');
             $table->string('name', 100);
             $table->smallInteger('number_of_days');
             $table->ipAddress('created_by');
             $table->timestamps();
 
-            $table->primary('uuid');
+            $table->unique('uuid');
         });
     }
 

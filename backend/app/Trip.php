@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Trip
  *
- * @property int $id
+ * @property int $uuid
  * @property string $name
  * @property int $number_of_days
  * @property string $created_by
@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Trip whereNumberOfDays($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Trip whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Trip whereUuid($value)
  */
 class Trip extends Model
 {
