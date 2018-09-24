@@ -71,4 +71,5 @@ interface ContentProvider
      * @return mixed A PHP object, with the contents of what the API returned
      */
     public function get(String $endpoint, String $method, array $parameters);
+
 }

@@ -14,11 +14,11 @@ class CreateTripVenuesTable extends Migration
     public function up()
     {
         Schema::create('trip_venues', function (Blueprint $table) {
-            $table->uuid('trip_uuid');
+            $table->unsignedInteger('trip_id');
             $table->string('venue_id');
             $table->timestamps();
 
-            $table->foreign('trip_uuid')->references('uuid')->on('trips')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('trip_id')->references('id')->on('trips')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

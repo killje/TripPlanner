@@ -195,18 +195,31 @@ class TripController extends Controller
         try {
             $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
         } catch (\Exception $e) {
-            dd($e);
             return response()->json([
                 'status' => 'fail',
                 'response' => 'Could not delete this venue from a certain trip',
             ], 422);
         }
 
-        $venues = $trip->venues();
+        $venuesJSON = [];
+        foreach($trip->venues()->get() as $detailedVenue)
+        {
+            $detailedVenueData = $detailedVenue->getDetailedVenue()->getAsSimpleArray();
+            array_push($venuesJSON, $detailedVenueData);
+        }
 
         return response()->json([
             'status' => 'success',
-            'data' => $venues
+            'data' => [
+                'id' => $trip->id,
+                'uuid' => $trip->uuid,
+                'name' => $trip->name,
+                'number_of_days' => $trip->number_of_days,
+                'created_by' => $trip->created_by,
+                'created_at' => $trip->created_at->toCookieString(),
+                'updated_at' => $trip->updated_at->toCookieString(),
+                'venues' => $venuesJSON
+            ]
         ]);
     }
 }

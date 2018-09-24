@@ -179,7 +179,7 @@ class FourSquare implements ContentProvider
      * @param string $id
      * @return mixed
      */
-    public function getVenueDetailsById(string $id)
+    public function getVenueDetailsById(string $id): DetailedVenue
     {
         $endpoint = 'venues/' . $id;
         $result = $this->get($endpoint, "GET", []);
@@ -188,6 +188,11 @@ class FourSquare implements ContentProvider
         return $detailedVenue;
     }
 
+    /**
+     * For each venue category in the FQ API, set it in ours.
+     * @param $categories
+     * @param DetailedVenue $venue
+     */
     private function setDetailedVenueCategories($categories, DetailedVenue $venue)
     {
         foreach($categories as $category) {
