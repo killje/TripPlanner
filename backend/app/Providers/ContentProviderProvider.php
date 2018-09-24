@@ -17,9 +17,9 @@ class ContentProviderProvider extends ServiceProvider
     public function boot(ContentProvider $contentProvider)
     {
         // Check whether the API is functional and credentials are OK
-        //if(!$contentProvider->isAvailable()) {
-        //    Log::error('Tried to initialize Content Provider, but is not available.');
-        //}
+        if(!$contentProvider->isAvailable()) {
+            Log::error('Tried to initialize Content Provider, but is not available.');
+        }
     }
 
     /**
