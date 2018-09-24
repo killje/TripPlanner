@@ -120,7 +120,7 @@ class TripController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function add(Request $request)
+    public function addVenue(Request $request)
     {
         // Validate input
         $validatedData = $request->validate([
@@ -141,6 +141,37 @@ class TripController extends Controller
         $venue = new TripVenue();
         $venue->venue_id = $validatedData['venue_id'];
         $trip->venues()->save($venue);
+
+        return response()->json([
+            'status' => 'success'
+        ]);
+    }
+
+    /**
+     * Remove a venue from the trip
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function removeVenue(Request $request)
+    {
+        // Validate input
+        $validatedData = $request->validate([
+            'uuid' => 'required',
+            'venue_id' => 'required',
+        ]);
+
+        // Delete the item from the database
+        try {
+            $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
+            $venue = $trip->venues()->where('venue_id', '=', $validatedData['venue_id'])->delete();
+        } catch (\Exception $e) {
+            dd($e);
+            return response()->json([
+                'status' => 'fail',
+                'response' => 'Could not delete this venue from a certain trip',
+            ], 422);
+        }
 
         return response()->json([
             'status' => 'success'
