@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/venues/lookupbycoords', 'API\VenuesController@lookUpByCoords')->name('venues.lookupbycoords');
 Route::post('/trips/store', 'API\TripController@store')->name('trips.store');
 Route::post('/trips/destroy', 'API\TripController@destroy')->name('trips.destroy');
+Route::post('/trips/venues/add', 'API\TripController@add')->name('trips.add');

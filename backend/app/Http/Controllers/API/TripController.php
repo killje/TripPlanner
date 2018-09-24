@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Trip;
+use App\TripVenue;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -111,5 +112,38 @@ class TripController extends Controller
             'status' => 'success',
         ]);
 
+    }
+
+    /**
+     * Add a venue to the trip
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function add(Request $request)
+    {
+        // Validate input
+        $validatedData = $request->validate([
+            'uuid' => 'required',
+            'venue_id' => 'required',
+        ]);
+
+        // Delete the item from the database
+        try {
+            $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'fail',
+                'response' => 'No Trip exists for this ID',
+            ], 422);
+        }
+
+        $venue = new TripVenue();
+        $venue->venue_id = $validatedData['venue_id'];
+        $trip->venues()->save($venue);
+
+        return response()->json([
+            'status' => 'success'
+        ]);
     }
 }
