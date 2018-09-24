@@ -23,6 +23,10 @@ Guideline for website mapping: Use this to map a website domain like tripplanner
 Open a command prompt or bash terminal, cd to the homestead directory, and run `vagrant up`.
 Now, you can access the website by going to http://yourlocalwebsitename.test which you configured in Homestead.yaml. Note: You might need to add :8000 to it (port 8000), depending on your configuration.
 
+## Endpoints
+GET /venues/lookupbycoords with arguments: longitude, latitude, radius (in meters)
+GET /venues/details with arguments: id
+
 # Frontend
 ## Installation instructions
 The following instructions will guide you on how to set up the front end for development
