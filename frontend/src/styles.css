@@ -18,3 +18,14 @@ body, html {
 .card {
     margin-bottom: 10px;
 }
+
+/* Footer Styling */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
