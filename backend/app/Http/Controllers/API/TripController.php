@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\ContentProviders\ContentProvider;
 use App\Http\Controllers\Controller;
 use App\Trip;
 use App\TripVenue;
@@ -184,7 +185,7 @@ class TripController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function listVenues(Request $request)
+    public function listVenues(Request $request, ContentProvider $contentProvider)
     {
         // Validate input
         $validatedData = $request->validate([
@@ -202,10 +203,10 @@ class TripController extends Controller
         }
 
         $venuesJSON = [];
-        foreach($trip->venues()->get() as $detailedVenue)
+        foreach($trip->venues()->get() as $venue)
         {
-            $detailedVenueData = $detailedVenue->getDetailedVenue()->getAsSimpleArray();
-            array_push($venuesJSON, $detailedVenueData);
+            $venue = $contentProvider->getVenueById($venue->venue_id)->getAsSimpleArray();
+            array_push($venuesJSON, $venue);
         }
 
         return response()->json([
