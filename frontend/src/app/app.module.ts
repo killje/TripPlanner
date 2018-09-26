@@ -10,13 +10,13 @@ import {MapViewComponent} from './map/map-view/map-view.component';
 import {MapListComponent} from './map/map-list/map-list.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import {NavBarComponent} from './nav-bar/nav-bar.component';
+import { ActivityPageComponent } from './activity-page/activity-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
+    {path: '', component: FrontPageComponent},
+    {path: 'activities', component: ActivityPageComponent},
     {path: 'map', component: MapComponent},
-    {
-        path: '',
-        component: FrontPageComponent
-    },
     {path: '**', component: FrontPageComponent}
 ];
 
@@ -27,7 +27,9 @@ const appRoutes: Routes = [
         MapViewComponent,
         MapListComponent,
         FrontPageComponent,
-        NavBarComponent
+        NavBarComponent,
+        ActivityPageComponent,
+        FooterComponent
     ],
     imports: [
         RouterModule.forRoot(
