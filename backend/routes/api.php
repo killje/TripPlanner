@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/venues/lookupbycoords', 'API\VenuesController@lookUpByCoords')->name('venues.lookupbycoords');
+Route::get('/venues/details', 'API\VenuesController@getDetails')->name('venues.details');

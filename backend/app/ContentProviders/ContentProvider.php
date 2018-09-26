@@ -29,6 +29,13 @@ interface ContentProvider
     public function getVenuesByLongLatitude(float $longitude, float $latitude, int $radius): array ;
 
     /**
+     * Obtain a DetailedVenue object by id
+     * @param string $id
+     * @return mixed
+     */
+    public function getVenueDetailsById(string $id);
+
+    /**
      * Will return whether the API is available
      * @return bool True for online, False for offline
      */
@@ -48,6 +55,13 @@ interface ContentProvider
      * @return Venue
      */
     public function createVenueFromAPIListing($object): Venue;
+
+    /**
+     * This method, should create an instance of the DetailedVenue object, from the data of the API
+     * @param $object mixed Data returned by the API
+     * @return Venue
+     */
+    public function createDetailedVenueFromAPIListing($object): Venue;
 
     /**
      * This function, will make the request to the API, and return the result
