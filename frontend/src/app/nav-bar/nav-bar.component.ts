@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 import {NavItem} from './nav-item';
 import {NavBarService} from './nav-bar.service';
-import {AfterViewInit} from '@angular/core';
 
 @Component({
     selector: 'app-nav-bar',
@@ -15,11 +15,21 @@ export class NavBarComponent implements OnInit, AfterViewInit {
     }
 
     private navItems: NavItem[] = [];
+    private currentItem: NavItem;
 
-    constructor(private navBarService: NavBarService) {
+    constructor(private navBarService: NavBarService, private router: Router) {
         this.navItems.push(new NavItem("Home", "/"));
         this.navItems.push(new NavItem("Activities", '/activities'));
         this.navItems.push(new NavItem("Map", "/map"));
+        
+        console.log(router.url);
+        for (let navItem of this.navItems) {
+            if (navItem.getLink() == router.url) {
+                this.currentItem = navItem;
+                console.log("FOUND", navItem);
+                break;
+            }
+        }
     }
 
     ngAfterViewInit() {
@@ -31,6 +41,4 @@ export class NavBarComponent implements OnInit, AfterViewInit {
             attributeFilter: ["class"]
         });
     }
-
-
 }

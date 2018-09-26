@@ -41,7 +41,7 @@ module.exports = ".activitybox {\n  background-color: #F0F0F0;\n  margin-bottom:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "  <app-nav-bar></app-nav-bar>\n\n  <div class=\"jumbotron jumbotron-fluid\">\n    <div class=\"container\">\n      <h1 class=\"display-4\">Select your activities</h1>\n      <p class=\"lead\">Now that you've selected to go to\n        <mark>New York City</mark> for\n        <mark>3</mark> days. Take a look at the recommended activities below!</p>\n      <hr class=\"my-4\">\n      <p>You can select everything that you would like to do. Our algorithm will try to fit as much activities as possible in your schedule.</p>\n    </div>\n  </div>\n\n  <div class=\"container activitybox rounded\">\n    <div class=\"row\">\n      <div class=\"col-sm-7\">\n        <figure class=\"figure\">\n          <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n          <figcaption class=\"figure-caption\">Picture taken by\n            <mark>Benjamin Bannister</mark>.</figcaption>\n        </figure>\n      </div>\n      <div class=\"col-sm-5\">\n          <div class=\"titlebox bg-primary\">\n            <h2>Central Park</h2>\n          </div>\n        <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n        be added here. Some text can be added here.</p>\n        <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"container activitybox rounded\">\n      <div class=\"row\">\n        <div class=\"col-sm-5\">\n            <div class=\"titlebox bg-primary\">\n              <h2>Central Park</h2>\n            </div>\n          <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n          be added here. Some text can be added here.</p>\n          <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n        </div>\n        <div class=\"col-sm-7\">\n          <figure class=\"figure\">\n            <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n            <figcaption class=\"figure-caption\">Picture taken by\n              <mark>Benjamin Bannister</mark>.</figcaption>\n          </figure>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"container activitybox rounded\">\n        <div class=\"row\">\n          <div class=\"col-sm-7\">\n            <figure class=\"figure\">\n              <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n              <figcaption class=\"figure-caption\">Picture taken by\n                <mark>Benjamin Bannister</mark>.</figcaption>\n            </figure>\n          </div>\n          <div class=\"col-sm-5\">\n              <div class=\"titlebox bg-primary\">\n                <h2>Central Park</h2>\n              </div>\n            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n            be added here. Some text can be added here.</p>\n            <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n          </div>\n        </div>\n      </div>\n\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <div class=\"card\">\n          <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Central Park</h5>\n            <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n            <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-sm-4\">\n        <div class=\"card\">\n          <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Central Park</h5>\n            <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n            <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-sm-4\">\n        <div class=\"card\">\n          <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Central Park</h5>\n            <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n            <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"container activitybox rounded\">\n      <div class=\"row\">\n        <div class=\"col-sm-7\">\n          <figure class=\"figure\">\n            <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n            <figcaption class=\"figure-caption\">Picture taken by\n              <mark>Benjamin Bannister</mark>.</figcaption>\n          </figure>\n        </div>\n        <div class=\"col-sm-5\">\n            <div class=\"titlebox bg-primary\">\n              <h2>Central Park</h2>\n            </div>\n          <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n          be added here. Some text can be added here.</p>\n          <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n        </div>\n      </div>\n    </div>\n  \n    <div class=\"container activitybox rounded\">\n        <div class=\"row\">\n          <div class=\"col-sm-5\">\n              <div class=\"titlebox bg-primary\">\n                <h2>Central Park</h2>\n              </div>\n            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n            be added here. Some text can be added here.</p>\n            <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n          </div>\n          <div class=\"col-sm-7\">\n            <figure class=\"figure\">\n              <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n              <figcaption class=\"figure-caption\">Picture taken by\n                <mark>Benjamin Bannister</mark>.</figcaption>\n            </figure>\n          </div>\n        </div>\n      </div>\n  \n      <div class=\"container activitybox rounded\">\n          <div class=\"row\">\n            <div class=\"col-sm-7\">\n              <figure class=\"figure\">\n                <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n                <figcaption class=\"figure-caption\">Picture taken by\n                  <mark>Benjamin Bannister</mark>.</figcaption>\n              </figure>\n            </div>\n            <div class=\"col-sm-5\">\n                <div class=\"titlebox bg-primary\">\n                  <h2>Central Park</h2>\n                </div>\n              <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n              be added here. Some text can be added here.</p>\n              <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n            </div>\n          </div>\n        </div>\n\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <div class=\"card\">\n          <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Central Park</h5>\n            <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n            <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-sm-4\">\n        <div class=\"card\">\n          <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Central Park</h5>\n            <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n            <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-sm-4\">\n        <div class=\"card\">\n          <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Central Park</h5>\n            <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n            <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <app-footer></app-footer>"
+module.exports = "<app-nav-bar></app-nav-bar>\n\n<div class=\"jumbotron jumbotron-fluid\">\n    <div class=\"container\">\n        <h1 class=\"display-4\">Select your activities</h1>\n        <p class=\"lead\">Now that you've selected to go to\n            <mark>New York City</mark> for\n            <mark>3</mark> days. Take a look at the recommended activities below!</p>\n        <hr class=\"my-4\">\n        <p>You can select everything that you would like to do. Our algorithm will try to fit as much activities as possible in your schedule.</p>\n    </div>\n</div>\n\n<div class=\"container activitybox rounded\">\n    <div class=\"row\">\n        <div class=\"col-sm-7\">\n            <figure class=\"figure\">\n                <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n                <figcaption class=\"figure-caption\">Picture taken by\n                    <mark>Benjamin Bannister</mark>.</figcaption>\n            </figure>\n        </div>\n        <div class=\"col-sm-5\">\n            <div class=\"titlebox bg-primary\">\n                <h2>Central Park</h2>\n            </div>\n            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n                be added here. Some text can be added here.</p>\n            <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n        </div>\n    </div>\n</div>\n\n<div class=\"container activitybox rounded\">\n    <div class=\"row\">\n        <div class=\"col-sm-5\">\n            <div class=\"titlebox bg-primary\">\n                <h2>Central Park</h2>\n            </div>\n            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n                be added here. Some text can be added here.</p>\n            <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n        </div>\n        <div class=\"col-sm-7\">\n            <figure class=\"figure\">\n                <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n                <figcaption class=\"figure-caption\">Picture taken by\n                    <mark>Benjamin Bannister</mark>.</figcaption>\n            </figure>\n        </div>\n    </div>\n</div>\n\n<div class=\"container activitybox rounded\">\n    <div class=\"row\">\n        <div class=\"col-sm-7\">\n            <figure class=\"figure\">\n                <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n                <figcaption class=\"figure-caption\">Picture taken by\n                    <mark>Benjamin Bannister</mark>.</figcaption>\n            </figure>\n        </div>\n        <div class=\"col-sm-5\">\n            <div class=\"titlebox bg-primary\">\n                <h2>Central Park</h2>\n            </div>\n            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n                be added here. Some text can be added here.</p>\n            <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n        </div>\n    </div>\n</div>\n\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-sm-4\">\n            <div class=\"card\">\n                <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Central Park</h5>\n                    <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n                    <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-sm-4\">\n            <div class=\"card\">\n                <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Central Park</h5>\n                    <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n                    <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-sm-4\">\n            <div class=\"card\">\n                <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Central Park</h5>\n                    <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n                    <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<div class=\"container activitybox rounded\">\n    <div class=\"row\">\n        <div class=\"col-sm-7\">\n            <figure class=\"figure\">\n                <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n                <figcaption class=\"figure-caption\">Picture taken by\n                    <mark>Benjamin Bannister</mark>.</figcaption>\n            </figure>\n        </div>\n        <div class=\"col-sm-5\">\n            <div class=\"titlebox bg-primary\">\n                <h2>Central Park</h2>\n            </div>\n            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n                be added here. Some text can be added here.</p>\n            <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n        </div>\n    </div>\n</div>\n\n<div class=\"container activitybox rounded\">\n    <div class=\"row\">\n        <div class=\"col-sm-5\">\n            <div class=\"titlebox bg-primary\">\n                <h2>Central Park</h2>\n            </div>\n            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n                be added here. Some text can be added here.</p>\n            <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n        </div>\n        <div class=\"col-sm-7\">\n            <figure class=\"figure\">\n                <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n                <figcaption class=\"figure-caption\">Picture taken by\n                    <mark>Benjamin Bannister</mark>.</figcaption>\n            </figure>\n        </div>\n    </div>\n</div>\n\n<div class=\"container activitybox rounded\">\n    <div class=\"row\">\n        <div class=\"col-sm-7\">\n            <figure class=\"figure\">\n                <img src=\"https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Central Park\" class=\"figure-img img-fluid rounded\">\n                <figcaption class=\"figure-caption\">Picture taken by\n                    <mark>Benjamin Bannister</mark>.</figcaption>\n            </figure>\n        </div>\n        <div class=\"col-sm-5\">\n            <div class=\"titlebox bg-primary\">\n                <h2>Central Park</h2>\n            </div>\n            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can\n                be added here. Some text can be added here.</p>\n            <a class=\"btn btn-primary\" href=\"#\">Add Activity</a>\n        </div>\n    </div>\n</div>\n\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-sm-4\">\n            <div class=\"card\">\n                <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Central Park</h5>\n                    <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n                    <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-sm-4\">\n            <div class=\"card\">\n                <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Central Park</h5>\n                    <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n                    <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-sm-4\">\n            <div class=\"card\">\n                <img class=\"card-img-top\" src=\"https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Central Park</h5>\n                    <p class=\"card-text\">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>\n                    <a href=\"#\" class=\"btn btn-primary\">Add Activity</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -82,6 +82,116 @@ var ActivityPageComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], ActivityPageComponent);
     return ActivityPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/api/venue-selector.ts":
+/*!***************************************!*\
+  !*** ./src/app/api/venue-selector.ts ***!
+  \***************************************/
+/*! exports provided: VenueSelector */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VenueSelector", function() { return VenueSelector; });
+var VenueSelector = /** @class */ (function () {
+    function VenueSelector(venue) {
+        this.hovered = false;
+        this.active = false;
+        this.venue = venue;
+    }
+    VenueSelector.prototype.setHovered = function (isHovered) {
+        this.hovered = isHovered;
+    };
+    VenueSelector.prototype.isHovered = function () {
+        return this.hovered;
+    };
+    VenueSelector.prototype.setActive = function (isActive) {
+        this.active = isActive;
+    };
+    VenueSelector.prototype.isActive = function () {
+        return this.active;
+    };
+    VenueSelector.prototype.getVenue = function () {
+        return this.venue;
+    };
+    return VenueSelector;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/api/venue.service.ts":
+/*!**************************************!*\
+  !*** ./src/app/api/venue.service.ts ***!
+  \**************************************/
+/*! exports provided: VenueService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VenueService", function() { return VenueService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _venue_selector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./venue-selector */ "./src/app/api/venue-selector.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var VenueService = /** @class */ (function () {
+    function VenueService(http) {
+        this.http = http;
+        this.venues = [];
+    }
+    VenueService.prototype.lookUpByCoords = function (longitude, latitude, radius) {
+        var _this = this;
+        var url = "api/venues/lookupbycoords";
+        var params = {
+            "longitude": longitude.toString(),
+            "latitude": latitude.toString(),
+            "radius": radius.toString()
+        };
+        this.http.get(url, { params: params }).subscribe(function (venues) {
+            while (_this.venues.length > 0) {
+                _this.venues.pop();
+            }
+            venues.forEach(function (venue) {
+                _this.venues.push(new _venue_selector__WEBPACK_IMPORTED_MODULE_2__["VenueSelector"](venue));
+            });
+        });
+    };
+    VenueService.prototype.getVenues = function () {
+        return this.venues;
+    };
+    VenueService.prototype.getVenueById = function (id) {
+        for (var _i = 0, _a = this.venues; _i < _a.length; _i++) {
+            var venue = _a[_i];
+            if (venue.getVenue().id == id) {
+                return venue;
+            }
+        }
+        return null;
+    };
+    VenueService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], VenueService);
+    return VenueService;
 }());
 
 
@@ -161,14 +271,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_openlayers__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ngx_openlayers__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _map_map_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./map/map.component */ "./src/app/map/map.component.ts");
-/* harmony import */ var _map_map_view_map_view_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./map/map-view/map-view.component */ "./src/app/map/map-view/map-view.component.ts");
-/* harmony import */ var _map_map_list_map_list_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./map/map-list/map-list.component */ "./src/app/map/map-list/map-list.component.ts");
-/* harmony import */ var _front_page_front_page_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./front-page/front-page.component */ "./src/app/front-page/front-page.component.ts");
-/* harmony import */ var _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./nav-bar/nav-bar.component */ "./src/app/nav-bar/nav-bar.component.ts");
-/* harmony import */ var _activity_page_activity_page_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./activity-page/activity-page.component */ "./src/app/activity-page/activity-page.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _map_map_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./map/map.component */ "./src/app/map/map.component.ts");
+/* harmony import */ var _map_map_view_map_view_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./map/map-view/map-view.component */ "./src/app/map/map-view/map-view.component.ts");
+/* harmony import */ var _map_map_list_map_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./map/map-list/map-list.component */ "./src/app/map/map-list/map-list.component.ts");
+/* harmony import */ var _front_page_front_page_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./front-page/front-page.component */ "./src/app/front-page/front-page.component.ts");
+/* harmony import */ var _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./nav-bar/nav-bar.component */ "./src/app/nav-bar/nav-bar.component.ts");
+/* harmony import */ var _activity_page_activity_page_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./activity-page/activity-page.component */ "./src/app/activity-page/activity-page.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -189,10 +299,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var appRoutes = [
-    { path: '', component: _front_page_front_page_component__WEBPACK_IMPORTED_MODULE_9__["FrontPageComponent"] },
-    { path: 'activities', component: _activity_page_activity_page_component__WEBPACK_IMPORTED_MODULE_11__["ActivityPageComponent"] },
-    { path: 'map', component: _map_map_component__WEBPACK_IMPORTED_MODULE_6__["MapComponent"] },
-    { path: '**', component: _front_page_front_page_component__WEBPACK_IMPORTED_MODULE_9__["FrontPageComponent"] }
+    { path: '', component: _front_page_front_page_component__WEBPACK_IMPORTED_MODULE_10__["FrontPageComponent"] },
+    { path: 'activities', component: _activity_page_activity_page_component__WEBPACK_IMPORTED_MODULE_12__["ActivityPageComponent"] },
+    { path: 'map', component: _map_map_component__WEBPACK_IMPORTED_MODULE_7__["MapComponent"] },
+    { path: '**', component: _front_page_front_page_component__WEBPACK_IMPORTED_MODULE_10__["FrontPageComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -200,91 +310,28 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-                _map_map_component__WEBPACK_IMPORTED_MODULE_6__["MapComponent"],
-                _map_map_view_map_view_component__WEBPACK_IMPORTED_MODULE_7__["MapViewComponent"],
-                _map_map_list_map_list_component__WEBPACK_IMPORTED_MODULE_8__["MapListComponent"],
-                _front_page_front_page_component__WEBPACK_IMPORTED_MODULE_9__["FrontPageComponent"],
-                _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_10__["NavBarComponent"],
-                _activity_page_activity_page_component__WEBPACK_IMPORTED_MODULE_11__["ActivityPageComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_12__["FooterComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+                _map_map_component__WEBPACK_IMPORTED_MODULE_7__["MapComponent"],
+                _map_map_view_map_view_component__WEBPACK_IMPORTED_MODULE_8__["MapViewComponent"],
+                _map_map_list_map_list_component__WEBPACK_IMPORTED_MODULE_9__["MapListComponent"],
+                _front_page_front_page_component__WEBPACK_IMPORTED_MODULE_10__["FrontPageComponent"],
+                _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_11__["NavBarComponent"],
+                _activity_page_activity_page_component__WEBPACK_IMPORTED_MODULE_12__["ActivityPageComponent"]
             ],
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(appRoutes, { enableTracing: true } // <-- debugging purposes only
                 ),
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModule"],
                 ngx_openlayers__WEBPACK_IMPORTED_MODULE_2__["AngularOpenlayersModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbCollapseModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/footer/footer.component.css":
-/*!*********************************************!*\
-  !*** ./src/app/footer/footer.component.css ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = " \n  .footer {\n    position: absolute;\n    bottom: 0;\n    width: 100%;\n    /* Set the fixed height of the footer here */\n    height: 60px;\n    line-height: 60px;\n    /* Vertically center the text there */\n    background-color: #f5f5f5;\n  }"
-
-/***/ }),
-
-/***/ "./src/app/footer/footer.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/footer/footer.component.html ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<footer class=\"footer bg-dark\">\n    <div class=\"container text-center\">\n      <span class=\"text-light\">Made with ❤</span>\n    </div>\n  </footer>"
-
-/***/ }),
-
-/***/ "./src/app/footer/footer.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/footer/footer.component.ts ***!
-  \********************************************/
-/*! exports provided: FooterComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterComponent", function() { return FooterComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var FooterComponent = /** @class */ (function () {
-    function FooterComponent() {
-    }
-    FooterComponent.prototype.ngOnInit = function () {
-    };
-    FooterComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-footer',
-            template: __webpack_require__(/*! ./footer.component.html */ "./src/app/footer/footer.component.html"),
-            styles: [__webpack_require__(/*! ./footer.component.css */ "./src/app/footer/footer.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], FooterComponent);
-    return FooterComponent;
 }());
 
 
@@ -372,7 +419,7 @@ module.exports = "\r\n#mapListContainer {\r\n    flex-grow: 0;\r\n    width: 300
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"mapListContainer\" [class.hideMenu]=\"isMenuHidden\">\n    <div id=\"mapListGroup\" class=\"list-group\">\n        <h1 class=\"mapListHeader\">\n            Places <button id=\"closeMapListButton\" class=\"btn btn-outline-primary\" type=\"button\" (click)=\"closeMenu()\">X</button>\n        </h1>\n        <button class=\"btn mapPointItem list-group-item\" *ngFor=\"let mapPoint of mapPoints\" [class.active]=\"mapPoint.isActive()\" [class.list-group-item-hover]=\"mapPoint.isHoverd() && !mapPoint.isActive()\" (mouseenter)=\"mapPoint.setHoverdState(true)\" (mouseleave)=\"mapPoint.setHoverdState(false)\" (click)=\"setActive(mapPoint)\" type=\"button\">\n            <h1>{{mapPoint.getName()}}</h1>\n            <p>{{mapPoint.getDescription()}}</p>\n        </button>\n    </div>\n</div>\n<button id=\"openMapListButton\"  [class.hideMenu]=\"!isMenuHidden\" class=\"btn btn-primary\" type=\"button\" (click)=\"openMenu()\">&gt;</button>"
+module.exports = "<div id=\"mapListContainer\" [class.hideMenu]=\"isMenuHidden\">\n    <div id=\"mapListGroup\" class=\"list-group\">\n        <h1 class=\"mapListHeader\">\n            Places <button id=\"closeMapListButton\" class=\"btn btn-outline-primary\" type=\"button\" (click)=\"closeMenu()\">X</button>\n        </h1>\n        <button class=\"btn mapPointItem list-group-item\" *ngFor=\"let venue of venues\" [class.active]=\"venue.isActive()\" [class.list-group-item-hover]=\"venue.isHovered() && !venue.isActive()\" (mouseenter)=\"venue.setHovered(true)\" (mouseleave)=\"venue.setHovered(false)\" (click)=\"setActive(venue)\" type=\"button\">\n            <h1>{{venue.getVenue().name}}</h1>\n            <p>{{venue.getVenue().description}}</p>\n        </button>\n    </div>\n</div>\n<button id=\"openMapListButton\"  [class.hideMenu]=\"!isMenuHidden\" class=\"btn btn-primary\" type=\"button\" (click)=\"openMenu()\">&gt;</button>"
 
 /***/ }),
 
@@ -387,6 +434,7 @@ module.exports = "<div id=\"mapListContainer\" [class.hideMenu]=\"isMenuHidden\"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapListComponent", function() { return MapListComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _api_venue_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../api/venue.service */ "./src/app/api/venue.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -397,9 +445,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var MapListComponent = /** @class */ (function () {
-    function MapListComponent() {
+    function MapListComponent(venueService) {
+        this.venueService = venueService;
         this.isMenuHidden = true;
+        this.venues = this.venueService.getVenues();
     }
     MapListComponent.prototype.ngOnInit = function () {
     };
@@ -409,77 +460,20 @@ var MapListComponent = /** @class */ (function () {
     MapListComponent.prototype.closeMenu = function () {
         this.isMenuHidden = true;
     };
-    MapListComponent.prototype.setActive = function (mapPoint) {
-        for (var _i = 0, _a = this.mapPoints; _i < _a.length; _i++) {
-            var current = _a[_i];
-            current.setActiveState(false);
-        }
-        mapPoint.setActiveState(true);
+    MapListComponent.prototype.setActive = function (venue) {
+        this.venues.forEach(function (venue) { venue.setActive(false); });
+        venue.setActive(true);
         this.closeMenu();
     };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Array)
-    ], MapListComponent.prototype, "mapPoints", void 0);
     MapListComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-map-list',
             template: __webpack_require__(/*! ./map-list.component.html */ "./src/app/map/map-list/map-list.component.html"),
             styles: [__webpack_require__(/*! ./map-list.component.css */ "./src/app/map/map-list/map-list.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_api_venue_service__WEBPACK_IMPORTED_MODULE_1__["VenueService"]])
     ], MapListComponent);
     return MapListComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/map/map-point.ts":
-/*!**********************************!*\
-  !*** ./src/app/map/map-point.ts ***!
-  \**********************************/
-/*! exports provided: MapPoint */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapPoint", function() { return MapPoint; });
-var MapPoint = /** @class */ (function () {
-    function MapPoint(name, description, x, y) {
-        this.hoverd = false;
-        this.active = false;
-        this.name = name;
-        this.description = description;
-        this.x = x;
-        this.y = y;
-    }
-    MapPoint.prototype.setHoverdState = function (isHoverd) {
-        this.hoverd = isHoverd;
-    };
-    MapPoint.prototype.isHoverd = function () {
-        return this.hoverd;
-    };
-    MapPoint.prototype.setActiveState = function (isActtive) {
-        this.active = isActtive;
-    };
-    MapPoint.prototype.isActive = function () {
-        return this.active;
-    };
-    MapPoint.prototype.getName = function () {
-        return this.name;
-    };
-    MapPoint.prototype.getDescription = function () {
-        return this.description;
-    };
-    MapPoint.prototype.getX = function () {
-        return this.x;
-    };
-    MapPoint.prototype.getY = function () {
-        return this.y;
-    };
-    return MapPoint;
 }());
 
 
@@ -504,7 +498,7 @@ module.exports = "app-map-view {\r\n    flex-grow: 1;\r\n    height:100%;\r\n   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div id=\"mapViewContainer\">\n    <aol-map [renderer]=\"'canvas'\" (onMoveEnd)=\"onMoveEnd($event)\">\n        <aol-interaction-default></aol-interaction-default>\n        <aol-view [zoom]=\"zoom\">\n            <aol-coordinate [x]=\"lat\" [y]=\"lng\"></aol-coordinate>\n        </aol-view>\n        <aol-layer-tile [opacity]=\"opacity\">\n            <aol-source-osm></aol-source-osm>\n        </aol-layer-tile>\n        <aol-layer-vector [opacity]=\"opacity\">\n            <aol-source-vector>\n                <aol-feature>\n                    <aol-control-attribution></aol-control-attribution>\n                </aol-feature>\n                <aol-feature *ngFor=\"let mapPoint of mapPoints; let i=index\" [id]=\"'mapPoint-' + i\">\n                    <aol-geometry-point>\n                        <aol-coordinate [x]=\"mapPoint.getX()\" [y]=\"mapPoint.getY()\" ></aol-coordinate>\n                    </aol-geometry-point>\n                    <aol-style>\n                        <aol-style-circle [radius]=\"10\">\n                            <aol-style-stroke [color]=\"'black'\" [width]=\"width\"></aol-style-stroke>\n                            <aol-style-fill [color]=\"mapPoint.isActive() ? 'green' : mapPoint.isHoverd() ? 'yellow' : 'red'\"></aol-style-fill>\n                        </aol-style-circle>\n                    </aol-style>\n                </aol-feature>\n            </aol-source-vector>\n        </aol-layer-vector>\n    </aol-map>\n</div>"
+module.exports = "\n<div id=\"mapViewContainer\">\n    <aol-map [renderer]=\"'canvas'\" (onMoveEnd)=\"onMoveEnd($event)\">\n        <aol-interaction-default></aol-interaction-default>\n        <aol-view [zoom]=\"zoom\">\n            <aol-coordinate [x]=\"lat\" [y]=\"lng\"></aol-coordinate>\n        </aol-view>\n        <aol-layer-tile [opacity]=\"opacity\">\n            <aol-source-osm></aol-source-osm>\n        </aol-layer-tile>\n        <aol-layer-vector [opacity]=\"opacity\">\n            <aol-source-vector>\n                <aol-feature>\n                    <aol-control-attribution></aol-control-attribution>\n                </aol-feature>\n                <aol-feature *ngFor=\"let venue of venues; let i=index\" [id]=\"'venue-' + venue.getVenue().id\">\n                    <aol-geometry-point>\n                        <aol-coordinate [x]=\"venue.getVenue().longitude\" [y]=\"venue.getVenue().latitude\" [srid]=\"'EPSG:4326'\"></aol-coordinate>\n                    </aol-geometry-point>\n                    <aol-style>\n                        <aol-style-circle [radius]=\"10\">\n                            <aol-style-stroke [color]=\"'black'\" [width]=\"width\"></aol-style-stroke>\n                            <aol-style-fill [color]=\"venue.isActive() ? 'green' : venue.isHovered() ? 'yellow' : 'red'\"></aol-style-fill>\n                        </aol-style-circle>\n                    </aol-style>\n                </aol-feature>\n            </aol-source-vector>\n        </aol-layer-vector>\n    </aol-map>\n</div>"
 
 /***/ }),
 
@@ -521,9 +515,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var openlayers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! openlayers */ "./node_modules/openlayers/dist/ol.js");
 /* harmony import */ var openlayers__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(openlayers__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _nav_bar_nav_bar_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../nav-bar/nav-bar.service */ "./src/app/nav-bar/nav-bar.service.ts");
-/* harmony import */ var ngx_openlayers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-openlayers */ "./node_modules/ngx-openlayers/dist/index.js");
-/* harmony import */ var ngx_openlayers__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ngx_openlayers__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var ngx_openlayers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-openlayers */ "./node_modules/ngx-openlayers/dist/index.js");
+/* harmony import */ var ngx_openlayers__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ngx_openlayers__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _api_venue_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../api/venue.service */ "./src/app/api/venue.service.ts");
+/* harmony import */ var _nav_bar_nav_bar_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../nav-bar/nav-bar.service */ "./src/app/nav-bar/nav-bar.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -537,9 +532,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var MapViewComponent = /** @class */ (function () {
-    function MapViewComponent(navBarService) {
+    function MapViewComponent(navBarService, venueService) {
         this.navBarService = navBarService;
+        this.venueService = venueService;
         this.zoom = 15;
         this.opacity = 1.0;
         this.width = 5;
@@ -553,66 +550,82 @@ var MapViewComponent = /** @class */ (function () {
         this.selectPointerMove = new openlayers__WEBPACK_IMPORTED_MODULE_1__["interaction"].Select({
             condition: openlayers__WEBPACK_IMPORTED_MODULE_1__["events"].condition.pointerMove
         });
+        this.venues = venueService.getVenues();
     }
     MapViewComponent.prototype.ngOnInit = function () {
     };
     MapViewComponent.prototype.ngAfterViewInit = function () {
         var map = this.mapComponent.instance;
-        map.addInteraction(this.selectClick);
-        map.addInteraction(this.selectPointerMove);
+        var venueService = this.venueService;
+        var selectClick = this.selectClick;
+        var selectPointerMove = this.selectPointerMove;
+        map.on("click", function () {
+            venues.forEach(function (venue) { venue.setActive(false); });
+        });
+        map.addInteraction(selectClick);
+        map.addInteraction(selectPointerMove);
         this.navBarService.postCollapseState.subscribe(function () {
             map.updateSize();
         });
-        var mapPoints = this.mapPoints;
-        this.selectClick.on('select', function (e) {
-            for (var _i = 0, mapPoints_1 = mapPoints; _i < mapPoints_1.length; _i++) {
-                var mapPoint = mapPoints_1[_i];
-                mapPoint.setActiveState(false);
-            }
-            for (var _a = 0, _b = e.selected; _a < _b.length; _a++) {
-                var selected = _b[_a];
-                var match = selected.getId().toString().match(/mapPoint-(\d*)/);
+        var venues = this.venues;
+        this.selectClick.on('select', function () {
+            for (var _i = 0, _a = selectClick.getFeatures().getArray(); _i < _a.length; _i++) {
+                var selected = _a[_i];
+                var match = selected.getId().toString().match(/venue-([0-9a-f]*)/);
                 if (match == null) {
                     continue;
                 }
-                mapPoints[Number.parseInt(match[1])].setActiveState(true);
+                var venue = venueService.getVenueById(match[1]);
+                if (venue != null) {
+                    venue.setActive(true);
+                }
                 return;
             }
         });
-        this.selectPointerMove.on('select', function (e) {
-            for (var _i = 0, mapPoints_2 = mapPoints; _i < mapPoints_2.length; _i++) {
-                var mapPoint = mapPoints_2[_i];
-                mapPoint.setHoverdState(false);
-            }
-            for (var _a = 0, _b = e.selected; _a < _b.length; _a++) {
-                var selected = _b[_a];
-                var match = selected.getId().toString().match(/mapPoint-(\d*)/);
+        this.selectPointerMove.on('select', function () {
+            venues.forEach(function (venue) { venue.setHovered(false); });
+            for (var _i = 0, _a = selectPointerMove.getFeatures().getArray(); _i < _a.length; _i++) {
+                var selected = _a[_i];
+                var match = selected.getId().toString().match(/venue-([0-9a-f]*)/);
                 if (match == null) {
                     continue;
                 }
-                mapPoints[Number.parseInt(match[1])].setHoverdState(true);
+                var venue = venueService.getVenueById(match[1]);
+                if (venue != null) {
+                    venue.setHovered(true);
+                }
                 return;
             }
         });
     };
     MapViewComponent.prototype.onMoveEnd = function (event) {
-        console.log(event.map.getView().getCenter());
+        var map = event.map;
+        var view = map.getView();
+        var projection = 'EPSG:4326';
+        var sourceProj = view.getProjection();
+        var center = openlayers__WEBPACK_IMPORTED_MODULE_1__["proj"].toLonLat(view.getCenter());
+        var extend = view.calculateExtent(map.getSize());
+        var c1 = openlayers__WEBPACK_IMPORTED_MODULE_1__["proj"].transform([extend[0], extend[1]], sourceProj, projection);
+        var c2 = openlayers__WEBPACK_IMPORTED_MODULE_1__["proj"].transform([extend[2], extend[3]], sourceProj, projection);
+        var wgs84Sphere = new openlayers__WEBPACK_IMPORTED_MODULE_1__["Sphere"](6378137);
+        var distance = wgs84Sphere.haversineDistance(c1, c2);
+        this.venueService.lookUpByCoords(center[0], center[1], distance);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ngx_openlayers__WEBPACK_IMPORTED_MODULE_3__["MapComponent"]),
         __metadata("design:type", ngx_openlayers__WEBPACK_IMPORTED_MODULE_3__["MapComponent"])
     ], MapViewComponent.prototype, "mapComponent", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Array)
-    ], MapViewComponent.prototype, "mapPoints", void 0);
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ngx_openlayers__WEBPACK_IMPORTED_MODULE_2__["MapComponent"]),
+        __metadata("design:type", ngx_openlayers__WEBPACK_IMPORTED_MODULE_2__["MapComponent"])
+    ], MapViewComponent.prototype, "mapComponent", void 0);
     MapViewComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-map-view',
             template: __webpack_require__(/*! ./map-view.component.html */ "./src/app/map/map-view/map-view.component.html"),
             styles: [__webpack_require__(/*! ./map-view.component.css */ "./src/app/map/map-view/map-view.component.css")]
         }),
-        __metadata("design:paramtypes", [_nav_bar_nav_bar_service__WEBPACK_IMPORTED_MODULE_2__["NavBarService"]])
+        __metadata("design:paramtypes", [_nav_bar_nav_bar_service__WEBPACK_IMPORTED_MODULE_4__["NavBarService"], _api_venue_service__WEBPACK_IMPORTED_MODULE_3__["VenueService"]])
     ], MapViewComponent);
     return MapViewComponent;
 }());
@@ -639,7 +652,7 @@ module.exports = "#mapContainer {\r\n    display:flex;\r\n    flex-direction: co
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"mapContainer\">\n    <app-nav-bar></app-nav-bar>\n    <div id=\"flexContainer\">\n        <div id=\"viewContainer\">\n            <app-map-list [mapPoints]=\"mapPoints\"></app-map-list>\n            <app-map-view [mapPoints]=\"mapPoints\"></app-map-view>\n        </div>\n    </div>\n</div>"
+module.exports = "<div id=\"mapContainer\">\n    <app-nav-bar></app-nav-bar>\n    <div id=\"flexContainer\">\n        <div id=\"viewContainer\">\n            <app-map-list></app-map-list>\n            <app-map-view></app-map-view>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -654,7 +667,6 @@ module.exports = "<div id=\"mapContainer\">\n    <app-nav-bar></app-nav-bar>\n  
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapComponent", function() { return MapComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _map_point__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map-point */ "./src/app/map/map-point.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -665,13 +677,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
 var MapComponent = /** @class */ (function () {
     function MapComponent() {
-        this.mapPoints = [];
-        this.mapPoints.push(new _map_point__WEBPACK_IMPORTED_MODULE_1__["MapPoint"]("BB", "Bernouliborg", 727640.686966983, 7027557.9083128));
-        this.mapPoints.push(new _map_point__WEBPACK_IMPORTED_MODULE_1__["MapPoint"]("EA", "Energy academy", 727792.375138526, 7027521.482854965));
-        this.mapPoints.push(new _map_point__WEBPACK_IMPORTED_MODULE_1__["MapPoint"]("NB", "NijenBorg", 727837.4443462458, 7027252.353320077));
     }
     MapComponent.prototype.ngOnInit = function () {
     };
@@ -855,6 +862,187 @@ var NavItem = /** @class */ (function () {
     NavItem.prototype.isCurrentPath = function () {
         return "Map" == this.name;
     };
+    return NavItem;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/nav-bar/nav-bar.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/nav-bar/nav-bar.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".navbar {\r\n    position: relative;\r\n}\r\n\r\n#navbarNav {\r\n    padding: .5rem 1rem;\r\n}\r\n\r\n.navbar-toggler {\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 10px;\r\n    z-index: 9999;\r\n    background-color: #343a40;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/nav-bar/nav-bar.component.html":
+/*!************************************************!*\
+  !*** ./src/app/nav-bar/nav-bar.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">\n    <div class=\"container\">\n        <a class=\"navbar-brand\" href=\"#\">City Trip Planner</a>\n        <button class=\"navbar-toggler\" type=\"button\" (click)=\"navBarService.toggleMenu()\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n        <div id=\"navbarNav\" class=\"collapse navbar-collapse float-right\" [ngbCollapse]=\"navBarService.isCollapsed()\" >\n            <ul class=\"nav navbar-nav ml-auto\">\n                <li class=\"nav-item\" *ngFor=\"let navItem of navItems\" [class.active]=\"navItem == currentItem\"><a class=\"nav-link\" [routerLink]=\"navItem.getLink()\" [routerLinkActive]=\"navItem.isActive() + ''\">{{navItem.getName()}}</a></li>\n            </ul>\n        </div>\n    </div>\n</nav>"
+
+/***/ }),
+
+/***/ "./src/app/nav-bar/nav-bar.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/nav-bar/nav-bar.component.ts ***!
+  \**********************************************/
+/*! exports provided: NavBarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavBarComponent", function() { return NavBarComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _nav_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nav-item */ "./src/app/nav-bar/nav-item.ts");
+/* harmony import */ var _nav_bar_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nav-bar.service */ "./src/app/nav-bar/nav-bar.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var NavBarComponent = /** @class */ (function () {
+    function NavBarComponent(navBarService, router) {
+        this.navBarService = navBarService;
+        this.router = router;
+        this.navItems = [];
+        this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_2__["NavItem"]("Home", "/"));
+        this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_2__["NavItem"]("Activities", '/activities'));
+        this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_2__["NavItem"]("Map", "/map"));
+        console.log(router.url);
+        for (var _i = 0, _a = this.navItems; _i < _a.length; _i++) {
+            var navItem = _a[_i];
+            if (navItem.getLink() == router.url) {
+                this.currentItem = navItem;
+                console.log("FOUND", navItem);
+                break;
+            }
+        }
+    }
+    NavBarComponent.prototype.ngOnInit = function () {
+    };
+    NavBarComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        var observer = new MutationObserver(function () {
+            _this.navBarService.collapseComplete();
+        });
+        observer.observe(document.querySelector('#navbarNav'), {
+            attributes: true,
+            attributeFilter: ["class"]
+        });
+    };
+    NavBarComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-nav-bar',
+            template: __webpack_require__(/*! ./nav-bar.component.html */ "./src/app/nav-bar/nav-bar.component.html"),
+            styles: [__webpack_require__(/*! ./nav-bar.component.css */ "./src/app/nav-bar/nav-bar.component.css")]
+        }),
+        __metadata("design:paramtypes", [_nav_bar_service__WEBPACK_IMPORTED_MODULE_3__["NavBarService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], NavBarComponent);
+    return NavBarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/nav-bar/nav-bar.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/nav-bar/nav-bar.service.ts ***!
+  \********************************************/
+/*! exports provided: NavBarService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavBarService", function() { return NavBarService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var NavBarService = /** @class */ (function () {
+    function NavBarService() {
+        this.collapsed = true;
+        this._collapsed = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        this.collapsedState = this._collapsed.asObservable();
+        this._postColapse = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        this.postCollapseState = this._postColapse.asObservable();
+    }
+    NavBarService.prototype.toggleMenu = function () {
+        this.collapsed = !this.collapsed;
+        this._collapsed.next(this.collapsed);
+    };
+    NavBarService.prototype.isCollapsed = function () {
+        return this.collapsed;
+    };
+    NavBarService.prototype.collapseComplete = function () {
+        this._postColapse.next();
+    };
+    NavBarService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], NavBarService);
+    return NavBarService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/nav-bar/nav-item.ts":
+/*!*************************************!*\
+  !*** ./src/app/nav-bar/nav-item.ts ***!
+  \*************************************/
+/*! exports provided: NavItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavItem", function() { return NavItem; });
+var NavItem = /** @class */ (function () {
+    function NavItem(name, link) {
+        this.active = true;
+        this.name = name;
+        this.link = link;
+    }
+    NavItem.prototype.getName = function () {
+        return this.name;
+    };
+    NavItem.prototype.getLink = function () {
+        return this.link;
+    };
+    NavItem.prototype.isActive = function () {
+        return this.active;
+    };
+    ;
+    NavItem.prototype.setActive = function (active) {
+        this.active = active;
+    };
+    ;
     return NavItem;
 }());
 
