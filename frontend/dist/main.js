@@ -612,6 +612,10 @@ var MapViewComponent = /** @class */ (function () {
         this.venueService.lookUpByCoords(center[0], center[1], distance);
     };
     __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ngx_openlayers__WEBPACK_IMPORTED_MODULE_3__["MapComponent"]),
+        __metadata("design:type", ngx_openlayers__WEBPACK_IMPORTED_MODULE_3__["MapComponent"])
+    ], MapViewComponent.prototype, "mapComponent", void 0);
+    __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ngx_openlayers__WEBPACK_IMPORTED_MODULE_2__["MapComponent"]),
         __metadata("design:type", ngx_openlayers__WEBPACK_IMPORTED_MODULE_2__["MapComponent"])
     ], MapViewComponent.prototype, "mapComponent", void 0);
@@ -687,6 +691,178 @@ var MapComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], MapComponent);
     return MapComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/nav-bar/nav-bar.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/nav-bar/nav-bar.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".navbar {\r\n    position: relative;\r\n}\r\n\r\n#navbarNav {\r\n    padding: .5rem 1rem;\r\n}\r\n\r\n.navbar-toggler {\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 10px;\r\n    z-index: 9999;\r\n    background-color: #343a40;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/nav-bar/nav-bar.component.html":
+/*!************************************************!*\
+  !*** ./src/app/nav-bar/nav-bar.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">\n    <div class=\"container\">\n        <a class=\"navbar-brand\" href=\"#\">City Trip Planner</a>\n        <button class=\"navbar-toggler\" type=\"button\" (click)=\"navBarService.toggleMenu()\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n        <div id=\"navbarNav\" class=\"collapse navbar-collapse float-right\" [ngbCollapse]=\"navBarService.isCollapsed()\" >\n            <ul class=\"nav navbar-nav ml-auto\">\n                <li class=\"nav-item\" *ngFor=\"let navItem of navItems\" [class.active]=\"navItem.isCurrentPath()\"><a class=\"nav-link\" [routerLink]=\"navItem.getLink()\" [routerLinkActive]=\"navItem.isActive() + ''\">{{navItem.getName()}}</a></li>\n            </ul>\n        </div>\n    </div>\n</nav>"
+
+/***/ }),
+
+/***/ "./src/app/nav-bar/nav-bar.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/nav-bar/nav-bar.component.ts ***!
+  \**********************************************/
+/*! exports provided: NavBarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavBarComponent", function() { return NavBarComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _nav_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nav-item */ "./src/app/nav-bar/nav-item.ts");
+/* harmony import */ var _nav_bar_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nav-bar.service */ "./src/app/nav-bar/nav-bar.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var NavBarComponent = /** @class */ (function () {
+    function NavBarComponent(navBarService) {
+        this.navBarService = navBarService;
+        this.navItems = [];
+        this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_1__["NavItem"]("Home", "/"));
+        this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_1__["NavItem"]("Activities", '/activities'));
+        this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_1__["NavItem"]("Map", "/map"));
+    }
+    NavBarComponent.prototype.ngOnInit = function () {
+    };
+    NavBarComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        var observer = new MutationObserver(function () {
+            _this.navBarService.collapseComplete();
+        });
+        observer.observe(document.querySelector('#navbarNav'), {
+            attributes: true,
+            attributeFilter: ["class"]
+        });
+    };
+    NavBarComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-nav-bar',
+            template: __webpack_require__(/*! ./nav-bar.component.html */ "./src/app/nav-bar/nav-bar.component.html"),
+            styles: [__webpack_require__(/*! ./nav-bar.component.css */ "./src/app/nav-bar/nav-bar.component.css")]
+        }),
+        __metadata("design:paramtypes", [_nav_bar_service__WEBPACK_IMPORTED_MODULE_2__["NavBarService"]])
+    ], NavBarComponent);
+    return NavBarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/nav-bar/nav-bar.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/nav-bar/nav-bar.service.ts ***!
+  \********************************************/
+/*! exports provided: NavBarService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavBarService", function() { return NavBarService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var NavBarService = /** @class */ (function () {
+    function NavBarService() {
+        this.collapsed = true;
+        this._collapsed = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        this.collapsedState = this._collapsed.asObservable();
+        this._postColapse = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        this.postCollapseState = this._postColapse.asObservable();
+    }
+    NavBarService.prototype.toggleMenu = function () {
+        this.collapsed = !this.collapsed;
+        this._collapsed.next(this.collapsed);
+    };
+    NavBarService.prototype.isCollapsed = function () {
+        return this.collapsed;
+    };
+    NavBarService.prototype.collapseComplete = function () {
+        this._postColapse.next();
+    };
+    NavBarService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], NavBarService);
+    return NavBarService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/nav-bar/nav-item.ts":
+/*!*************************************!*\
+  !*** ./src/app/nav-bar/nav-item.ts ***!
+  \*************************************/
+/*! exports provided: NavItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavItem", function() { return NavItem; });
+var NavItem = /** @class */ (function () {
+    function NavItem(name, link) {
+        this.active = true;
+        this.name = name;
+        this.link = link;
+    }
+    NavItem.prototype.getName = function () {
+        return this.name;
+    };
+    NavItem.prototype.getLink = function () {
+        return this.link;
+    };
+    NavItem.prototype.isActive = function () {
+        return this.active;
+    };
+    ;
+    NavItem.prototype.setActive = function (active) {
+        this.active = active;
+    };
+    ;
+    NavItem.prototype.isCurrentPath = function () {
+        return "Map" == this.name;
+    };
+    return NavItem;
 }());
 
 
@@ -935,7 +1111,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\@NeatbeansProjects\TripPlanner\frontend\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\soelm\Desktop\Repositories\TripPlanner\frontend\src\main.ts */"./src/main.ts");
 
 
 /***/ })
