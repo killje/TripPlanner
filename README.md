@@ -24,8 +24,15 @@ Open a command prompt or bash terminal, cd to the homestead directory, and run `
 Now, you can access the website by going to http://yourlocalwebsitename.test which you configured in Homestead.yaml. Note: You might need to add :8000 to it (port 8000), depending on your configuration.
 
 ## Endpoints
+### Venues
 - GET `/venues/lookupbycoords` with arguments: longitude, latitude, radius (in meters) Example: `/venues/lookupbycoords?longitude=-74.0018&latitude=40.7243&radius=500`
 - GET `/venues/details` with arguments: id. Example: `/venues/details?id=412d2800f964a520df0c1fe3`
+### Trip
+- POST `/trips/store` with arguments: name, number_of_days. Example: `/trips/store?name=My New Trip&number_of_days=3`
+- DELETE `/trips/destroy` with arguments: uuid. Example: `/trips/destroy?uuid=f60e6d5f-772c-47a1-a81f-e06709671cc7`
+- POST `/trips/venues/add` with arguments: uuid. Example: `/trips/venues/add?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f&venue_id=412d2800f964a520df0c1fe3`
+- DELETE `/trips/venues/remove` with arguments: uuid, venue_id. Example: `/trips/venues/remove?uuid=1e5289a9-1d30-44cf-bfbe-0e4ec61f4138&venue_id=4a942a25f964a520972020e3`
+- GET `/trips/venues/list` with arguments: uuid. Example: `/trips/venues/list?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f`
 
 # Frontend
 ## Installation instructions
