@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "body, html {\n    height: 100%;\n    padding: 0;\n    margin: 0;\n}"
+module.exports = "body, html {\n    height: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n.btn-primary {\n    background-color: #3a90e0;\n}\n\n.bg-primary {\n    background-color: #3a90e0 !important;\n}\n\n.bg-dark {\n    background-color: #254563!important;\n}\n\n.card {\n    margin-bottom: 10px;\n}"
 
 /***/ }),
 

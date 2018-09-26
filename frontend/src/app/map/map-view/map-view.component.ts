@@ -1,8 +1,10 @@
-import {Component, AfterViewInit, OnInit, Input, ViewChild} from '@angular/core';
-import {MapPoint} from '../map-point';
-import {events, interaction, Map, MapEvent} from 'openlayers';
-import {NavBarService} from '../../nav-bar/nav-bar.service';
+import {Component, AfterViewInit, OnInit, ViewChild} from '@angular/core';
+import {events, interaction, Map, MapEvent, proj, Sphere} from 'openlayers';
 import {MapComponent} from 'ngx-openlayers';
+
+import {VenueService} from '../../api/venue.service';
+import {VenueSelector} from '../../api/venue-selector';
+import {NavBarService} from '../../nav-bar/nav-bar.service';
 
 @Component({
     selector: 'app-map-view',
@@ -11,10 +13,11 @@ import {MapComponent} from 'ngx-openlayers';
 })
 export class MapViewComponent implements OnInit, AfterViewInit {
 
-
     public zoom = 15;
     public opacity = 1.0;
     public width = 5;
+
+    private venues: VenueSelector[];
 
     lat: number = 727640.686966983;
     lng: number = 7027557.9083128;
@@ -30,43 +33,58 @@ export class MapViewComponent implements OnInit, AfterViewInit {
         condition: events.condition.pointerMove
     });
 
-    @Input() mapPoints: MapPoint[];
-
-    constructor(private navBarService: NavBarService) {
+    constructor(private navBarService: NavBarService, private venueService: VenueService) {
+        this.venues = venueService.getVenues();
     }
+
     ngOnInit(): void {
     }
+
     ngAfterViewInit(): void {
         let map: Map = this.mapComponent.instance;
-        map.addInteraction(this.selectClick);
-        map.addInteraction(this.selectPointerMove);
+        let venueService = this.venueService;
+        let selectClick = this.selectClick;
+        let selectPointerMove = this.selectPointerMove;
+
+        map.on("click", function(){
+            venues.forEach((venue: VenueSelector) => {venue.setActive(false)});
+        });
+        
+        map.addInteraction(selectClick);
+        map.addInteraction(selectPointerMove);
+        
         this.navBarService.postCollapseState.subscribe(() => {
             map.updateSize();
         })
-        let mapPoints: MapPoint[] = this.mapPoints;
-        this.selectClick.on('select', function (e: interaction.Select.Event) {
-            for (let mapPoint of mapPoints) {
-                mapPoint.setActiveState(false);
-            }
-            for (let selected of e.selected) {
-                let match: RegExpMatchArray = selected.getId().toString().match(/mapPoint-(\d*)/);
+        
+        let venues: VenueSelector[] = this.venues;
+        
+        this.selectClick.on('select', function () {
+            
+            for (let selected of selectClick.getFeatures().getArray()) {
+                let match: RegExpMatchArray = selected.getId().toString().match(/venue-([0-9a-f]*)/);
                 if (match == null) {
                     continue;
                 }
-                mapPoints[Number.parseInt(match[1])].setActiveState(true);
+                let venue: VenueSelector = venueService.getVenueById(match[1]);
+                if (venue != null) {
+                    venue.setActive(true);
+                }
                 return;
             }
         });
-        this.selectPointerMove.on('select', function (e: interaction.Select.Event) {
-            for (let mapPoint of mapPoints) {
-                mapPoint.setHoverdState(false);
-            }
-            for (let selected of e.selected) {
-                let match: RegExpMatchArray = selected.getId().toString().match(/mapPoint-(\d*)/);
+        this.selectPointerMove.on('select', function () {
+            
+            venues.forEach((venue: VenueSelector) => {venue.setHovered(false)});
+            for (let selected of selectPointerMove.getFeatures().getArray()) {
+                let match: RegExpMatchArray = selected.getId().toString().match(/venue-([0-9a-f]*)/);
                 if (match == null) {
                     continue;
                 }
-                mapPoints[Number.parseInt(match[1])].setHoverdState(true);
+                let venue: VenueSelector = venueService.getVenueById(match[1]);
+                if (venue != null) {
+                    venue.setHovered(true);
+                }
                 return;
             }
         });
@@ -74,7 +92,22 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     }
 
     onMoveEnd(event: MapEvent) {
-        console.log(event.map.getView().getCenter());
+        let map = event.map;
+        let view = map.getView();
+
+        let projection = 'EPSG:4326';
+        let sourceProj = view.getProjection();
+
+        let center = proj.toLonLat(view.getCenter());
+        let extend = view.calculateExtent(map.getSize());
+
+        let c1 = proj.transform([extend[0], extend[1]], sourceProj, projection);
+        let c2 = proj.transform([extend[2], extend[3]], sourceProj, projection);
+
+        let wgs84Sphere = new Sphere(6378137);
+        let distance = wgs84Sphere.haversineDistance(c1, c2);
+
+        this.venueService.lookUpByCoords(center[0], center[1], distance);
     }
 
 }
