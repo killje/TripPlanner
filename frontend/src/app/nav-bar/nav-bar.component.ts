@@ -18,6 +18,7 @@ export class NavBarComponent implements OnInit, AfterViewInit {
 
     constructor(private navBarService: NavBarService) {
         this.navItems.push(new NavItem("Home", "/"));
+        this.navItems.push(new NavItem("Activities", '/activities'));
         this.navItems.push(new NavItem("Map", "/map"));
     }
 
