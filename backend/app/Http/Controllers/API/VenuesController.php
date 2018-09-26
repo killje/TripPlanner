@@ -42,8 +42,8 @@ class VenuesController extends Controller
     public function getDetails(ContentProvider $contentProvider, Request $request) {
         $id = $request->input('id');
 
-        $venueDetails = $contentProvider->getVenueDetailsById($id);
-        return response()->json($venueDetails->getAsSimpleArray());
+        $venue = $contentProvider->getVenueById($id);
+        return response()->json($venue->getAsSimpleArray());
     }
 
 

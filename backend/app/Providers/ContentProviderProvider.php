@@ -19,6 +19,7 @@ class ContentProviderProvider extends ServiceProvider
         // Check whether the API is functional and credentials are OK
         if(!$contentProvider->isAvailable()) {
             Log::error('Tried to initialize Content Provider, but is not available.');
+            abort(429, 'API is currently unavailable');
         }
     }
 
@@ -32,7 +33,7 @@ class ContentProviderProvider extends ServiceProvider
         switch(config('services.contentproviders.default'))
         {
             case 'foursquare':
-                $this->app->bind('App\ContentProviders\ContentProvider', 'App\COntentProviders\FourSquare');
+                $this->app->bind('App\ContentProviders\ContentProvider', 'App\ContentProviders\FourSquare');
                 break;
             default:
                 Log::error("Unknown Content Provider specified in config");

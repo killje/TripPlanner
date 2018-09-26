@@ -45,6 +45,7 @@ return [
         'client_id' => env('FOURSQUARE_CLIENT_ID'),
         'client_secret' => env('FOURSQUARE_CLIENT_SECRET'),
         'version' => env('FOURSQUARE_VERSION'),
+        'venue_limit' => env('FOURSQUARE_VENUE_LIMIT'),
     ],
 
 ];
