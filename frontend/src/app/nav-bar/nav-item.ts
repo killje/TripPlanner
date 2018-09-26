@@ -1,3 +1,4 @@
+
 export class NavItem {
 
     private name: string;
@@ -24,8 +25,4 @@ export class NavItem {
     public setActive(active: boolean): void {
         this.active = active;
     };
-
-    public isCurrentPath(): boolean {
-        return "Map" == this.name;
-    }
 }

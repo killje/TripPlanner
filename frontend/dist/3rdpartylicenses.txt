@@ -91,6 +91,10 @@ MIT
 MIT
 MIT
 
+@angular/router@6.1.7
+MIT
+MIT
+
 @ng-bootstrap/ng-bootstrap@3.2.0
 MIT
 The MIT License (MIT)

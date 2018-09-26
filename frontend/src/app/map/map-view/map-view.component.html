@@ -13,14 +13,14 @@
                 <aol-feature>
                     <aol-control-attribution></aol-control-attribution>
                 </aol-feature>
-                <aol-feature *ngFor="let mapPoint of mapPoints; let i=index" [id]="'mapPoint-' + i">
+                <aol-feature *ngFor="let venue of venues; let i=index" [id]="'venue-' + venue.getVenue().id">
                     <aol-geometry-point>
-                        <aol-coordinate [x]="mapPoint.getX()" [y]="mapPoint.getY()" ></aol-coordinate>
+                        <aol-coordinate [x]="venue.getVenue().longitude" [y]="venue.getVenue().latitude" [srid]="'EPSG:4326'"></aol-coordinate>
                     </aol-geometry-point>
                     <aol-style>
                         <aol-style-circle [radius]="10">
                             <aol-style-stroke [color]="'black'" [width]="width"></aol-style-stroke>
-                            <aol-style-fill [color]="mapPoint.isActive() ? 'green' : mapPoint.isHoverd() ? 'yellow' : 'red'"></aol-style-fill>
+                            <aol-style-fill [color]="venue.isActive() ? 'green' : venue.isHovered() ? 'yellow' : 'red'"></aol-style-fill>
                         </aol-style-circle>
                     </aol-style>
                 </aol-feature>
