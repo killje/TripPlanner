@@ -31,10 +31,10 @@ class TripVenue extends Model
     /**
      * Return the DetailedVenue object
      */
-    public function getDetailedVenue(): DetailedVenue
+    public function getVenue(): Venue
     {
         $contentProvider = resolve('App\ContentProviders\ContentProvider');
-        $detailedVenue = $contentProvider->getVenueDetailsById($this->venue_id);
+        $detailedVenue = $contentProvider->getVenueById($this->venue_id);
         return $detailedVenue;
     }
 }
