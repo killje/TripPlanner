@@ -33,7 +33,7 @@ interface ContentProvider
      * @param string $id
      * @return mixed
      */
-    public function getVenueDetailsById(string $id);
+    public function getVenueById(string $id);
 
     /**
      * Will return whether the API is available
@@ -48,20 +48,6 @@ interface ContentProvider
      * @return bool
      */
     public function checkResponse($endpoint, $request): bool;
-
-    /**
-     * This method, should create an instance of the Venue object, from the data of the API
-     * @param $object mixed Data returned by the API
-     * @return Venue
-     */
-    public function createVenueFromAPIListing($object): Venue;
-
-    /**
-     * This method, should create an instance of the DetailedVenue object, from the data of the API
-     * @param $object mixed Data returned by the API
-     * @return Venue
-     */
-    public function createDetailedVenueFromAPIListing($object): Venue;
 
     /**
      * This function, will make the request to the API, and return the result
