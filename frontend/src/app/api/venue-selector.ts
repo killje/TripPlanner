@@ -1,3 +1,5 @@
+import {EventEmitter} from "@angular/core";
+
 import {Venue} from "./venue";
 
 export class VenueSelector {
@@ -6,11 +8,14 @@ export class VenueSelector {
     private hovered: boolean = false;
     private active: boolean = false;
     
+    stateUpdate = new EventEmitter<VenueStateEvent>();
+    
     constructor(venue: Venue) {
         this.venue = venue;
     }
     
     setHovered(isHovered: boolean): void {
+        this.stateUpdate.emit(new VenueStateEvent(this, 'hovered', isHovered));
         this.hovered = isHovered;
     }
     
@@ -19,6 +24,7 @@ export class VenueSelector {
     }
     
     setActive(isActive: boolean): void {
+        this.stateUpdate.emit(new VenueStateEvent(this, 'active', isActive));
         this.active = isActive;
     }
     
@@ -28,6 +34,25 @@ export class VenueSelector {
     
     getVenue(): Venue {
         return this.venue;
+    }
+    
+}
+
+export class VenueStateEvent {
+    
+    constructor(private venue: VenueSelector,private emitedState: 'hovered' | 'active',private emitedValue: boolean) {
+    }
+    
+    public getVenue(): VenueSelector {
+        return this.venue;
+    }
+    
+    public getEmitedState(): 'hovered' | 'active' {
+        return this.emitedState;
+    }
+    
+    public getEmitedValue(): boolean {
+        return this.emitedValue;
     }
     
 }

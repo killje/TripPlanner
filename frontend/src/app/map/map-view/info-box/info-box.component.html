@@ -1,0 +1,6 @@
+<div id="infoBoxContainer" *ngIf="selectedVenue">
+    <h2>{{selectedVenue.getVenue().name}}</h2>
+    <div id="venueAddress">
+        <p class="addressLine" *ngFor="let addressLine of selectedVenue.getVenue().address">{{addressLine}}</p>
+    </div>
+</div>
