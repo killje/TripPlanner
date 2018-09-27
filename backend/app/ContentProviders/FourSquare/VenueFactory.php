@@ -84,7 +84,7 @@ class VenueFactory
                 return NULL;
 
             // Store the venue
-            Storage::put('venues/' . $id . '.json', json_encode($result));
+            Storage::put('venues/' . $id . '.json', json_encode($result->response->venue));
 
             return $this->createVenueFromAPIResponse($result->response->venue);
         }
