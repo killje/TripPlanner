@@ -85,7 +85,6 @@ class VenueFactory
 
             // Store the venue
             Storage::put('venues/' . $id . '.json', json_encode($result));
-            dd("hi");
 
             return $this->createVenueFromAPIResponse($result->response->venue);
         }
