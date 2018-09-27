@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".activitybox {\n  background-color: #F0F0F0;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  padding: 10px;\n}\n\n.titlebox {\n  padding-top: 5px;\n  padding-left: 10px;\n  padding-bottom: 5px;\n  border-radius: 5px;\n  color: white;\n}\n"
+module.exports = ".activitybox {\r\n  background-color: #F0F0F0;\r\n  margin-bottom: 10px;\r\n  margin-top: 10px;\r\n  padding: 10px;\r\n}\r\n\r\n.titlebox {\r\n  padding-top: 5px;\r\n  padding-left: 10px;\r\n  padding-bottom: 5px;\r\n  border-radius: 5px;\r\n  color: white;\r\n}\r\n"
 
 /***/ }),
 
@@ -216,7 +216,7 @@ module.exports = "#appContainer {\r\n    height:100%;\r\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"appContainer\">\n    <router-outlet></router-outlet>\n</div>"
+module.exports = "<div id=\"appContainer\">\r\n    <router-outlet></router-outlet>\r\n</div>"
 
 /***/ }),
 
@@ -356,7 +356,7 @@ module.exports = "\r\n\r\n#frontPageContainer {\r\n    background-color: #CCCCCC
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"frontPageContainer\">\n    <div id=\"frontPageContent\">\n        <div id=\"mapButtonContainer\">\n            <div id=\"mapButtonContent\">\n                <button type=\"button\" class=\"btn btn-primary btn-lg\" routerLink=\"/activities\" routerLinkActive=\"active\">Go to the map</button>\n            </div>\n        </div>\n        <div id=\"header\">\n            <div class=\"text-center\">\n                <img class=\"img-fluid\" src=\"assets/logo.png\" />\n            </div>\n        </div>\n        <div id=\"frontPageDescription\">\n            <p>This is the description of our project</p>\n            <p>\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque volutpat ultricies. Sed sed ligula a urna viverra efficitur eu non urna. Integer nec ante elementum nisl laoreet faucibus nec non lacus. Duis rhoncus arcu non leo feugiat, at suscipit diam molestie. Ut ultricies tincidunt maximus. Mauris porta faucibus turpis, ac dapibus nisi interdum eu. Duis faucibus efficitur dui, facilisis ultrices arcu pharetra quis. Aenean posuere, lacus et venenatis euismod, nulla nibh elementum orci, rhoncus dapibus lorem nibh et diam.\n            </p>\n            <p>\n                Donec sollicitudin elit id eros ornare, ut accumsan mauris convallis. Duis vel magna vitae quam ultricies vestibulum eget eu arcu. Nam eget eleifend libero. Suspendisse id rutrum turpis. Aliquam lectus risus, efficitur quis orci a, efficitur commodo velit. Curabitur sed urna ac turpis tempus porttitor. Proin in nulla lacus. Integer euismod risus a tellus posuere, ut bibendum elit hendrerit. Maecenas quis massa porttitor, venenatis dui ut, congue dui. Nulla non ante ultricies, tempor libero eget, ultricies libero.\n            </p>\n            <p>\n                Mauris maximus sit amet nulla quis ullamcorper. Cras quis libero leo. Curabitur tincidunt ultrices diam consequat lacinia. Aliquam pellentesque interdum nisl, quis vulputate ex pretium et. Ut eleifend lobortis velit, eget scelerisque neque vehicula vel. Nullam posuere non orci et posuere. Nulla cursus leo eu blandit dictum. Nunc vel erat dui. Quisque et fringilla arcu, in laoreet magna. Ut vitae tellus id mi venenatis imperdiet. In vitae arcu quis nisl aliquet mattis nec sed quam. Praesent vel tellus sollicitudin, consequat sapien quis, aliquet nisl. Aenean sed ex commodo lacus vulputate aliquet volutpat et augue.\n            </p>\n            <p>\n                Etiam lobortis ligula sed ligula consectetur, ut aliquam ex rutrum. Nunc condimentum, nisl a imperdiet volutpat, ex odio sodales lorem, nec semper lacus diam id elit. Mauris non elit scelerisque, bibendum mauris nec, facilisis est. Aliquam quis vestibulum risus, nec imperdiet metus. Proin auctor vitae dui luctus tincidunt. Aliquam ultrices leo sed mauris cursus, a fringilla orci iaculis. Praesent placerat interdum lectus, ut blandit nisl convallis ac. Vestibulum sed enim eu mauris tincidunt ultricies. Sed in luctus metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam ut leo at mauris viverra auctor. Nulla nec metus vel nisi laoreet dapibus. Suspendisse potenti. Praesent porta, arcu ac aliquet imperdiet, felis nulla feugiat nunc, sed pharetra tellus nulla eget ante. Proin eu sapien tristique dolor egestas pharetra eget at nulla.\n            </p>\n            <p>\n                Vivamus a libero et felis pharetra egestas. Sed iaculis, arcu quis lobortis fermentum, nulla nisi ultricies enim, id lobortis lorem augue sit amet turpis. Vestibulum scelerisque pharetra tristique. Nunc ut urna efficitur, lacinia nunc sed, tincidunt est. Nam tempor faucibus pharetra. Quisque vitae rhoncus risus. Praesent vehicula libero a mauris mattis rutrum. Fusce aliquet a ipsum eget sodales. Integer vel convallis risus. Nulla tellus enim, ultricies vitae efficitur non, placerat at erat.\n            </p>\n        </div>\n    </div>\n</div>"
+module.exports = "<div id=\"frontPageContainer\">\r\n    <div id=\"frontPageContent\">\r\n        <div id=\"mapButtonContainer\">\r\n            <div id=\"mapButtonContent\">\r\n                <button type=\"button\" class=\"btn btn-primary btn-lg\" routerLink=\"/activities\" routerLinkActive=\"active\">Go to the map</button>\r\n            </div>\r\n        </div>\r\n        <div id=\"header\">\r\n            <div class=\"text-center\">\r\n                <img class=\"img-fluid\" src=\"assets/logo.png\" />\r\n            </div>\r\n        </div>\r\n        <div id=\"frontPageDescription\">\r\n            <p>This is the description of our project</p>\r\n            <p>\r\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque volutpat ultricies. Sed sed ligula a urna viverra efficitur eu non urna. Integer nec ante elementum nisl laoreet faucibus nec non lacus. Duis rhoncus arcu non leo feugiat, at suscipit diam molestie. Ut ultricies tincidunt maximus. Mauris porta faucibus turpis, ac dapibus nisi interdum eu. Duis faucibus efficitur dui, facilisis ultrices arcu pharetra quis. Aenean posuere, lacus et venenatis euismod, nulla nibh elementum orci, rhoncus dapibus lorem nibh et diam.\r\n            </p>\r\n            <p>\r\n                Donec sollicitudin elit id eros ornare, ut accumsan mauris convallis. Duis vel magna vitae quam ultricies vestibulum eget eu arcu. Nam eget eleifend libero. Suspendisse id rutrum turpis. Aliquam lectus risus, efficitur quis orci a, efficitur commodo velit. Curabitur sed urna ac turpis tempus porttitor. Proin in nulla lacus. Integer euismod risus a tellus posuere, ut bibendum elit hendrerit. Maecenas quis massa porttitor, venenatis dui ut, congue dui. Nulla non ante ultricies, tempor libero eget, ultricies libero.\r\n            </p>\r\n            <p>\r\n                Mauris maximus sit amet nulla quis ullamcorper. Cras quis libero leo. Curabitur tincidunt ultrices diam consequat lacinia. Aliquam pellentesque interdum nisl, quis vulputate ex pretium et. Ut eleifend lobortis velit, eget scelerisque neque vehicula vel. Nullam posuere non orci et posuere. Nulla cursus leo eu blandit dictum. Nunc vel erat dui. Quisque et fringilla arcu, in laoreet magna. Ut vitae tellus id mi venenatis imperdiet. In vitae arcu quis nisl aliquet mattis nec sed quam. Praesent vel tellus sollicitudin, consequat sapien quis, aliquet nisl. Aenean sed ex commodo lacus vulputate aliquet volutpat et augue.\r\n            </p>\r\n            <p>\r\n                Etiam lobortis ligula sed ligula consectetur, ut aliquam ex rutrum. Nunc condimentum, nisl a imperdiet volutpat, ex odio sodales lorem, nec semper lacus diam id elit. Mauris non elit scelerisque, bibendum mauris nec, facilisis est. Aliquam quis vestibulum risus, nec imperdiet metus. Proin auctor vitae dui luctus tincidunt. Aliquam ultrices leo sed mauris cursus, a fringilla orci iaculis. Praesent placerat interdum lectus, ut blandit nisl convallis ac. Vestibulum sed enim eu mauris tincidunt ultricies. Sed in luctus metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam ut leo at mauris viverra auctor. Nulla nec metus vel nisi laoreet dapibus. Suspendisse potenti. Praesent porta, arcu ac aliquet imperdiet, felis nulla feugiat nunc, sed pharetra tellus nulla eget ante. Proin eu sapien tristique dolor egestas pharetra eget at nulla.\r\n            </p>\r\n            <p>\r\n                Vivamus a libero et felis pharetra egestas. Sed iaculis, arcu quis lobortis fermentum, nulla nisi ultricies enim, id lobortis lorem augue sit amet turpis. Vestibulum scelerisque pharetra tristique. Nunc ut urna efficitur, lacinia nunc sed, tincidunt est. Nam tempor faucibus pharetra. Quisque vitae rhoncus risus. Praesent vehicula libero a mauris mattis rutrum. Fusce aliquet a ipsum eget sodales. Integer vel convallis risus. Nulla tellus enim, ultricies vitae efficitur non, placerat at erat.\r\n            </p>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -612,10 +612,6 @@ var MapViewComponent = /** @class */ (function () {
         this.venueService.lookUpByCoords(center[0], center[1], distance);
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ngx_openlayers__WEBPACK_IMPORTED_MODULE_3__["MapComponent"]),
-        __metadata("design:type", ngx_openlayers__WEBPACK_IMPORTED_MODULE_3__["MapComponent"])
-    ], MapViewComponent.prototype, "mapComponent", void 0);
-    __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ngx_openlayers__WEBPACK_IMPORTED_MODULE_2__["MapComponent"]),
         __metadata("design:type", ngx_openlayers__WEBPACK_IMPORTED_MODULE_2__["MapComponent"])
     ], MapViewComponent.prototype, "mapComponent", void 0);
@@ -691,178 +687,6 @@ var MapComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], MapComponent);
     return MapComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/nav-bar/nav-bar.component.css":
-/*!***********************************************!*\
-  !*** ./src/app/nav-bar/nav-bar.component.css ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".navbar {\r\n    position: relative;\r\n}\r\n\r\n#navbarNav {\r\n    padding: .5rem 1rem;\r\n}\r\n\r\n.navbar-toggler {\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 10px;\r\n    z-index: 9999;\r\n    background-color: #343a40;\r\n}"
-
-/***/ }),
-
-/***/ "./src/app/nav-bar/nav-bar.component.html":
-/*!************************************************!*\
-  !*** ./src/app/nav-bar/nav-bar.component.html ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">\n    <div class=\"container\">\n        <a class=\"navbar-brand\" href=\"#\">City Trip Planner</a>\n        <button class=\"navbar-toggler\" type=\"button\" (click)=\"navBarService.toggleMenu()\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n        <div id=\"navbarNav\" class=\"collapse navbar-collapse float-right\" [ngbCollapse]=\"navBarService.isCollapsed()\" >\n            <ul class=\"nav navbar-nav ml-auto\">\n                <li class=\"nav-item\" *ngFor=\"let navItem of navItems\" [class.active]=\"navItem.isCurrentPath()\"><a class=\"nav-link\" [routerLink]=\"navItem.getLink()\" [routerLinkActive]=\"navItem.isActive() + ''\">{{navItem.getName()}}</a></li>\n            </ul>\n        </div>\n    </div>\n</nav>"
-
-/***/ }),
-
-/***/ "./src/app/nav-bar/nav-bar.component.ts":
-/*!**********************************************!*\
-  !*** ./src/app/nav-bar/nav-bar.component.ts ***!
-  \**********************************************/
-/*! exports provided: NavBarComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavBarComponent", function() { return NavBarComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _nav_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nav-item */ "./src/app/nav-bar/nav-item.ts");
-/* harmony import */ var _nav_bar_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nav-bar.service */ "./src/app/nav-bar/nav-bar.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var NavBarComponent = /** @class */ (function () {
-    function NavBarComponent(navBarService) {
-        this.navBarService = navBarService;
-        this.navItems = [];
-        this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_1__["NavItem"]("Home", "/"));
-        this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_1__["NavItem"]("Activities", '/activities'));
-        this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_1__["NavItem"]("Map", "/map"));
-    }
-    NavBarComponent.prototype.ngOnInit = function () {
-    };
-    NavBarComponent.prototype.ngAfterViewInit = function () {
-        var _this = this;
-        var observer = new MutationObserver(function () {
-            _this.navBarService.collapseComplete();
-        });
-        observer.observe(document.querySelector('#navbarNav'), {
-            attributes: true,
-            attributeFilter: ["class"]
-        });
-    };
-    NavBarComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-nav-bar',
-            template: __webpack_require__(/*! ./nav-bar.component.html */ "./src/app/nav-bar/nav-bar.component.html"),
-            styles: [__webpack_require__(/*! ./nav-bar.component.css */ "./src/app/nav-bar/nav-bar.component.css")]
-        }),
-        __metadata("design:paramtypes", [_nav_bar_service__WEBPACK_IMPORTED_MODULE_2__["NavBarService"]])
-    ], NavBarComponent);
-    return NavBarComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/nav-bar/nav-bar.service.ts":
-/*!********************************************!*\
-  !*** ./src/app/nav-bar/nav-bar.service.ts ***!
-  \********************************************/
-/*! exports provided: NavBarService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavBarService", function() { return NavBarService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-var NavBarService = /** @class */ (function () {
-    function NavBarService() {
-        this.collapsed = true;
-        this._collapsed = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
-        this.collapsedState = this._collapsed.asObservable();
-        this._postColapse = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
-        this.postCollapseState = this._postColapse.asObservable();
-    }
-    NavBarService.prototype.toggleMenu = function () {
-        this.collapsed = !this.collapsed;
-        this._collapsed.next(this.collapsed);
-    };
-    NavBarService.prototype.isCollapsed = function () {
-        return this.collapsed;
-    };
-    NavBarService.prototype.collapseComplete = function () {
-        this._postColapse.next();
-    };
-    NavBarService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
-            providedIn: 'root'
-        })
-    ], NavBarService);
-    return NavBarService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/nav-bar/nav-item.ts":
-/*!*************************************!*\
-  !*** ./src/app/nav-bar/nav-item.ts ***!
-  \*************************************/
-/*! exports provided: NavItem */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavItem", function() { return NavItem; });
-var NavItem = /** @class */ (function () {
-    function NavItem(name, link) {
-        this.active = true;
-        this.name = name;
-        this.link = link;
-    }
-    NavItem.prototype.getName = function () {
-        return this.name;
-    };
-    NavItem.prototype.getLink = function () {
-        return this.link;
-    };
-    NavItem.prototype.isActive = function () {
-        return this.active;
-    };
-    ;
-    NavItem.prototype.setActive = function (active) {
-        this.active = active;
-    };
-    ;
-    NavItem.prototype.isCurrentPath = function () {
-        return "Map" == this.name;
-    };
-    return NavItem;
 }());
 
 
@@ -1111,7 +935,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\soelm\Desktop\Repositories\TripPlanner\frontend\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\@NeatbeansProjects\TripPlanner\frontend\src\main.ts */"./src/main.ts");
 
 
 /***/ })
