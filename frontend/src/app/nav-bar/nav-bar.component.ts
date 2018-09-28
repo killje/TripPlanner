@@ -22,11 +22,9 @@ export class NavBarComponent implements OnInit, AfterViewInit {
         this.navItems.push(new NavItem("Activities", '/activities'));
         this.navItems.push(new NavItem("Map", "/map"));
         
-        console.log(router.url);
         for (let navItem of this.navItems) {
             if (navItem.getLink() == router.url) {
                 this.currentItem = navItem;
-                console.log("FOUND", navItem);
                 break;
             }
         }
@@ -37,6 +35,10 @@ export class NavBarComponent implements OnInit, AfterViewInit {
             this.navBarService.collapseComplete();
         });
         observer.observe(document.querySelector('#navbarNav'), {
+            attributes: true,
+            attributeFilter: ["class"]
+        });
+        observer.observe(document.querySelector('#navbarBranding'), {
             attributes: true,
             attributeFilter: ["class"]
         });
