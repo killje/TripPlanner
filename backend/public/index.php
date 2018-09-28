@@ -1,5 +1,7 @@
 <?php
 
+$_SERVER['REQUEST_URI'] = preg_replace('/^\/api/', '', $_SERVER['REQUEST_URI']);
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
