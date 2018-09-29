@@ -26,7 +26,7 @@ export class TripService {
             "number_of_days": days.toString()
         }
         
-        this.http.get<CreateTripResponse>(url, {params: params}).subscribe((response: CreateTripResponse) => {
+        this.http.post<CreateTripResponse>(url, params).subscribe((response: CreateTripResponse) => {
             tripResponse.emit(new Trip(response.uuid, destination, days));
         });
 
@@ -76,7 +76,7 @@ export class TripService {
             "venue_id": venueId
         };
 
-        this.http.get<AddVenueResonse>(url, {params: params}).subscribe((response: AddVenueResonse) => {
+        this.http.post<AddVenueResonse>(url, params).subscribe((response: AddVenueResonse) => {
             success.emit(true);
         });
 
