@@ -21,7 +21,7 @@
             "assets": [
               "src/assets",
               "src/.htaccess",
-              "src/api/venues"
+              "src/api"
             ],
             "styles": [
                 "src/styles.css"

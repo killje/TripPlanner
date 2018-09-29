@@ -1,16 +1,57 @@
 <app-nav-bar></app-nav-bar>
 
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">Select your activities</h1>
-        <p class="lead">Now that you've selected to go to
-            <mark>New York City</mark> for
-            <mark>3</mark> days. Take a look at the recommended activities below!</p>
-        <hr class="my-4">
-        <p>You can select everything that you would like to do. Our algorithm will try to fit as much activities as possible in your schedule.</p>
+<div class="activity-top">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div *ngIf="!trip">
+                <h1 class="display-4">Create your trip</h1>
+                <p class="lead">
+                    Start by setting your destination below
+                </p>
+                <hr class="my-4">
+                <p>Select your destination and how many days you want to go.</p>
+                <app-label-input [name]="'Destination'" [id]="'destination'" [(value)]="destination" [description]="'destination'" [error]="destinationError" (valueChange)="recheckInput()"></app-label-input>
+                <app-label-input [name]="'Days'" [id]="'days'" [(value)]="days" [description]="'days'" [type]="'number'" [OnlyNumber]="'true'" [error]="daysError" (valueChange)="recheckInput()"></app-label-input>
+                <button type="submit" class="btn btn-primary" (click)="createTrip()">Create your trip</button>
+            </div>
+            <div *ngIf="trip">
+                <h1 class="display-4">Select your activities</h1>
+                <p class="lead">
+                    Plan your trip in detail here below!
+                </p>
+                <hr class="my-4">
+                <p>You have selected <mark>{{trip.destination}}</mark> for <mark>{{trip.getDaysFormatted()}}</mark></p>
+                <p>Select the activities you want to do below</p>
+            </div>
+        </div>
     </div>
 </div>
 
+<div class="activity-container" *ngIf="trip">
+
+    <div class="container activitybox rounded" *ngFor="let venue of venues">
+         <div class="row">
+            <div class="col-sm-7">
+                <figure class="figure">
+                    <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded">
+                    <figcaption class="figure-caption">Picture taken by
+                        <mark>Benjamin Bannister</mark>.</figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-5">
+                <div class="titlebox bg-primary">
+                    <h2>{{venue.name}}</h2>
+                </div>
+                <div *ngIf="venue.address" class="venue-address">
+                    <p *ngFor="let addressLine of venue.address">
+                        {{addressLine}}
+                </p>
+            </div>
+            <button class="btn btn-primary" (click)="addVenue(venue)">Add Activity</button>
+        </div>
+    </div>
+</div>
+<!-- OLD ---------------
 <div class="container activitybox rounded">
     <div class="row">
         <div class="col-sm-7">
@@ -199,4 +240,6 @@
             </div>
         </div>
     </div>
+</div>
+-->
 </div>

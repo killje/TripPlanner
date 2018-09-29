@@ -4,9 +4,9 @@
             Places <button id="closeMapListButton" class="btn btn-outline-primary" type="button" (click)="closeMenu()">X</button>
         </h1>
         <button class="btn mapPointItem list-group-item" *ngFor="let venue of venues" [class.active]="venue.isActive()" [class.list-group-item-hover]="venue.isHovered() && !venue.isActive()" (mouseenter)="venue.setHovered(true)" (mouseleave)="venue.setHovered(false)" (click)="setActive(venue)" type="button">
-            <h2 class="venueName">{{venue.getVenue().name}}</h2>
+            <h2 class="venueName">{{venue.name}}</h2>
             <div class="venueAddress">
-                <p class="addressLine" *ngFor="let addressLine of venue.getVenue().address">{{addressLine}}</p>
+                <p class="addressLine" *ngFor="let addressLine of venue.address">{{addressLine}}</p>
             </div>
         </button>
     </div>

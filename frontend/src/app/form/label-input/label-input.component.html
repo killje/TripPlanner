@@ -1,0 +1,8 @@
+<div class="form-group form-label-input" [class.form-has-content]="value|| isFocused" [class.has-danger]="error">
+     <label class="form-label" [for]="id">
+        {{name}}
+    </label>
+    <div class="form-control-container">
+        <input class="form-control" [type]="type" [id]="id" [attr.aria-describedby]="description" (focus)="focusEvent()" (blur)="blurEvent()" [ngModel]="value" (ngModelChange)="setValue($event)">
+    </div>
+</div>

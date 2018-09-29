@@ -13,9 +13,9 @@
                 <aol-feature>
                     <aol-control-attribution></aol-control-attribution>
                 </aol-feature>
-                <aol-feature *ngFor="let venue of venues; let i=index" [id]="'venue-' + venue.getVenue().id">
+                <aol-feature *ngFor="let venue of venues; let i=index" [id]="'venue-' + venue.id">
                     <aol-geometry-point>
-                        <aol-coordinate [x]="venue.getVenue().longitude" [y]="venue.getVenue().latitude" [srid]="'EPSG:4326'"></aol-coordinate>
+                        <aol-coordinate [x]="venue.longitude" [y]="venue.latitude" [srid]="'EPSG:4326'"></aol-coordinate>
                     </aol-geometry-point>
                     <aol-style>
                         <aol-style-circle [radius]="10">
