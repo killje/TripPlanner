@@ -31,8 +31,7 @@ const appRoutes: Routes = [
         FrontPageComponent,
         NavBarComponent,
         ActivityPageComponent,
-        FooterComponent
-        ActivityPageComponent,
+        FooterComponent,
         InfoBoxComponent
     ],
     imports: [
