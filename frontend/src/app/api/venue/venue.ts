@@ -1,7 +1,7 @@
 import {EventEmitter} from "@angular/core";
 import {VenueInterface} from "./venue-interface";
 
-export class Venue {
+export class Venue implements VenueInterface{
     id: string;
     name: string;
     address: string[];
@@ -25,6 +25,7 @@ export class Venue {
         if (intf == undefined) {
             return;
         }
+        
         this.id = intf.id;
         this.name = intf.name;
         this.address = intf.address;
