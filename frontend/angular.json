@@ -20,7 +20,7 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/assets",
-              "src/.htaccess",
+              "src/index.php",
               "src/api/venues"
             ],
             "styles": [
