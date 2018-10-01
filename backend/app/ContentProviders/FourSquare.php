@@ -9,6 +9,7 @@
 namespace App\ContentProviders;
 
 use App\ContentProviders\FourSquare\VenueFactory;
+use App\Trip;
 use App\Venue;
 use App\VenueCategory;
 use Illuminate\Support\Collection;
@@ -136,6 +137,20 @@ class FourSquare implements ContentProvider
     public function getFeaturedVenuesByLocation($query): array
     {
         return $this->venueFactory->getFeaturedByLocation($query);
+    }
+
+    /**
+     * @param $uuid
+     * @param $generate
+     * @return array
+     */
+    public function getSchedule($uuid, $generate): array
+    {
+        $trip = Trip::whereUuid($uuid)->firstOrFail();
+        if($generate)
+            $trip->generateSchedule($this);
+
+        return [];
     }
 
 }

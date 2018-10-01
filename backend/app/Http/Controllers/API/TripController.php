@@ -212,4 +212,25 @@ class TripController extends Controller
             ]
         ]);
     }
+
+    /**
+     * Input argument: uuid=.... regenerate=0/1
+     * @param ContentProvider $contentProvider
+     * @param Request $request
+     */
+    public function getSchedule(ContentProvider $contentProvider, Request $request)
+    {
+        // Validate input
+        $validatedData = $request->validate([
+            'uuid' => 'required|exists:trips,uuid',
+            'generate' => 'sometimes|required|boolean' // may not be present, but if it is, then it should be validated.
+        ]);
+
+        $regenerate = false;
+        if(isset($validatedData["generate"])) {
+            $generate = $request->input('generate');
+        }
+
+        $contentProvider->getSchedule($validatedData['uuid'], $generate);
+    }
 }

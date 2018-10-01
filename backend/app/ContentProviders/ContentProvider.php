@@ -65,4 +65,11 @@ interface ContentProvider
      */
     public function getFeaturedVenuesByLocation($query): array;
 
+    /**
+     * @param $uuid
+     * @param $generate
+     * @return array
+     */
+    public function getSchedule($uuid, $generate): array;
+
 }
