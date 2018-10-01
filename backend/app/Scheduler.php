@@ -31,33 +31,15 @@ class Scheduler
      * @param bool $array
      * @return array
      */
-    public static function algorithm(ContentProvider $contentProvider, $id, int $number_of_groups, $venues, $array = false)
+    public static function algorithm(ContentProvider $contentProvider, $id, int $number_of_groups, $venues, $generate, $array = false)
     {
-        $samples = self::initializeSamples($venues);
-        self::SetTripVenueDays($samples, $id, $number_of_groups);
 
-        // Set order numbers
-        $trip = Trip::whereId($id)->firstOrFail(); // Obtain trip
-        $prev = "";
-        foreach($trip->venues()->get() as $tripvenue) {
-            $tripvenue->parent_venue_id = $prev;
-            $tripvenue->save();
-
-            $prev = $tripvenue->venue_id;
+        if($generate) {
+            $samples = self::initializeSamples($venues);
+            self::SetTripVenueDays($samples, $id, $number_of_groups);
+            self::SetTripVenueOrder($id);
         }
-
-        // Now, return the day planning
-        $trip = Trip::whereId($id)->firstOrFail(); // Obtain trip
-        $activities = $trip->venues()->orderBy('day_number')->get();
-        $planning = [];
-        foreach($activities as $activity) {
-            // if array format
-            if($array)
-                $planning[$activity->day_number][] = $contentProvider->getVenueById($activity->venue_id)->getAsSimpleArray();
-            else
-                $planning[$activity->day_number][] = $contentProvider->getVenueById($activity->venue_id);
-        }
-        return $planning;
+        return self::getDayPlanning($contentProvider, $id, $array);
     }
 
     /**
@@ -218,5 +200,45 @@ class Scheduler
         $tripvenue = TripVenue::where('trip_id', '=', $id)
             ->where('venue_id', '=', $sampleKey)->firstOrFail();
         return $tripvenue;
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Model|static
+     */
+    private static function SetTripVenueOrder($id)
+    {
+// Set order numbers
+        $trip = Trip::whereId($id)->firstOrFail(); // Obtain trip
+        $prev = "";
+        foreach ($trip->venues()->get() as $tripvenue) {
+            $tripvenue->parent_venue_id = $prev;
+            $tripvenue->save();
+
+            $prev = $tripvenue->venue_id;
+        }
+        return $trip;
+    }
+
+    /**
+     * @param ContentProvider $contentProvider
+     * @param $id
+     * @param $array
+     * @return array
+     */
+    private static function getDayPlanning(ContentProvider $contentProvider, $id, $array): array
+    {
+// Now, return the day planning
+        $trip = Trip::whereId($id)->firstOrFail(); // Obtain trip
+        $activities = $trip->venues()->orderBy('day_number')->get();
+        $planning = [];
+        foreach ($activities as $activity) {
+            // if array format
+            if ($array)
+                $planning[$activity->day_number][] = $contentProvider->getVenueById($activity->venue_id)->getAsSimpleArray();
+            else
+                $planning[$activity->day_number][] = $contentProvider->getVenueById($activity->venue_id);
+        }
+        return $planning;
     }
 }
