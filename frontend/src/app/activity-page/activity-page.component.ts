@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
-import { Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-activity-page',
@@ -10,8 +9,8 @@ import { Renderer2 } from '@angular/core';
 })
 export class ActivityPageComponent implements OnInit {
 
-  constructor(private renderer: Renderer2) {
-    this.renderer.addClass(document.body, 'bootstrap-grid');
+  constructor() {
+
    }
 
   ngOnInit() {
