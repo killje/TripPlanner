@@ -58,4 +58,11 @@ interface ContentProvider
      */
     public function get(String $endpoint, String $method, array $parameters);
 
+    /**
+     * Get featured venues by location query
+     * @param $query
+     * @return array
+     */
+    public function getFeaturedVenuesByLocation($query): array;
+
 }

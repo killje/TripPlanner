@@ -46,5 +46,19 @@ class VenuesController extends Controller
         return response()->json($venue->getAsSimpleArray());
     }
 
+    /**
+     * @param ContentProvider $contentProvider
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getFeaturedByLocation(ContentProvider $contentProvider, Request $request)
+    {
+        $searchQuery = $request->input('query');
+
+        $venues = $contentProvider->getFeaturedVenuesByLocation($searchQuery);
+
+        return response()->json($venues);
+    }
+
 
 }

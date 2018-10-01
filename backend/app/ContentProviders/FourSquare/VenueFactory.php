@@ -45,7 +45,7 @@ class VenueFactory
             'll' => $latitude . "," . $longitude,
             'intent' => "browse",
             'radius' => $radius,
-            'limit' => config('services.foursquare.venue_limit'), // Temporary because of quota
+            'limit' => config('services.foursquare.venue_map_limit'), // Temporary because of quota
         ]);
 
         if($this->contentProvider->checkResponse($endpoint, $result) == false)
@@ -128,5 +128,33 @@ class VenueFactory
             $newCategory->setPluralName($category->pluralName);
             array_push($venue->categories, $newCategory);
         }
+    }
+
+    /**
+     * Enter a search term, get featured activities, get detailed information, return
+     * @param $query
+     * @return array
+     */
+    public function getFeaturedByLocation($query): array
+    {
+        $endpoint = "venues/explore";
+        $result = $this->contentProvider->get($endpoint, "GET", [
+            'near' => $query,
+            //'section' => 'topPicks',
+            'limit' => config('services.foursquare.venue_featured_limit'),
+            //'radius' => '5000'
+        ]);
+
+        if($this->contentProvider->checkResponse($endpoint, $result) == false)
+            return [];
+
+        // For each venue we obtain, create a venue object
+        $venues = [];
+        foreach ($result->response->groups[0]->items as $venue) {
+            $newVenue = $this->getVenueById($venue->venue->id);
+            array_push($venues, $newVenue->getAsSimpleArray());
+        }
+
+        return $venues;
     }
 }

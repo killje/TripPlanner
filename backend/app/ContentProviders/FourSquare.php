@@ -127,4 +127,15 @@ class FourSquare implements ContentProvider
         abort($request->meta->code, $request->meta->errorDetail);
         return false;
     }
+
+    /**
+     * Get featured venues by location query
+     * @param $query
+     * @return array
+     */
+    public function getFeaturedVenuesByLocation($query): array
+    {
+        return $this->venueFactory->getFeaturedByLocation($query);
+    }
+
 }
