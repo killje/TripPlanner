@@ -4,7 +4,8 @@ import {ActivatedRoute} from '@angular/router';
 
 import {TripService} from '../api/trip.service';
 import {Trip} from '../api/trip/trip';
-import {Venue} from '../api/trip/venue';
+import {Venue} from '../api/venue/venue';
+import {VenueService} from '../api/venue.service';
 
 @Component({
     selector: 'app-trip',
@@ -19,9 +20,9 @@ export class TripComponent implements OnInit {
     private daysError: boolean = false;
     
     trip: Trip;
-    venues: Venue[] = [];
+    venueSugestions: Venue[] = [];
 
-    constructor(private tripService: TripService, private route: ActivatedRoute, private location: Location) {
+    constructor(private tripService: TripService, private venueService: VenueService, private route: ActivatedRoute, private location: Location) {
     }
 
     ngOnInit() {
@@ -29,8 +30,9 @@ export class TripComponent implements OnInit {
         if (id) {
             this.tripService.getTrip(id).subscribe((trip: Trip) => {
                 this.trip = trip;
-                this.tripService.listVenues(id).subscribe((venues: Venue[]) => {
-                    this.venues = venues;
+                this.venueService.getFeaturedByLocation(trip.name);
+                this.venueService.venuesUpdated.subscribe((venues: Venue[]) => {
+                    this.venueSugestions = venues;
                 });
             });
         }
@@ -51,11 +53,8 @@ export class TripComponent implements OnInit {
         // Create the trip. Once created set the trip
         this.tripService.createTrip(this.destination, this.days).subscribe((trip: Trip) => {
             this.trip = trip;
-            this.tripService.listVenues(trip.id).subscribe((venues: Venue[]) => {
-                this.venues = venues;
-            });
             // Update the location without navigation. This is so someone can go to the url again
-            this.location.go("trip/" + trip.id);
+            this.location.go("trip/" + trip.uuid);
         });
     }
 
@@ -69,6 +68,26 @@ export class TripComponent implements OnInit {
     }
     
     addVenue(venue: Venue):void {
-        this.tripService.addVenue(this.trip.id, venue.id);
+        this.tripService.addVenue(this.trip.uuid, venue.id).subscribe((success) => {
+            if (success) {
+                this.trip.venues.push(venue);
+                var index = this.venueSugestions.indexOf(venue);
+                if (index > -1) {
+                    this.venueSugestions.splice(index, 1);
+                }
+            }
+        });
     }
+    
+    removeVenue(venue: Venue):void {
+        this.tripService.removeVenue(this.trip.uuid, venue.id).subscribe((success) => {
+            if (success) {
+                var index = this.trip.venues.indexOf(venue);
+                if (index > -1) {
+                    this.trip.venues.splice(index, 1);
+                }
+            }
+        });
+    }
+    
 }

@@ -1,4 +1,5 @@
 import {EventEmitter} from "@angular/core";
+import {VenueInterface} from "./venue-interface";
 
 export class Venue {
     id: string;
@@ -6,15 +7,39 @@ export class Venue {
     address: string[];
     latitude: number;
     longitude: number;
-    categories: string[];
+    categories: {
+        name: string;
+        pluralName: string;
+        icon: string;
+    }[];
     url: string;
     openingHours: string;
     popularHours: string;
     price: string;
     rating: string;
     ratingColor: string;
-    peopleNow: boolean;
+    peopleNow: string;
     likes: number;
+
+    constructor(intf?: VenueInterface) {
+        if (intf == undefined) {
+            return;
+        }
+        this.id = intf.id;
+        this.name = intf.name;
+        this.address = intf.address;
+        this.latitude = intf.latitude;
+        this.longitude = intf.longitude;
+        this.categories = intf.categories;
+        this.url = intf.url;
+        this.openingHours = intf.openingHours;
+        this.popularHours = intf.popularHours;
+        this.price = intf.price;
+        this.rating = intf.rating;
+        this.ratingColor = intf.ratingColor;
+        this.peopleNow = intf.peopleNow;
+        this.likes = intf.likes;
+    }
 
     private hovered: boolean = false;
     private active: boolean = false;

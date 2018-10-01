@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {VenueService} from '../../api/venue.service';
-import {Venue} from '../../api/trip/venue';
+import {Venue} from '../../api/venue/venue';
 
 @Component({
     selector: 'app-map-list',

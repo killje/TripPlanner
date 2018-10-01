@@ -1,30 +1,19 @@
-import {Venue} from "./venue";
+import {TripInterface} from "./trip-interface";
 
 export interface CreateTripResponse {
     status: string;
     uuid: string;
 }
 
-export interface GetTripResponse {
-    uuid: string,
-    name: string,
-    number_of_days: number
-}
-
 export interface AddVenueResonse {
     status: string;
 }
 
-export interface ListVenueResponse {
+export interface RemoveVenueResonse {
     status: string;
-    data: {
-        id: string;
-        uuid: string;
-        name: string;
-        number_of_days: number;
-        created_by: string;
-        created_at: string;
-        updated_at: string;
-        venues: Venue[]
-    }
+}
+
+export interface GetTripResponse {
+    status: string;
+    data: TripInterface
 }

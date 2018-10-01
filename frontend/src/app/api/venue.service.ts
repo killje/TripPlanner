@@ -1,6 +1,7 @@
 import {Injectable, EventEmitter} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Venue, VenueStateEvent} from './trip/venue';
+import {Venue, VenueStateEvent} from './venue/venue';
+import {VenueInterface} from './venue/venue-interface';
 
 @Injectable({
     providedIn: 'root'
@@ -16,6 +17,8 @@ export class VenueService {
 
     venueHovered = new EventEmitter<Venue>();
     venueDeHovered = new EventEmitter<Venue>();
+    
+    venuesUpdated = new EventEmitter<Venue[]>();
 
     constructor(private http: HttpClient) {
     }
@@ -29,11 +32,12 @@ export class VenueService {
             "radius": radius.toString()
         };
 
-        this.http.get<Venue[]>(url, {params: params}).subscribe((venues: Venue[]) => {
+        this.http.get<Venue[]>(url, {params: params}).subscribe((venues: VenueInterface[]) => {
             while (this.venues.length > 0) {
                 this.venues.pop();
             }
-            venues.forEach((venue: Venue) => {
+            venues.forEach((venueInterface: VenueInterface) => {
+                let venue = new Venue(venueInterface);
                 venue.stateUpdate.subscribe((event: VenueStateEvent) => {
                     if (event.getEmitedState() == "active") {
                         if (event.getEmitedValue()) {
@@ -63,6 +67,53 @@ export class VenueService {
                 });
                 this.venues.push(venue);
             });
+            this.venuesUpdated.emit(this.venues);
+        });
+    }
+    
+    getFeaturedByLocation(query: string) {
+        let url = "api/venues/featuredbyname";
+
+        let params: {[param: string]: string} = {
+            "query": query
+        };
+
+        this.http.get<Venue[]>(url, {params: params}).subscribe((venues: VenueInterface[]) => {
+            while (this.venues.length > 0) {
+                this.venues.pop();
+            }
+            venues.forEach((venueInterface: VenueInterface) => {
+                let venue = new Venue(venueInterface);
+                venue.stateUpdate.subscribe((event: VenueStateEvent) => {
+                    if (event.getEmitedState() == "active") {
+                        if (event.getEmitedValue()) {
+                            if (this.selectedVenue != null) {
+                                this.selectedVenue.setActive(false);
+                                this.venueDeSelected.emit(this.selectedVenue);
+                            }
+                            this.selectedVenue = event.getVenue();
+                            this.venueSelected.emit(this.selectedVenue);
+                        } else if (this.selectedVenue = event.getVenue()) {
+                            this.venueDeSelected.emit(this.selectedVenue);
+                            this.selectedVenue = null;
+                        }
+                    } else if (event.getEmitedState() == "hovered") {
+                        if (event.getEmitedValue()) {
+                            if (this.hoveredVenue != null) {
+                                this.hoveredVenue.setHovered(false);
+                                this.venueDeHovered.emit(this.hoveredVenue);
+                            }
+                            this.hoveredVenue = event.getVenue();
+                            this.venueHovered.emit(this.hoveredVenue);
+                        } else if (this.hoveredVenue = event.getVenue()) {
+                            this.venueDeHovered.emit(this.hoveredVenue);
+                            this.hoveredVenue = null;
+                        }
+                    }
+                });
+                this.venues.push(venue);
+            });
+            this.venuesUpdated.emit(this.venues);
         });
     }
 

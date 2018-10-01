@@ -4,7 +4,7 @@ import {MapComponent} from 'ngx-openlayers';
 
 import {VenueService} from '../../api/venue.service';
 import {NavBarService} from '../../nav-bar/nav-bar.service';
-import {Venue} from '../../api/trip/venue';
+import {Venue} from '../../api/venue/venue';
 
 @Component({
     selector: 'app-map-view',

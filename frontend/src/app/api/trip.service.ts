@@ -3,8 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 import {Trip} from './trip/trip';
-import {CreateTripResponse, GetTripResponse, ListVenueResponse, AddVenueResonse} from './trip/response';
-import {Venue} from './trip/venue';
+import {CreateTripResponse, GetTripResponse, AddVenueResonse, RemoveVenueResonse} from './trip/response';
 
 @Injectable({
     providedIn: 'root'
@@ -27,7 +26,12 @@ export class TripService {
         }
         
         this.http.post<CreateTripResponse>(url, params).subscribe((response: CreateTripResponse) => {
-            tripResponse.emit(new Trip(response.uuid, destination, days));
+            let trip: Trip = new Trip();
+            trip.uuid = response.uuid;
+            trip.name = destination;
+            trip.number_of_days = days;
+            trip.venues = [];
+            tripResponse.emit(trip);
         });
 
         return tripResponse;
@@ -43,23 +47,8 @@ export class TripService {
         }
         
         this.http.get<GetTripResponse>(url, {params: params}).subscribe((response: GetTripResponse) => {
-            tripResponse.emit(new Trip(response.uuid, response.name, response.number_of_days));
-        });
-
-        return tripResponse;
-    }
-
-    listVenues(id: string): Observable<Venue[]> {
-        let url = "api/trips/listVenues";
-
-        let tripResponse = new EventEmitter<Venue[]>();
-
-        let params: {[param: string]: string} = {
-            "uuid": id.toString()
-        }
-
-        this.http.get<ListVenueResponse>(url, {params: params}).subscribe((response: ListVenueResponse) => {
-            tripResponse.emit(response.data.venues);
+            
+            tripResponse.emit(new Trip(response.data));
         });
 
         return tripResponse;
@@ -77,6 +66,24 @@ export class TripService {
         };
 
         this.http.post<AddVenueResonse>(url, params).subscribe((response: AddVenueResonse) => {
+            success.emit(true);
+        });
+
+        return success;
+    }
+    
+    removeVenue(tripId: string, venueId: string): Observable<boolean> {
+
+        let url = "api/trips/removeVenue";
+
+        let success = new EventEmitter<boolean>();
+
+        let params: {[param: string]: string} = {
+            "uuid": tripId,
+            "venue_id": venueId
+        };
+
+        this.http.post<RemoveVenueResonse>(url, params).subscribe((response: RemoveVenueResonse) => {
             success.emit(true);
         });
 
