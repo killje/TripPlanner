@@ -70,6 +70,6 @@ interface ContentProvider
      * @param $generate
      * @return array
      */
-    public function getSchedule($uuid, $generate): array;
+    public function getSchedule($uuid, $generate, $array): array;
 
 }

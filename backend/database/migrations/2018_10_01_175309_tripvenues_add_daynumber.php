@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class VenueOrder extends Migration
+class TripvenuesAddDaynumber extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class VenueOrder extends Migration
     public function up()
     {
         Schema::table('trip_venues', function (Blueprint $table) {
-            $table->string('parent_venue_id')->default('');
+            $table->integer('day_number')->default(0);
         });
     }
 
@@ -26,7 +26,7 @@ class VenueOrder extends Migration
     public function down()
     {
         Schema::table('trip_venues', function (Blueprint $table) {
-            $table->dropColumn('parent_venue_id');
+            $table->dropColumn('day_number');
         });
     }
 }

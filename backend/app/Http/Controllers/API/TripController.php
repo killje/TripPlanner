@@ -226,11 +226,13 @@ class TripController extends Controller
             'generate' => 'sometimes|required|boolean' // may not be present, but if it is, then it should be validated.
         ]);
 
-        $regenerate = false;
+        $generate = false;
         if(isset($validatedData["generate"])) {
             $generate = $request->input('generate');
         }
 
-        $contentProvider->getSchedule($validatedData['uuid'], $generate);
+        return response()->json([
+            'data' => $contentProvider->getSchedule($validatedData['uuid'], $generate, true)
+        ]);
     }
 }

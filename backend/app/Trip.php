@@ -55,9 +55,10 @@ class Trip extends Model
     /**
      * Re-Generate the schedule based on all venues
      * @param ContentProvider $contentProvider
+     * @return array
      */
-    public function generateSchedule(ContentProvider $contentProvider)
+    public function generateSchedule(ContentProvider $contentProvider, $array)
     {
-        Scheduler::algorithm($this->number_of_days, $this->detailedVenues($contentProvider));
+        return Scheduler::algorithm($contentProvider, $this->id, $this->number_of_days, $this->detailedVenues($contentProvider), $array);
     }
 }

@@ -144,13 +144,10 @@ class FourSquare implements ContentProvider
      * @param $generate
      * @return array
      */
-    public function getSchedule($uuid, $generate): array
+    public function getSchedule($uuid, $generate, $array): array
     {
         $trip = Trip::whereUuid($uuid)->firstOrFail();
-        if($generate)
-            $trip->generateSchedule($this);
-
-        return [];
+        return $trip->generateSchedule($this, $array);
     }
 
 }
