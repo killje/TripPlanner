@@ -53,6 +53,10 @@ export class TripComponent implements OnInit {
         // Create the trip. Once created set the trip
         this.tripService.createTrip(this.destination, this.days).subscribe((trip: Trip) => {
             this.trip = trip;
+            this.venueService.getFeaturedByLocation(trip.name);
+            this.venueService.venuesUpdated.subscribe((venues: Venue[]) => {
+                this.venueSugestions = venues;
+            });
             // Update the location without navigation. This is so someone can go to the url again
             this.location.go("trip/" + trip.uuid);
         });
