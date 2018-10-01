@@ -9,7 +9,9 @@ import { ViewEncapsulation } from '@angular/core';
 })
 export class ActivityPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit() {
   }
