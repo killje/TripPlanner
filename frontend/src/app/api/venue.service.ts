@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
+import {Injectable, EventEmitter} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 import {Venue} from './venue';
-import {VenueSelector} from './venue-selector';
+import {VenueSelector, VenueStateEvent} from './venue-selector';
 
 @Injectable({
     providedIn: 'root'
@@ -10,6 +10,14 @@ import {VenueSelector} from './venue-selector';
 export class VenueService {
 
     private venues: VenueSelector[] = [];
+    private selectedVenue: VenueSelector;
+    private hoveredVenue: VenueSelector;
+    
+    venueSelected = new EventEmitter<VenueSelector>();
+    venueDeSelected = new EventEmitter<VenueSelector>();
+    
+    venueHovered = new EventEmitter<VenueSelector>();
+    venueDeHovered = new EventEmitter<VenueSelector>();
 
     constructor(private http: HttpClient) {
     }
@@ -28,7 +36,35 @@ export class VenueService {
                 this.venues.pop();
             }
             venues.forEach((venue: Venue) => {
-                this.venues.push(new VenueSelector(venue));
+                let venueSelector = new VenueSelector(venue);
+                venueSelector.stateUpdate.subscribe((event: VenueStateEvent) => {
+                    if (event.getEmitedState() == "active") {
+                        if (event.getEmitedValue()) {
+                            if (this.selectedVenue != null) {
+                                this.selectedVenue.setActive(false);
+                                this.venueDeSelected.emit(this.selectedVenue);
+                            }
+                            this.selectedVenue = event.getVenue();
+                            this.venueSelected.emit(this.selectedVenue);
+                        } else if (this.selectedVenue = event.getVenue()) {
+                            this.venueDeSelected.emit(this.selectedVenue);
+                            this.selectedVenue = null;
+                        }
+                    } else if (event.getEmitedState() == "hovered") {
+                        if (event.getEmitedValue()) {
+                            if (this.hoveredVenue != null) {
+                                this.hoveredVenue.setHovered(false);
+                                this.venueDeHovered.emit(this.hoveredVenue);
+                            }
+                            this.hoveredVenue = event.getVenue();
+                            this.venueHovered.emit(this.hoveredVenue);
+                        } else if (this.hoveredVenue = event.getVenue()) {
+                            this.venueDeHovered.emit(this.hoveredVenue);
+                            this.hoveredVenue = null;
+                        }
+                    }
+                });
+                this.venues.push(venueSelector);
             });
         });
     }
@@ -44,5 +80,21 @@ export class VenueService {
             }
         }
         return null;
+    }
+    
+    getSelectedVenue(): VenueSelector {
+        return this.selectedVenue;
+    }
+    
+    deselectSelectedVenue():void {
+        if (this.selectedVenue != null) {
+            this.selectedVenue.setActive(false);
+        }
+    }
+    
+    deselectHoveredVenue():void {
+        if (this.hoveredVenue != null) {
+            this.hoveredVenue.setHovered(false);
+        }
     }
 }

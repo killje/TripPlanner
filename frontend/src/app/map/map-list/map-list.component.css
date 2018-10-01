@@ -28,6 +28,14 @@
     background-color: yellow;
 }
 
+.addressLine {
+    margin: 0;
+}
+
+.mapPointItem {
+    overflow-x: hidden;
+}
+
 @media (max-width: 767.98px) { 
     
     #openMapListButton, #closeMapListButton {
