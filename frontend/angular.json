@@ -22,6 +22,8 @@
               "src/assets",
               "src/.htaccess",
               "src/api"
+              "src/index.php",
+              "src/api/venues"
             ],
             "styles": [
                 "src/styles.css"
