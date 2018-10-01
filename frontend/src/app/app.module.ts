@@ -12,6 +12,7 @@ import {MapListComponent} from './map/map-list/map-list.component';
 import {FrontPageComponent} from './front-page/front-page.component';
 import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {ActivityPageComponent} from './activity-page/activity-page.component';
+import {FooterComponent} from './footer/footer.component';
 import {InfoBoxComponent} from './map/map-view/info-box/info-box.component';
 
 const appRoutes: Routes = [
@@ -29,6 +30,8 @@ const appRoutes: Routes = [
         MapListComponent,
         FrontPageComponent,
         NavBarComponent,
+        ActivityPageComponent,
+        FooterComponent
         ActivityPageComponent,
         InfoBoxComponent
     ],
