@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".activitybox {\r\n  background-color: #F0F0F0;\r\n  margin-bottom: 10px;\r\n  margin-top: 10px;\r\n  padding: 10px;\r\n}\r\n\r\n.titlebox {\r\n  padding-top: 5px;\r\n  padding-left: 10px;\r\n  padding-bottom: 5px;\r\n  border-radius: 5px;\r\n  color: white;\r\n}\r\n"
+module.exports = ".activitybox {\n  background-color: #F0F0F0;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  padding: 10px;\n}\n\n.titlebox {\n  padding-top: 5px;\n  padding-left: 10px;\n  padding-bottom: 5px;\n  border-radius: 5px;\n  color: white;\n}\n"
 
 /***/ }),
 
@@ -92,25 +92,31 @@ var ActivityPageComponent = /** @class */ (function () {
 /*!***************************************!*\
   !*** ./src/app/api/venue-selector.ts ***!
   \***************************************/
-/*! exports provided: VenueSelector */
+/*! exports provided: VenueSelector, VenueStateEvent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VenueSelector", function() { return VenueSelector; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VenueStateEvent", function() { return VenueStateEvent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
 var VenueSelector = /** @class */ (function () {
     function VenueSelector(venue) {
         this.hovered = false;
         this.active = false;
+        this.stateUpdate = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.venue = venue;
     }
     VenueSelector.prototype.setHovered = function (isHovered) {
+        this.stateUpdate.emit(new VenueStateEvent(this, 'hovered', isHovered));
         this.hovered = isHovered;
     };
     VenueSelector.prototype.isHovered = function () {
         return this.hovered;
     };
     VenueSelector.prototype.setActive = function (isActive) {
+        this.stateUpdate.emit(new VenueStateEvent(this, 'active', isActive));
         this.active = isActive;
     };
     VenueSelector.prototype.isActive = function () {
@@ -120,6 +126,24 @@ var VenueSelector = /** @class */ (function () {
         return this.venue;
     };
     return VenueSelector;
+}());
+
+var VenueStateEvent = /** @class */ (function () {
+    function VenueStateEvent(venue, emitedState, emitedValue) {
+        this.venue = venue;
+        this.emitedState = emitedState;
+        this.emitedValue = emitedValue;
+    }
+    VenueStateEvent.prototype.getVenue = function () {
+        return this.venue;
+    };
+    VenueStateEvent.prototype.getEmitedState = function () {
+        return this.emitedState;
+    };
+    VenueStateEvent.prototype.getEmitedValue = function () {
+        return this.emitedValue;
+    };
+    return VenueStateEvent;
 }());
 
 
@@ -155,6 +179,10 @@ var VenueService = /** @class */ (function () {
     function VenueService(http) {
         this.http = http;
         this.venues = [];
+        this.venueSelected = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.venueDeSelected = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.venueHovered = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.venueDeHovered = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     VenueService.prototype.lookUpByCoords = function (longitude, latitude, radius) {
         var _this = this;
@@ -169,7 +197,38 @@ var VenueService = /** @class */ (function () {
                 _this.venues.pop();
             }
             venues.forEach(function (venue) {
-                _this.venues.push(new _venue_selector__WEBPACK_IMPORTED_MODULE_2__["VenueSelector"](venue));
+                var venueSelector = new _venue_selector__WEBPACK_IMPORTED_MODULE_2__["VenueSelector"](venue);
+                venueSelector.stateUpdate.subscribe(function (event) {
+                    if (event.getEmitedState() == "active") {
+                        if (event.getEmitedValue()) {
+                            if (_this.selectedVenue != null) {
+                                _this.selectedVenue.setActive(false);
+                                _this.venueDeSelected.emit(_this.selectedVenue);
+                            }
+                            _this.selectedVenue = event.getVenue();
+                            _this.venueSelected.emit(_this.selectedVenue);
+                        }
+                        else if (_this.selectedVenue = event.getVenue()) {
+                            _this.venueDeSelected.emit(_this.selectedVenue);
+                            _this.selectedVenue = null;
+                        }
+                    }
+                    else if (event.getEmitedState() == "hovered") {
+                        if (event.getEmitedValue()) {
+                            if (_this.hoveredVenue != null) {
+                                _this.hoveredVenue.setHovered(false);
+                                _this.venueDeHovered.emit(_this.hoveredVenue);
+                            }
+                            _this.hoveredVenue = event.getVenue();
+                            _this.venueHovered.emit(_this.hoveredVenue);
+                        }
+                        else if (_this.hoveredVenue = event.getVenue()) {
+                            _this.venueDeHovered.emit(_this.hoveredVenue);
+                            _this.hoveredVenue = null;
+                        }
+                    }
+                });
+                _this.venues.push(venueSelector);
             });
         });
     };
@@ -184,6 +243,19 @@ var VenueService = /** @class */ (function () {
             }
         }
         return null;
+    };
+    VenueService.prototype.getSelectedVenue = function () {
+        return this.selectedVenue;
+    };
+    VenueService.prototype.deselectSelectedVenue = function () {
+        if (this.selectedVenue != null) {
+            this.selectedVenue.setActive(false);
+        }
+    };
+    VenueService.prototype.deselectHoveredVenue = function () {
+        if (this.hoveredVenue != null) {
+            this.hoveredVenue.setHovered(false);
+        }
     };
     VenueService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -216,7 +288,7 @@ module.exports = "#appContainer {\r\n    height:100%;\r\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"appContainer\">\r\n    <router-outlet></router-outlet>\r\n</div>"
+module.exports = "<div id=\"appContainer\">\n    <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -279,12 +351,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _front_page_front_page_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./front-page/front-page.component */ "./src/app/front-page/front-page.component.ts");
 /* harmony import */ var _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./nav-bar/nav-bar.component */ "./src/app/nav-bar/nav-bar.component.ts");
 /* harmony import */ var _activity_page_activity_page_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./activity-page/activity-page.component */ "./src/app/activity-page/activity-page.component.ts");
+/* harmony import */ var _map_map_view_info_box_info_box_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./map/map-view/info-box/info-box.component */ "./src/app/map/map-view/info-box/info-box.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -316,7 +390,8 @@ var AppModule = /** @class */ (function () {
                 _map_map_list_map_list_component__WEBPACK_IMPORTED_MODULE_9__["MapListComponent"],
                 _front_page_front_page_component__WEBPACK_IMPORTED_MODULE_10__["FrontPageComponent"],
                 _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_11__["NavBarComponent"],
-                _activity_page_activity_page_component__WEBPACK_IMPORTED_MODULE_12__["ActivityPageComponent"]
+                _activity_page_activity_page_component__WEBPACK_IMPORTED_MODULE_12__["ActivityPageComponent"],
+                _map_map_view_info_box_info_box_component__WEBPACK_IMPORTED_MODULE_13__["InfoBoxComponent"]
             ],
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(appRoutes, { enableTracing: true } // <-- debugging purposes only
@@ -356,7 +431,7 @@ module.exports = "\r\n\r\n#frontPageContainer {\r\n    background-color: #CCCCCC
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"frontPageContainer\">\r\n    <div id=\"frontPageContent\">\r\n        <div id=\"mapButtonContainer\">\r\n            <div id=\"mapButtonContent\">\r\n                <button type=\"button\" class=\"btn btn-primary btn-lg\" routerLink=\"/activities\" routerLinkActive=\"active\">Go to the map</button>\r\n            </div>\r\n        </div>\r\n        <div id=\"header\">\r\n            <div class=\"text-center\">\r\n                <img class=\"img-fluid\" src=\"assets/logo.png\" />\r\n            </div>\r\n        </div>\r\n        <div id=\"frontPageDescription\">\r\n            <p>This is the description of our project</p>\r\n            <p>\r\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque volutpat ultricies. Sed sed ligula a urna viverra efficitur eu non urna. Integer nec ante elementum nisl laoreet faucibus nec non lacus. Duis rhoncus arcu non leo feugiat, at suscipit diam molestie. Ut ultricies tincidunt maximus. Mauris porta faucibus turpis, ac dapibus nisi interdum eu. Duis faucibus efficitur dui, facilisis ultrices arcu pharetra quis. Aenean posuere, lacus et venenatis euismod, nulla nibh elementum orci, rhoncus dapibus lorem nibh et diam.\r\n            </p>\r\n            <p>\r\n                Donec sollicitudin elit id eros ornare, ut accumsan mauris convallis. Duis vel magna vitae quam ultricies vestibulum eget eu arcu. Nam eget eleifend libero. Suspendisse id rutrum turpis. Aliquam lectus risus, efficitur quis orci a, efficitur commodo velit. Curabitur sed urna ac turpis tempus porttitor. Proin in nulla lacus. Integer euismod risus a tellus posuere, ut bibendum elit hendrerit. Maecenas quis massa porttitor, venenatis dui ut, congue dui. Nulla non ante ultricies, tempor libero eget, ultricies libero.\r\n            </p>\r\n            <p>\r\n                Mauris maximus sit amet nulla quis ullamcorper. Cras quis libero leo. Curabitur tincidunt ultrices diam consequat lacinia. Aliquam pellentesque interdum nisl, quis vulputate ex pretium et. Ut eleifend lobortis velit, eget scelerisque neque vehicula vel. Nullam posuere non orci et posuere. Nulla cursus leo eu blandit dictum. Nunc vel erat dui. Quisque et fringilla arcu, in laoreet magna. Ut vitae tellus id mi venenatis imperdiet. In vitae arcu quis nisl aliquet mattis nec sed quam. Praesent vel tellus sollicitudin, consequat sapien quis, aliquet nisl. Aenean sed ex commodo lacus vulputate aliquet volutpat et augue.\r\n            </p>\r\n            <p>\r\n                Etiam lobortis ligula sed ligula consectetur, ut aliquam ex rutrum. Nunc condimentum, nisl a imperdiet volutpat, ex odio sodales lorem, nec semper lacus diam id elit. Mauris non elit scelerisque, bibendum mauris nec, facilisis est. Aliquam quis vestibulum risus, nec imperdiet metus. Proin auctor vitae dui luctus tincidunt. Aliquam ultrices leo sed mauris cursus, a fringilla orci iaculis. Praesent placerat interdum lectus, ut blandit nisl convallis ac. Vestibulum sed enim eu mauris tincidunt ultricies. Sed in luctus metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam ut leo at mauris viverra auctor. Nulla nec metus vel nisi laoreet dapibus. Suspendisse potenti. Praesent porta, arcu ac aliquet imperdiet, felis nulla feugiat nunc, sed pharetra tellus nulla eget ante. Proin eu sapien tristique dolor egestas pharetra eget at nulla.\r\n            </p>\r\n            <p>\r\n                Vivamus a libero et felis pharetra egestas. Sed iaculis, arcu quis lobortis fermentum, nulla nisi ultricies enim, id lobortis lorem augue sit amet turpis. Vestibulum scelerisque pharetra tristique. Nunc ut urna efficitur, lacinia nunc sed, tincidunt est. Nam tempor faucibus pharetra. Quisque vitae rhoncus risus. Praesent vehicula libero a mauris mattis rutrum. Fusce aliquet a ipsum eget sodales. Integer vel convallis risus. Nulla tellus enim, ultricies vitae efficitur non, placerat at erat.\r\n            </p>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div id=\"frontPageContainer\">\n    <div id=\"frontPageContent\">\n        <div id=\"mapButtonContainer\">\n            <div id=\"mapButtonContent\">\n                <button type=\"button\" class=\"btn btn-primary btn-lg\" routerLink=\"/activities\" routerLinkActive=\"active\">Select your Activities</button>\n            </div>\n        </div>\n        <div id=\"header\">\n            <div class=\"text-center\">\n                <img class=\"img-fluid\" src=\"assets/logo.png\" />\n            </div>\n        </div>\n        <div id=\"frontPageDescription\">\n            <p>City Trip Planner</p>\n            <p>\n                Ever thought about going to New York, London, Paris or Amsterdam and wanted to see everyting that city has to offer?\n\t\t\t\tIf the answer is a resouding yes, then you know the struggle of planning all these different events and activities.\n\t\t\t\tWith City Trip Planner you don't have to stress out about anything, we will help you with your planning.\n\t\t\t</p>\n            <p>\n               With our service you are able to plan city trips very easy by selecting different venues on our map.\n\t\t\t   We will then make an optimized route for you on the map, so you can track which venues to go to next.\n\t\t\t   We will also give you a list of venues for easy management and general information.\n\t\t\t   Are you spending more days in a city, no problem out service will also be able to span the venues out over multiple days.\n\t\t\t</p>\n\t\t\t<p>\n\t\t\t   Keeping track of places to visit and sites to see was never this easy.\n\t\t\t   Now with City Trip Planner visiting new cities will be an absolute joy.\n\t\t\t</p>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -408,7 +483,7 @@ var FrontPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n#mapListContainer {\r\n    flex-grow: 0;\r\n    width: 300px;\r\n    overflow-y: auto;\r\n    height: 100%;\r\n    background-color: #FFFFFF;\r\n}\r\n#openMapListButton {\r\n    display: none;\r\n    position: absolute;\r\n    top: 10px;\r\n    left: 10px;\r\n    z-index: 9999;\r\n}\r\n#closeMapListButton {\r\n    display: none;\r\n    position: absolute;\r\n    top: 10px;\r\n    right:10px;\r\n}\r\n.mapListHeader {\r\n    position: relative;\r\n    padding-left:16px;\r\n}\r\n.list-group-item-hover {\r\n    background-color: yellow;\r\n}\r\n@media (max-width: 767.98px) { \r\n    \r\n    #openMapListButton, #closeMapListButton {\r\n        display: block;\r\n    }\r\n    .hideMenu {\r\n        display: none !important;\r\n    }\r\n    #mapListContainer {\r\n        position: absolute;\r\n        width: 100%;\r\n        z-index: 9998;\r\n    }\r\n}"
+module.exports = "\r\n#mapListContainer {\r\n    flex-grow: 0;\r\n    width: 300px;\r\n    overflow-y: auto;\r\n    height: 100%;\r\n    background-color: #FFFFFF;\r\n}\r\n#openMapListButton {\r\n    display: none;\r\n    position: absolute;\r\n    top: 10px;\r\n    left: 10px;\r\n    z-index: 9999;\r\n}\r\n#closeMapListButton {\r\n    display: none;\r\n    position: absolute;\r\n    top: 10px;\r\n    right:10px;\r\n}\r\n.mapListHeader {\r\n    position: relative;\r\n    padding-left:16px;\r\n}\r\n.list-group-item-hover {\r\n    background-color: yellow;\r\n}\r\n.addressLine {\r\n    margin: 0;\r\n}\r\n.mapPointItem {\r\n    overflow-x: hidden;\r\n}\r\n@media (max-width: 767.98px) { \r\n    \r\n    #openMapListButton, #closeMapListButton {\r\n        display: block;\r\n    }\r\n    .hideMenu {\r\n        display: none !important;\r\n    }\r\n    #mapListContainer {\r\n        position: absolute;\r\n        width: 100%;\r\n        z-index: 9998;\r\n    }\r\n}"
 
 /***/ }),
 
@@ -419,7 +494,7 @@ module.exports = "\r\n#mapListContainer {\r\n    flex-grow: 0;\r\n    width: 300
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"mapListContainer\" [class.hideMenu]=\"isMenuHidden\">\n    <div id=\"mapListGroup\" class=\"list-group\">\n        <h1 class=\"mapListHeader\">\n            Places <button id=\"closeMapListButton\" class=\"btn btn-outline-primary\" type=\"button\" (click)=\"closeMenu()\">X</button>\n        </h1>\n        <button class=\"btn mapPointItem list-group-item\" *ngFor=\"let venue of venues\" [class.active]=\"venue.isActive()\" [class.list-group-item-hover]=\"venue.isHovered() && !venue.isActive()\" (mouseenter)=\"venue.setHovered(true)\" (mouseleave)=\"venue.setHovered(false)\" (click)=\"setActive(venue)\" type=\"button\">\n            <h1>{{venue.getVenue().name}}</h1>\n            <p>{{venue.getVenue().description}}</p>\n        </button>\n    </div>\n</div>\n<button id=\"openMapListButton\"  [class.hideMenu]=\"!isMenuHidden\" class=\"btn btn-primary\" type=\"button\" (click)=\"openMenu()\">&gt;</button>"
+module.exports = "<div id=\"mapListContainer\" [class.hideMenu]=\"isMenuHidden\">\n    <div id=\"mapListGroup\" class=\"list-group\">\n        <h1 class=\"mapListHeader\">\n            Places <button id=\"closeMapListButton\" class=\"btn btn-outline-primary\" type=\"button\" (click)=\"closeMenu()\">X</button>\n        </h1>\n        <button class=\"btn mapPointItem list-group-item\" *ngFor=\"let venue of venues\" [class.active]=\"venue.isActive()\" [class.list-group-item-hover]=\"venue.isHovered() && !venue.isActive()\" (mouseenter)=\"venue.setHovered(true)\" (mouseleave)=\"venue.setHovered(false)\" (click)=\"setActive(venue)\" type=\"button\">\n            <h2 class=\"venueName\">{{venue.getVenue().name}}</h2>\n            <div class=\"venueAddress\">\n                <p class=\"addressLine\" *ngFor=\"let addressLine of venue.getVenue().address\">{{addressLine}}</p>\n            </div>\n        </button>\n    </div>\n</div>\n<button id=\"openMapListButton\"  [class.hideMenu]=\"!isMenuHidden\" class=\"btn btn-primary\" type=\"button\" (click)=\"openMenu()\">&gt;</button>"
 
 /***/ }),
 
@@ -480,6 +555,80 @@ var MapListComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/map/map-view/info-box/info-box.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/map/map-view/info-box/info-box.component.css ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n#infoBoxContainer {\r\n    background-color: #FFFFFF;\r\n    border: 1px solid #000000;\r\n    border-radius: 5px;\r\n    padding: 10px 20px;\r\n    max-width: 600px;\r\n}\r\n\r\n.addressLine {\r\n    margin: 0;\r\n}\r\n\r\n@media (max-width: 575.98px) { \r\n\r\n    #infoBoxContainer {\r\n        max-width: 250px;\r\n    }\r\n    \r\n}"
+
+/***/ }),
+
+/***/ "./src/app/map/map-view/info-box/info-box.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/map/map-view/info-box/info-box.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"infoBoxContainer\" *ngIf=\"selectedVenue\">\n    <h2>{{selectedVenue.getVenue().name}}</h2>\n    <div id=\"venueAddress\">\n        <p class=\"addressLine\" *ngFor=\"let addressLine of selectedVenue.getVenue().address\">{{addressLine}}</p>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/map/map-view/info-box/info-box.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/map/map-view/info-box/info-box.component.ts ***!
+  \*************************************************************/
+/*! exports provided: InfoBoxComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoBoxComponent", function() { return InfoBoxComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _api_venue_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../api/venue.service */ "./src/app/api/venue.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var InfoBoxComponent = /** @class */ (function () {
+    function InfoBoxComponent(venueService) {
+        var _this = this;
+        this.venueService = venueService;
+        this.selectedVenue = null;
+        venueService.venueSelected.subscribe(function (venue) {
+            _this.selectedVenue = venue;
+        });
+        venueService.venueDeSelected.subscribe(function (venue) {
+            _this.selectedVenue = null;
+        });
+    }
+    InfoBoxComponent.prototype.ngOnInit = function () {
+    };
+    InfoBoxComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-info-box',
+            template: __webpack_require__(/*! ./info-box.component.html */ "./src/app/map/map-view/info-box/info-box.component.html"),
+            styles: [__webpack_require__(/*! ./info-box.component.css */ "./src/app/map/map-view/info-box/info-box.component.css")]
+        }),
+        __metadata("design:paramtypes", [_api_venue_service__WEBPACK_IMPORTED_MODULE_1__["VenueService"]])
+    ], InfoBoxComponent);
+    return InfoBoxComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/map/map-view/map-view.component.css":
 /*!*****************************************************!*\
   !*** ./src/app/map/map-view/map-view.component.css ***!
@@ -498,7 +647,7 @@ module.exports = "app-map-view {\r\n    flex-grow: 1;\r\n    height:100%;\r\n   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div id=\"mapViewContainer\">\n    <aol-map [renderer]=\"'canvas'\" (onMoveEnd)=\"onMoveEnd($event)\">\n        <aol-interaction-default></aol-interaction-default>\n        <aol-view [zoom]=\"zoom\">\n            <aol-coordinate [x]=\"lat\" [y]=\"lng\"></aol-coordinate>\n        </aol-view>\n        <aol-layer-tile [opacity]=\"opacity\">\n            <aol-source-osm></aol-source-osm>\n        </aol-layer-tile>\n        <aol-layer-vector [opacity]=\"opacity\">\n            <aol-source-vector>\n                <aol-feature>\n                    <aol-control-attribution></aol-control-attribution>\n                </aol-feature>\n                <aol-feature *ngFor=\"let venue of venues; let i=index\" [id]=\"'venue-' + venue.getVenue().id\">\n                    <aol-geometry-point>\n                        <aol-coordinate [x]=\"venue.getVenue().longitude\" [y]=\"venue.getVenue().latitude\" [srid]=\"'EPSG:4326'\"></aol-coordinate>\n                    </aol-geometry-point>\n                    <aol-style>\n                        <aol-style-circle [radius]=\"10\">\n                            <aol-style-stroke [color]=\"'black'\" [width]=\"width\"></aol-style-stroke>\n                            <aol-style-fill [color]=\"venue.isActive() ? 'green' : venue.isHovered() ? 'yellow' : 'red'\"></aol-style-fill>\n                        </aol-style-circle>\n                    </aol-style>\n                </aol-feature>\n            </aol-source-vector>\n        </aol-layer-vector>\n    </aol-map>\n</div>"
+module.exports = "\n<div id=\"mapViewContainer\">\n    <aol-map [renderer]=\"'canvas'\" (onMoveEnd)=\"onMoveEnd($event)\">\n        <aol-interaction-default></aol-interaction-default>\n        <aol-view [zoom]=\"zoom\">\n            <aol-coordinate [x]=\"lat\" [y]=\"lng\"></aol-coordinate>\n        </aol-view>\n        <aol-layer-tile [opacity]=\"opacity\">\n            <aol-source-osm></aol-source-osm>\n        </aol-layer-tile>\n        <aol-layer-vector [opacity]=\"opacity\">\n            <aol-source-vector>\n                <aol-feature>\n                    <aol-control-attribution></aol-control-attribution>\n                </aol-feature>\n                <aol-feature *ngFor=\"let venue of venues; let i=index\" [id]=\"'venue-' + venue.getVenue().id\">\n                    <aol-geometry-point>\n                        <aol-coordinate [x]=\"venue.getVenue().longitude\" [y]=\"venue.getVenue().latitude\" [srid]=\"'EPSG:4326'\"></aol-coordinate>\n                    </aol-geometry-point>\n                    <aol-style>\n                        <aol-style-circle [radius]=\"10\">\n                            <aol-style-stroke [color]=\"'black'\" [width]=\"width\"></aol-style-stroke>\n                            <aol-style-fill [color]=\"venue == venueService.getSelectedVenue() ? 'green' : venue.isHovered() ? 'yellow' : 'red'\"></aol-style-fill>\n                        </aol-style-circle>\n                    </aol-style>\n                </aol-feature>\n            </aol-source-vector>\n        </aol-layer-vector>\n\n        <aol-overlay>\n            <aol-coordinate\n                [x]=\"longitude\"\n                [y]=\"latitude\"\n                [srid]=\"'EPSG:4326'\"\n                >\n            </aol-coordinate>\n            <aol-content id=\"infoBox\" class=\"d-none\">\n                <app-info-box></app-info-box>\n            </aol-content>\n        </aol-overlay>\n    </aol-map>\n</div>"
 
 /***/ }),
 
@@ -542,8 +691,6 @@ var MapViewComponent = /** @class */ (function () {
         this.width = 5;
         this.lat = 727640.686966983;
         this.lng = 7027557.9083128;
-        this.select = null;
-        this.selectElement = document.getElementById('type');
         this.selectClick = new openlayers__WEBPACK_IMPORTED_MODULE_1__["interaction"].Select({
             condition: openlayers__WEBPACK_IMPORTED_MODULE_1__["events"].condition.click
         });
@@ -555,27 +702,57 @@ var MapViewComponent = /** @class */ (function () {
     MapViewComponent.prototype.ngOnInit = function () {
     };
     MapViewComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
         var map = this.mapComponent.instance;
-        var venueService = this.venueService;
-        var selectClick = this.selectClick;
-        var selectPointerMove = this.selectPointerMove;
-        map.on("click", function () {
-            venues.forEach(function (venue) { venue.setActive(false); });
+        var infoBox = null;
+        map.getOverlays().forEach(function (overlay) {
+            if (overlay.getElement().id == 'infoBox') {
+                infoBox = overlay;
+            }
         });
-        map.addInteraction(selectClick);
-        map.addInteraction(selectPointerMove);
+        map.getLayers().forEach(function (currentLayer) {
+            if (currentLayer instanceof openlayers__WEBPACK_IMPORTED_MODULE_1__["layer"].Vector) {
+                _this.vectorLayer = currentLayer;
+            }
+        });
+        map.on("click", function () {
+            _this.venueService.deselectSelectedVenue();
+        });
+        map.on("pointermove", function () {
+            _this.venueService.deselectHoveredVenue();
+        });
+        map.addInteraction(this.selectClick);
+        map.addInteraction(this.selectPointerMove);
         this.navBarService.postCollapseState.subscribe(function () {
             map.updateSize();
         });
-        var venues = this.venues;
+        this.venueService.venueSelected.subscribe(function (venue) {
+            var venueFeature = _this.getVenueById(venue.getVenue().id);
+            var venuePoint = venueFeature.getGeometry();
+            infoBox.setPosition(venuePoint.getCoordinates());
+            infoBox.getElement().classList.remove("d-none");
+            _this.selectClick.getFeatures().clear();
+            _this.selectClick.getFeatures().push(venueFeature);
+        });
+        this.venueService.venueDeSelected.subscribe(function () {
+            _this.selectClick.getFeatures().clear();
+            infoBox.getElement().classList.add("d-none");
+        });
+        this.venueService.venueHovered.subscribe(function (venue) {
+            _this.selectPointerMove.getFeatures().clear();
+            _this.selectPointerMove.getFeatures().push(_this.getVenueById(venue.getVenue().id));
+        });
+        this.venueService.venueDeHovered.subscribe(function () {
+            _this.selectPointerMove.getFeatures().clear();
+        });
         this.selectClick.on('select', function () {
-            for (var _i = 0, _a = selectClick.getFeatures().getArray(); _i < _a.length; _i++) {
+            for (var _i = 0, _a = _this.selectClick.getFeatures().getArray(); _i < _a.length; _i++) {
                 var selected = _a[_i];
                 var match = selected.getId().toString().match(/venue-([0-9a-f]*)/);
                 if (match == null) {
                     continue;
                 }
-                var venue = venueService.getVenueById(match[1]);
+                var venue = _this.venueService.getVenueById(match[1]);
                 if (venue != null) {
                     venue.setActive(true);
                 }
@@ -583,14 +760,13 @@ var MapViewComponent = /** @class */ (function () {
             }
         });
         this.selectPointerMove.on('select', function () {
-            venues.forEach(function (venue) { venue.setHovered(false); });
-            for (var _i = 0, _a = selectPointerMove.getFeatures().getArray(); _i < _a.length; _i++) {
+            for (var _i = 0, _a = _this.selectPointerMove.getFeatures().getArray(); _i < _a.length; _i++) {
                 var selected = _a[_i];
                 var match = selected.getId().toString().match(/venue-([0-9a-f]*)/);
                 if (match == null) {
                     continue;
                 }
-                var venue = venueService.getVenueById(match[1]);
+                var venue = _this.venueService.getVenueById(match[1]);
                 if (venue != null) {
                     venue.setHovered(true);
                 }
@@ -609,7 +785,10 @@ var MapViewComponent = /** @class */ (function () {
         var c2 = openlayers__WEBPACK_IMPORTED_MODULE_1__["proj"].transform([extend[2], extend[3]], sourceProj, projection);
         var wgs84Sphere = new openlayers__WEBPACK_IMPORTED_MODULE_1__["Sphere"](6378137);
         var distance = wgs84Sphere.haversineDistance(c1, c2);
-        this.venueService.lookUpByCoords(center[0], center[1], distance);
+        this.venueService.lookUpByCoords(center[0], center[1], distance / 4);
+    };
+    MapViewComponent.prototype.getVenueById = function (id) {
+        return this.vectorLayer.getSource().getFeatureById("venue-" + id);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ngx_openlayers__WEBPACK_IMPORTED_MODULE_2__["MapComponent"]),
@@ -700,7 +879,7 @@ var MapComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".navbar {\r\n    position: relative;\r\n}\r\n\r\n#navbarNav {\r\n    padding: .5rem 1rem;\r\n}\r\n\r\n.navbar-toggler {\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 10px;\r\n    z-index: 9999;\r\n    background-color: #343a40;\r\n}"
+module.exports = ".navbar {\r\n    padding: 0 1rem;\r\n    position: relative;\r\n}\r\n\r\n#navbarNav {\r\n    padding: .5rem 1rem;\r\n}\r\n\r\n.navbar-toggler {\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 10px;\r\n    z-index: 9999;\r\n    background-color: #254563;\r\n}\r\n\r\n@media (max-width: 767.98px) { \r\n    #navbarBranding {\r\n        display: none;\r\n    }\r\n    #navbarBranding.show {\r\n        display: block;\r\n    }\r\n}"
 
 /***/ }),
 
@@ -711,7 +890,7 @@ module.exports = ".navbar {\r\n    position: relative;\r\n}\r\n\r\n#navbarNav {\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">\n    <div class=\"container\">\n        <a class=\"navbar-brand\" href=\"#\">City Trip Planner</a>\n        <button class=\"navbar-toggler\" type=\"button\" (click)=\"navBarService.toggleMenu()\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n        <div id=\"navbarNav\" class=\"collapse navbar-collapse float-right\" [ngbCollapse]=\"navBarService.isCollapsed()\" >\n            <ul class=\"nav navbar-nav ml-auto\">\n                <li class=\"nav-item\" *ngFor=\"let navItem of navItems\" [class.active]=\"navItem == currentItem\"><a class=\"nav-link\" [routerLink]=\"navItem.getLink()\" [routerLinkActive]=\"navItem.isActive() + ''\">{{navItem.getName()}}</a></li>\n            </ul>\n        </div>\n    </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">\n    <div class=\"container\">\n        <a id=\"navbarBranding\" class=\"navbar-brand collapse navbar-collapse\" [ngbCollapse]=\"navBarService.isCollapsed()\" href=\"#\">City Trip Planner</a>\n        <button class=\"navbar-toggler\" type=\"button\" (click)=\"navBarService.toggleMenu()\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n        <div id=\"navbarNav\" class=\"collapse navbar-collapse float-right\" [ngbCollapse]=\"navBarService.isCollapsed()\" >\n            <ul class=\"nav navbar-nav ml-auto\">\n                <li class=\"nav-item\" *ngFor=\"let navItem of navItems\" [class.active]=\"navItem == currentItem\"><a class=\"nav-link\" [routerLink]=\"navItem.getLink()\" [routerLinkActive]=\"navItem.isActive() + ''\">{{navItem.getName()}}</a></li>\n            </ul>\n        </div>\n    </div>\n</nav>"
 
 /***/ }),
 
@@ -750,12 +929,10 @@ var NavBarComponent = /** @class */ (function () {
         this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_2__["NavItem"]("Home", "/"));
         this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_2__["NavItem"]("Activities", '/activities'));
         this.navItems.push(new _nav_item__WEBPACK_IMPORTED_MODULE_2__["NavItem"]("Map", "/map"));
-        console.log(router.url);
         for (var _i = 0, _a = this.navItems; _i < _a.length; _i++) {
             var navItem = _a[_i];
             if (navItem.getLink() == router.url) {
                 this.currentItem = navItem;
-                console.log("FOUND", navItem);
                 break;
             }
         }
@@ -768,6 +945,10 @@ var NavBarComponent = /** @class */ (function () {
             _this.navBarService.collapseComplete();
         });
         observer.observe(document.querySelector('#navbarNav'), {
+            attributes: true,
+            attributeFilter: ["class"]
+        });
+        observer.observe(document.querySelector('#navbarBranding'), {
             attributes: true,
             attributeFilter: ["class"]
         });
@@ -935,7 +1116,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\@NeatbeansProjects\TripPlanner\frontend\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\soelm\Desktop\Repositories\TripPlanner\frontend\src\main.ts */"./src/main.ts");
 
 
 /***/ })

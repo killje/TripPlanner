@@ -139,7 +139,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
         let wgs84Sphere = new Sphere(6378137);
         let distance = wgs84Sphere.haversineDistance(c1, c2);
 
-        this.venueService.lookUpByCoords(center[0], center[1], distance);
+        this.venueService.lookUpByCoords(center[0], center[1], distance/4);
     }
     
     getVenueById(id: string): Feature {

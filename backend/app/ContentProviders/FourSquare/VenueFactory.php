@@ -54,7 +54,7 @@ class VenueFactory
         // For each venue we obtain, create a venue object
         $venues = [];
         foreach ($result->response->groups[0]->items as $venue) {
-            $newVenue = $this->getVenueById($venue->venue->id);
+            $newVenue = $this->createNonDetailedVenueFromAPIResponse($venue->venue);
             array_push($venues, $newVenue->getAsSimpleArray());
         }
 
@@ -112,6 +112,23 @@ class VenueFactory
         if(isset($object->ratingColor)) $venue->setRatingColor($object->ratingColor);
         $venue->setPeopleNow($object->hereNow->count);
         $venue->setLikes($object->likes->count);
+        return $venue;
+    }
+
+    /**
+     * The following method will only get the basic venue information, to be used for the map scrolling
+     * @param $object
+     * @return Venue
+     */
+    public function createNonDetailedVenueFromAPIResponse($object): Venue
+    {
+        $venue = new Venue();
+        $venue->setId($object->id);
+        $venue->setName($object->name);
+        $venue->setAddressHumanReadable($object->location->formattedAddress);
+        $venue->setLatitude($object->location->lat);
+        $venue->setLongitude($object->location->lng);
+        $this->setVenueCategories($object->categories, $venue);
         return $venue;
     }
 

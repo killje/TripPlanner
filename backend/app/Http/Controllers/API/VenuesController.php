@@ -16,7 +16,7 @@ class VenuesController extends Controller
 {
 
     /**
-     * Return venues based on coordinates
+     * Return non-detailed venues based on coordinates
      * @param ContentProvider $contentProvider
      * @param Request $request Web Request
      * @return \Illuminate\Http\JsonResponse
