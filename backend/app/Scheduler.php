@@ -22,12 +22,14 @@ class Scheduler
 {
 
     /**
+     * 1. Use K-Means clustering to group nearby venues together
+     * 2. Rebalance, by doing k-means again with 1 extra cluster, and merge the smallest 2 days
+     * 3. Keep doing step 2, until finally balanced
+     * 4. Return it
      * @param ContentProvider $contentProvider
      * @param $id
      * @param int $number_of_groups
      * @param array $venues array
-     * 1. Use K-Means clustering to group nearby venues together
-     * 2. Rebalance
      * @param bool $array
      * @return array
      */
