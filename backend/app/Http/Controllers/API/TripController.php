@@ -51,17 +51,6 @@ class TripController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Trip  $trip
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Trip $trip)
-    {
-        // TODO
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Trip  $trip
@@ -180,12 +169,12 @@ class TripController extends Controller
     }
 
     /**
-     * List all venues for a certain trip
+     * List detailed information of the trip
      *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function listVenues(Request $request, ContentProvider $contentProvider)
+    public function show(Request $request, ContentProvider $contentProvider)
     {
         // Validate input
         $validatedData = $request->validate([
