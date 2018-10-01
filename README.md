@@ -27,6 +27,7 @@ Now, you can access the website by going to http://yourlocalwebsitename.test whi
 ### Venues
 - GET `/venues/lookupbycoords` with arguments: longitude, latitude, radius (in meters) Example: `/venues/lookupbycoords?longitude=-74.0018&latitude=40.7243&radius=500`
 - GET `/venues/details` with arguments: id. Example: `/venues/details?id=412d2800f964a520df0c1fe3`
+- GET `/venues/featuredbyname` with arguments: query. Example: `/venues/featuredbyname?query=NYC`
 ### Trip
 - POST `/trips/store` with arguments: name, number_of_days. Example: `/trips/store?name=My New Trip&number_of_days=3`
 - DELETE `/trips/destroy` with arguments: uuid. Example: `/trips/destroy?uuid=f60e6d5f-772c-47a1-a81f-e06709671cc7`

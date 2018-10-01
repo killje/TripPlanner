@@ -19,9 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/venues/lookupbycoords', 'API\VenuesController@lookUpByCoords')->name('venues.lookupbycoords');
 Route::get('/venues/details', 'API\VenuesController@getDetails')->name('venues.details');
+Route::get('/venues/featuredbyname', 'API\VenuesController@getFeaturedByLocation')->name('venues.featured');
 
 Route::post('/trips/store', 'API\TripController@store')->name('trips.store');
 Route::delete('/trips/destroy', 'API\TripController@destroy')->name('trips.destroy');
 Route::post('/trips/venues/add', 'API\TripController@addVenue')->name('trips.addvenue');
 Route::delete('/trips/venues/remove', 'API\TripController@removeVenue')->name('trips.removevenue');
-Route::get('/trips/venues/list', 'API\TripController@listVenues')->name('trips.listvenues');
+Route::get('/trips/show', 'API\TripController@show')->name('trips.show');
