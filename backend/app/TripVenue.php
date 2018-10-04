@@ -19,7 +19,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TripVenue extends Model
 {
-
     /**
      * Get the trip that this venue belongs to
      */

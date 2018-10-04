@@ -2,7 +2,12 @@
 
 namespace App;
 
+use App\ContentProviders\ContentProvider;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
+use Phpml\Clustering\DBSCAN;
+use Phpml\Clustering\KMeans;
+use Phpml\Exception\InvalidArgumentException;
 
 /**
  * App\Trip
@@ -32,5 +37,28 @@ class Trip extends Model
     public function venues()
     {
         return $this->hasMany('App\TripVenue');
+    }
+
+    /**
+     * Get Detailed venues
+     * @return array
+     */
+    public function detailedVenues(ContentProvider $contentProvider)
+    {
+        $detailedVenues = [];
+        foreach($this->venues()->get() as $detailedVenue) {
+            array_push($detailedVenues, $contentProvider->getVenueById($detailedVenue->venue_id));
+        }
+        return $detailedVenues;
+    }
+
+    /**
+     * Re-Generate the schedule based on all venues
+     * @param ContentProvider $contentProvider
+     * @return array
+     */
+    public function generateSchedule(ContentProvider $contentProvider, $generate, $array)
+    {
+        return Scheduler::algorithm($contentProvider, $this->id, $this->number_of_days, $this->detailedVenues($contentProvider), $generate, $array);
     }
 }
