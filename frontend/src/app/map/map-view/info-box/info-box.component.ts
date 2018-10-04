@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {VenueService} from '../../../api/venue.service';
-import {VenueSelector} from '../../../api/venue-selector';
+import {Venue} from '../../../api/venue/venue';
 
 @Component({
     selector: 'app-info-box',
@@ -10,13 +10,13 @@ import {VenueSelector} from '../../../api/venue-selector';
 })
 export class InfoBoxComponent implements OnInit {
     
-    private selectedVenue: VenueSelector = null;
+    private selectedVenue: Venue = null;
     
     constructor(private venueService: VenueService) {
-        venueService.venueSelected.subscribe((venue: VenueSelector) => {
+        venueService.venueSelected.subscribe((venue: Venue) => {
             this.selectedVenue = venue;
         });
-        venueService.venueDeSelected.subscribe((venue: VenueSelector) => {
+        venueService.venueDeSelected.subscribe((venue: Venue) => {
             this.selectedVenue = null;
         });
     }

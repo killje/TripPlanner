@@ -44,6 +44,7 @@ We will use node.js with npm to install everything
 2. To install angular do `npm install -g @angular/cli` this will install angular cli for the whole computer.
 3. Go to the frontend project folder. This is the folder with `package.json` in it and do `npm install`. This can take a few minutes.
 4. Do `ng serve [-o]` (`ng` is the angular cli program that handles a lot of the angular project) the `-o` is optional and will open your browser to the webpage when ready
+5. Do `npm run-script proxy` to start the proxy server to mock back-end data
 
 You can now edit files in `src` and it will automatically be updated on the website.
 

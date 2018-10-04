@@ -3,8 +3,8 @@ import {events, interaction, Map, MapEvent, proj, Sphere, Overlay, geom, layer, 
 import {MapComponent} from 'ngx-openlayers';
 
 import {VenueService} from '../../api/venue.service';
-import {VenueSelector} from '../../api/venue-selector';
 import {NavBarService} from '../../nav-bar/nav-bar.service';
+import {Venue} from '../../api/venue/venue';
 
 @Component({
     selector: 'app-map-view',
@@ -17,7 +17,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     public opacity = 1.0;
     public width = 5;
 
-    private venues: VenueSelector[];
+    private venues: Venue[];
 
     lat: number = 727640.686966983;
     lng: number = 7027557.9083128;
@@ -69,8 +69,8 @@ export class MapViewComponent implements OnInit, AfterViewInit {
             map.updateSize();
         })
         
-        this.venueService.venueSelected.subscribe((venue: VenueSelector) => {
-            let venueFeature = this.getVenueById(venue.getVenue().id);
+        this.venueService.venueSelected.subscribe((venue: Venue) => {
+            let venueFeature = this.getVenueById(venue.id);
             let venuePoint = <geom.Point> venueFeature.getGeometry();
             infoBox.setPosition(venuePoint.getCoordinates());
             infoBox.getElement().classList.remove("d-none");
@@ -83,9 +83,9 @@ export class MapViewComponent implements OnInit, AfterViewInit {
             infoBox.getElement().classList.add("d-none");
         });
         
-        this.venueService.venueHovered.subscribe((venue: VenueSelector) => {
+        this.venueService.venueHovered.subscribe((venue: Venue) => {
             this.selectPointerMove.getFeatures().clear();
-            this.selectPointerMove.getFeatures().push(this.getVenueById(venue.getVenue().id));
+            this.selectPointerMove.getFeatures().push(this.getVenueById(venue.id));
         });
         
         this.venueService.venueDeHovered.subscribe(() => {
@@ -99,7 +99,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
                 if (match == null) {
                     continue;
                 }
-                let venue: VenueSelector = this.venueService.getVenueById(match[1]);
+                let venue: Venue = this.venueService.getVenueById(match[1]);
                 if (venue != null) {
                     venue.setActive(true);
                 }
@@ -113,7 +113,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
                 if (match == null) {
                     continue;
                 }
-                let venue: VenueSelector = this.venueService.getVenueById(match[1]);
+                let venue: Venue = this.venueService.getVenueById(match[1]);
                 if (venue != null) {
                     venue.setHovered(true);
                 }

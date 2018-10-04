@@ -1,0 +1,270 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="activity-top">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div *ngIf="!trip">
+                <h1 class="display-4">Create your trip</h1>
+                <p class="lead">
+                    Start by setting your destination below
+                </p>
+                <hr class="my-4">
+                <p>Select your destination and how many days you want to go.</p>
+                <app-label-input [name]="'Destination'" [id]="'destination'" [(value)]="destination" [description]="'destination'" [error]="destinationError" (valueChange)="recheckInput()"></app-label-input>
+                <app-label-input [name]="'Days'" [id]="'days'" [(value)]="days" [description]="'days'" [type]="'number'" [OnlyNumber]="'true'" [error]="daysError" (valueChange)="recheckInput()"></app-label-input>
+                <button type="submit" class="btn btn-primary" (click)="createTrip()">Create your trip</button>
+            </div>
+            <div *ngIf="trip">
+                <h1 class="display-4">Select your activities</h1>
+                <p class="lead">
+                    Plan your trip in detail here below!
+                </p>
+                <hr class="my-4">
+                <p>You have selected <mark>{{trip.name}}</mark> for <mark>{{trip.number_of_days}}</mark></p>
+                <p>Select the activities you want to do below</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="activity-container" *ngIf="trip">
+    <div class="container rounded">
+        <h1>Selected activities</h1>
+    </div>
+    <div class="container activitybox rounded" *ngFor="let venue of trip.venues" >
+         <div class="row">
+            <div class="col-sm-7">
+                <figure class="figure">
+                    <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded" />
+                    <figcaption class="figure-caption">Picture taken by <mark>Benjamin Bannister</mark>.</figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-5">
+                <div class="titlebox bg-primary">
+                    <h2>{{venue.name}}</h2>
+                </div>
+                <div *ngIf="venue.address" class="venue-address">
+                    <p *ngFor="let addressLine of venue.address">
+                        {{addressLine}}
+                </p>
+            </div>
+            <button class="btn btn-danger" (click)="removeVenue(venue)">Remove Activity</button>
+        </div>
+    </div>
+</div>
+<div class="container rounded">
+    <h1>Sugested activities</h1>
+</div>
+<div class="container activitybox rounded" *ngFor="let venue of venueSugestions">
+     <div class="row">
+        <div class="col-sm-7">
+            <figure class="figure">
+                <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded" />
+                <figcaption class="figure-caption">Picture taken by <mark>Benjamin Bannister</mark>.</figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-5">
+            <div class="titlebox bg-primary">
+                <h2>{{venue.name}}</h2>
+            </div>
+            <div *ngIf="venue.address" class="venue-address">
+                <p *ngFor="let addressLine of venue.address">
+                    {{addressLine}}
+            </p>
+        </div>
+        <button class="btn btn-primary" (click)="addVenue(venue)">Add Activity</button>
+    </div>
+</div>
+</div>
+<!-- OLD ---------------
+<div class="container activitybox rounded">
+    <div class="row">
+        <div class="col-sm-7">
+            <figure class="figure">
+                <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded">
+                <figcaption class="figure-caption">Picture taken by
+                    <mark>Benjamin Bannister</mark>.</figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-5">
+            <div class="titlebox bg-primary">
+                <h2>Central Park</h2>
+            </div>
+            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can
+                be added here. Some text can be added here.</p>
+            <a class="btn btn-primary" href="#">Add Activity</a>
+        </div>
+    </div>
+</div>
+
+<div class="container activitybox rounded">
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="titlebox bg-primary">
+                <h2>Central Park</h2>
+            </div>
+            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can
+                be added here. Some text can be added here.</p>
+            <a class="btn btn-primary" href="#">Add Activity</a>
+        </div>
+        <div class="col-sm-7">
+            <figure class="figure">
+                <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded">
+                <figcaption class="figure-caption">Picture taken by
+                    <mark>Benjamin Bannister</mark>.</figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+
+<div class="container activitybox rounded">
+    <div class="row">
+        <div class="col-sm-7">
+            <figure class="figure">
+                <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded">
+                <figcaption class="figure-caption">Picture taken by
+                    <mark>Benjamin Bannister</mark>.</figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-5">
+            <div class="titlebox bg-primary">
+                <h2>Central Park</h2>
+            </div>
+            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can
+                be added here. Some text can be added here.</p>
+            <a class="btn btn-primary" href="#">Add Activity</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <img class="card-img-top" src="https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Central Park</h5>
+                    <p class="card-text">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>
+                    <a href="#" class="btn btn-primary">Add Activity</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img class="card-img-top" src="https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Central Park</h5>
+                    <p class="card-text">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>
+                    <a href="#" class="btn btn-primary">Add Activity</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img class="card-img-top" src="https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Central Park</h5>
+                    <p class="card-text">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>
+                    <a href="#" class="btn btn-primary">Add Activity</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container activitybox rounded">
+    <div class="row">
+        <div class="col-sm-7">
+            <figure class="figure">
+                <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded">
+                <figcaption class="figure-caption">Picture taken by
+                    <mark>Benjamin Bannister</mark>.</figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-5">
+            <div class="titlebox bg-primary">
+                <h2>Central Park</h2>
+            </div>
+            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can
+                be added here. Some text can be added here.</p>
+            <a class="btn btn-primary" href="#">Add Activity</a>
+        </div>
+    </div>
+</div>
+
+<div class="container activitybox rounded">
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="titlebox bg-primary">
+                <h2>Central Park</h2>
+            </div>
+            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can
+                be added here. Some text can be added here.</p>
+            <a class="btn btn-primary" href="#">Add Activity</a>
+        </div>
+        <div class="col-sm-7">
+            <figure class="figure">
+                <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded">
+                <figcaption class="figure-caption">Picture taken by
+                    <mark>Benjamin Bannister</mark>.</figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+
+<div class="container activitybox rounded">
+    <div class="row">
+        <div class="col-sm-7">
+            <figure class="figure">
+                <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded">
+                <figcaption class="figure-caption">Picture taken by
+                    <mark>Benjamin Bannister</mark>.</figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-5">
+            <div class="titlebox bg-primary">
+                <h2>Central Park</h2>
+            </div>
+            <p>Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can
+                be added here. Some text can be added here.</p>
+            <a class="btn btn-primary" href="#">Add Activity</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <img class="card-img-top" src="https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Central Park</h5>
+                    <p class="card-text">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>
+                    <a href="#" class="btn btn-primary">Add Activity</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img class="card-img-top" src="https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Central Park</h5>
+                    <p class="card-text">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>
+                    <a href="#" class="btn btn-primary">Add Activity</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img class="card-img-top" src="https://igx.4sqi.net/img/general/350x220/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Central Park</h5>
+                    <p class="card-text">Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. Some text can be added here. </p>
+                    <a href="#" class="btn btn-primary">Add Activity</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+</div>

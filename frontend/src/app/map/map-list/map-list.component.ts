@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {VenueService} from '../../api/venue.service';
-import {VenueSelector} from '../../api/venue-selector';
+import {Venue} from '../../api/venue/venue';
 
 @Component({
     selector: 'app-map-list',
@@ -12,7 +12,7 @@ export class MapListComponent implements OnInit {
 
     isMenuHidden: boolean = true;
 
-    private venues: VenueSelector[];
+    private venues: Venue[];
 
     constructor(private venueService: VenueService) {
         this.venues = this.venueService.getVenues();
@@ -29,8 +29,8 @@ export class MapListComponent implements OnInit {
         this.isMenuHidden = true;
     }
 
-    setActive(venue: VenueSelector) {
-        this.venues.forEach((venue: VenueSelector) => {venue.setActive(false)});
+    setActive(venue: Venue) {
+        this.venues.forEach((venue: Venue) => {venue.setActive(false)});
         venue.setActive(true);
         this.closeMenu();
     }

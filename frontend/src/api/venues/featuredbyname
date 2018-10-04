@@ -1,0 +1,870 @@
+[
+  {
+    "id": "4b40c455f964a520e0ba25e3",
+    "name": "Noorderplantsoen",
+    "address": [
+      "Leliesingel (Kruissingel)",
+      "Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.223407913752894,
+    "longitude": 6.5554235978050786,
+    "categories": [
+      {
+        "name": "Park",
+        "pluralName": "Parks",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_64.png"
+      },
+      {
+        "name": "Playground",
+        "pluralName": "Playgrounds",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/playground_64.png"
+      }
+    ],
+    "url": "http://www.noorderplantsoen.nl",
+    "openingHours": null,
+    "popularHours": null,
+    "price": null,
+    "rating": "9.6",
+    "ratingColor": "00B551",
+    "peopleNow": "0",
+    "likes": 134
+  },
+  {
+    "id": "4fa4fd84e4b0e7038aefa7d9",
+    "name": "Pure Groningen",
+    "address": [
+      "Vismarkt 10 (Koude Gat)",
+      "9711 KS Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.217708031885536,
+    "longitude": 6.566397252621049,
+    "categories": [
+      {
+        "name": "Frozen Yogurt Shop",
+        "pluralName": "Frozen Yogurt Shops",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/frozenyogurt_64.png"
+      },
+      {
+        "name": "Ice Cream Shop",
+        "pluralName": "Ice Cream Shops",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/icecream_64.png"
+      },
+      {
+        "name": "Bakery",
+        "pluralName": "Bakeries",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/bakery_64.png"
+      }
+    ],
+    "url": "http://www.puregroningen.nl",
+    "openingHours": "Closed until 9:00 AM tomorrow",
+    "popularHours": "Likely open",
+    "price": "Cheap",
+    "rating": "9.1",
+    "ratingColor": "00B551",
+    "peopleNow": "0",
+    "likes": 30
+  },
+  {
+    "id": "4b669a95f964a5204e252be3",
+    "name": "Stadsschouwburg",
+    "address": [
+      "Turfsingel 86",
+      "9711 VX Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.22073317505104,
+    "longitude": 6.571736180665293,
+    "categories": [
+      {
+        "name": "Theater",
+        "pluralName": "Theaters",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/performingarts_theater_64.png"
+      },
+      {
+        "name": "Music Venue",
+        "pluralName": "Music Venues",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_64.png"
+      },
+      {
+        "name": "Concert Hall",
+        "pluralName": "Concert Halls",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_64.png"
+      }
+    ],
+    "url": "http://www.de-oosterpoort.nl",
+    "openingHours": null,
+    "popularHours": null,
+    "price": null,
+    "rating": "9.2",
+    "ratingColor": "00B551",
+    "peopleNow": "0",
+    "likes": 86
+  },
+  {
+    "id": "4ff169c5e4b05df964b17ce4",
+    "name": "Black & Bloom",
+    "address": [
+      "Oude Kijk In T Jatstraat 32",
+      "9712EK Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.219432522691065,
+    "longitude": 6.56182459107847,
+    "categories": [
+      {
+        "name": "Coffee Shop",
+        "pluralName": "Coffee Shops",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_64.png"
+      }
+    ],
+    "url": "http://www.blackandbloom.nl",
+    "openingHours": "Open until 6:30 PM",
+    "popularHours": "Likely open",
+    "price": "Cheap",
+    "rating": "9",
+    "ratingColor": "00B551",
+    "peopleNow": "0",
+    "likes": 147
+  },
+  {
+    "id": "4c94ed6358d4b60c422c2d29",
+    "name": "Oosterpoort Grote Zaal",
+    "address": [
+      "De Oosterpoort (Trompsingel 27)",
+      "9724 DA",
+      "Nederland"
+    ],
+    "latitude": 53.213976505139115,
+    "longitude": 6.576705023625482,
+    "categories": [
+      {
+        "name": "Theater",
+        "pluralName": "Theaters",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/performingarts_theater_64.png"
+      },
+      {
+        "name": "Arts & Crafts Store",
+        "pluralName": "Arts & Crafts Stores",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/shops/artstore_64.png"
+      }
+    ],
+    "url": "http://www.de-oosterpoort.nl",
+    "openingHours": null,
+    "popularHours": null,
+    "price": null,
+    "rating": "9.1",
+    "ratingColor": "00B551",
+    "peopleNow": "0",
+    "likes": 39
+  },
+  {
+    "id": "4c515c1c3940be9a4aafb708",
+    "name": "Croissanterie Pigalle",
+    "address": [
+      "Stoeldraaierstraat 17",
+      "9712 BT Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.21761692354348,
+    "longitude": 6.563481896624966,
+    "categories": [
+      {
+        "name": "Bakery",
+        "pluralName": "Bakeries",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/bakery_64.png"
+      },
+      {
+        "name": "Sandwich Place",
+        "pluralName": "Sandwich Places",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/deli_64.png"
+      }
+    ],
+    "url": "http://www.croissanteriepigalle.nl",
+    "openingHours": "Open until 6:00 PM",
+    "popularHours": "Likely open",
+    "price": "Cheap",
+    "rating": "9",
+    "ratingColor": "00B551",
+    "peopleNow": "0",
+    "likes": 34
+  },
+  {
+    "id": "4b4f4ce7f964a520530027e3",
+    "name": "Der Witz",
+    "address": [
+      "Grote Markt 47",
+      "9711 LX Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.218258656922416,
+    "longitude": 6.567053706384058,
+    "categories": [
+      {
+        "name": "Bar",
+        "pluralName": "Bars",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/pub_64.png"
+      }
+    ],
+    "url": "http://www.derwitz.nl",
+    "openingHours": "Open until 3:00 AM",
+    "popularHours": null,
+    "price": "Moderate",
+    "rating": "9.1",
+    "ratingColor": "00B551",
+    "peopleNow": "0",
+    "likes": 45
+  },
+  {
+    "id": "54246121498e3f417c94ac47",
+    "name": "Gustatio",
+    "address": [
+      "Oosterstraat 3",
+      "Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.21825016984567,
+    "longitude": 6.569116861256406,
+    "categories": [
+      {
+        "name": "Italian Restaurant",
+        "pluralName": "Italian Restaurants",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/italian_64.png"
+      }
+    ],
+    "url": null,
+    "openingHours": null,
+    "popularHours": null,
+    "price": "Moderate",
+    "rating": "9",
+    "ratingColor": "00B551",
+    "peopleNow": "0",
+    "likes": 22
+  },
+  {
+    "id": "4b22a1dcf964a520a44a24e3",
+    "name": "De Pintelier",
+    "address": [
+      "Kleine Kromme Elleboog 9",
+      "9718BS Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.21860684682149,
+    "longitude": 6.56177324583391,
+    "categories": [
+      {
+        "name": "Bar",
+        "pluralName": "Bars",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/pub_64.png"
+      },
+      {
+        "name": "Beer Garden",
+        "pluralName": "Beer Gardens",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/beergarden_64.png"
+      }
+    ],
+    "url": "http://www.depintelier.nl",
+    "openingHours": "Closed until 3:00 PM",
+    "popularHours": null,
+    "price": "Moderate",
+    "rating": "9",
+    "ratingColor": "00B551",
+    "peopleNow": "0",
+    "likes": 135
+  },
+  {
+    "id": "4b8d6721f964a520a4f932e3",
+    "name": "Café De Koffer",
+    "address": [
+      "Nieuwe Blekerstraat 1",
+      "9718 ED Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.21624758430439,
+    "longitude": 6.555468152985574,
+    "categories": [
+      {
+        "name": "Beer Garden",
+        "pluralName": "Beer Gardens",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/beergarden_64.png"
+      }
+    ],
+    "url": "http://www.dekoffer.nl",
+    "openingHours": "Closed until 4:00 PM",
+    "popularHours": null,
+    "price": "Cheap",
+    "rating": "9",
+    "ratingColor": "00B551",
+    "peopleNow": "0",
+    "likes": 55
+  },
+  {
+    "id": "4ae59ecef964a52018a121e3",
+    "name": "Ariola Delicatessen",
+    "address": [
+      "Folkingestraat 54",
+      "9711 JZ Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.2151653263172,
+    "longitude": 6.565087996343437,
+    "categories": [
+      {
+        "name": "Deli / Bodega",
+        "pluralName": "Delis / Bodegas",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/deli_64.png"
+      },
+      {
+        "name": "Italian Restaurant",
+        "pluralName": "Italian Restaurants",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/italian_64.png"
+      }
+    ],
+    "url": null,
+    "openingHours": "Open until 7:00 PM",
+    "popularHours": "Likely open",
+    "price": "Cheap",
+    "rating": "8.9",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 39
+  },
+  {
+    "id": "530dedb311d2c91560b1723b",
+    "name": "Griekse Traiterie de Olijfboom",
+    "address": [
+      "Steenstilstraat 28",
+      "9711 GN Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.2164348986433,
+    "longitude": 6.5723881219923,
+    "categories": [
+      {
+        "name": "Greek Restaurant",
+        "pluralName": "Greek Restaurants",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/greek_64.png"
+      }
+    ],
+    "url": "http://www.traiteriedeolijfboom.nl",
+    "openingHours": "Closed until Noon tomorrow",
+    "popularHours": null,
+    "price": "Moderate",
+    "rating": "8.9",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 19
+  },
+  {
+    "id": "50117feae4b064ddc6df210f",
+    "name": "Thai Jasmine",
+    "address": [
+      "Gedempte Zuiderdiep 19",
+      "9711 HA Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.215572,
+    "longitude": 6.5696096,
+    "categories": [
+      {
+        "name": "Thai Restaurant",
+        "pluralName": "Thai Restaurants",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/thai_64.png"
+      }
+    ],
+    "url": "http://www.thai-jasmine.nl/home.htm",
+    "openingHours": "Open until 10:00 PM",
+    "popularHours": "Likely open",
+    "price": "Moderate",
+    "rating": "8.9",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 44
+  },
+  {
+    "id": "4c94df556b35a143ba571fdc",
+    "name": "Oosterpoort Kleine Zaal",
+    "address": [
+      "Nederland"
+    ],
+    "latitude": 53.213456034623185,
+    "longitude": 6.57654981605007,
+    "categories": [
+      {
+        "name": "Concert Hall",
+        "pluralName": "Concert Halls",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_64.png"
+      }
+    ],
+    "url": null,
+    "openingHours": null,
+    "popularHours": null,
+    "price": null,
+    "rating": "8.9",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 25
+  },
+  {
+    "id": "4bf56fb194af2d7ffab73b72",
+    "name": "Mr. Mofongo",
+    "address": [
+      "Oude Boteringestraat 26 (Academieplein)",
+      "9712 GJ Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.21936850376903,
+    "longitude": 6.5641002913560555,
+    "categories": [
+      {
+        "name": "Restaurant",
+        "pluralName": "Restaurants",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/default_64.png"
+      },
+      {
+        "name": "Café",
+        "pluralName": "Cafés",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/cafe_64.png"
+      },
+      {
+        "name": "Bar",
+        "pluralName": "Bars",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/pub_64.png"
+      }
+    ],
+    "url": "http://www.mofongo.nl",
+    "openingHours": "Open until 3:00 AM",
+    "popularHours": "Likely open",
+    "price": "Moderate",
+    "rating": "8.9",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 156
+  },
+  {
+    "id": "4abea513f964a5200d8f20e3",
+    "name": "Vera",
+    "address": [
+      "Oosterstraat 44",
+      "9711 NV Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.217047,
+    "longitude": 6.570089,
+    "categories": [
+      {
+        "name": "Rock Club",
+        "pluralName": "Rock Clubs",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_rockclub_64.png"
+      }
+    ],
+    "url": "http://www.vera-groningen.nl",
+    "openingHours": null,
+    "popularHours": null,
+    "price": null,
+    "rating": "8.9",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 76
+  },
+  {
+    "id": "4b0e814df964a520225823e3",
+    "name": "Groninger Museum",
+    "address": [
+      "Museumeiland 1 (Stationsweg)",
+      "9711 ME Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.2123388738623,
+    "longitude": 6.565974653488134,
+    "categories": [
+      {
+        "name": "Art Museum",
+        "pluralName": "Art Museums",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/museum_art_64.png"
+      }
+    ],
+    "url": "http://www.groningermuseum.nl",
+    "openingHours": "Closed until 10:00 AM tomorrow",
+    "popularHours": null,
+    "price": null,
+    "rating": "8.9",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 251
+  },
+  {
+    "id": "4d97423d744f3704aea2cf57",
+    "name": "Donar",
+    "address": [
+      "Leonard Springerlaan 2",
+      "9727 KB Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.202841653014296,
+    "longitude": 6.555463925949153,
+    "categories": [
+      {
+        "name": "Basketball Stadium",
+        "pluralName": "Basketball Stadiums",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/stadium_basketball_64.png"
+      }
+    ],
+    "url": "http://www.martiniplaza.nl",
+    "openingHours": null,
+    "popularHours": null,
+    "price": null,
+    "rating": "8.9",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 44
+  },
+  {
+    "id": "55549aa5498edd2766da9073",
+    "name": "Wadapartja",
+    "address": [
+      "Gedempte Zuiderdiep 41",
+      "9711 HB Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.215081,
+    "longitude": 6.567786,
+    "categories": [
+      {
+        "name": "Restaurant",
+        "pluralName": "Restaurants",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/default_64.png"
+      }
+    ],
+    "url": "http://www.wadapartja.nl",
+    "openingHours": "Open until 6:00 PM",
+    "popularHours": null,
+    "price": "Moderate",
+    "rating": "8.8",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 59
+  },
+  {
+    "id": "4da8883043a12d0c2654108f",
+    "name": "Restaurant Voilà",
+    "address": [
+      "W.A. Scholtenstraat 39",
+      "9711 XB Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.22338972043216,
+    "longitude": 6.570168971548585,
+    "categories": [
+      {
+        "name": "French Restaurant",
+        "pluralName": "French Restaurants",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/french_64.png"
+      }
+    ],
+    "url": "http://www.restaurantvoila.nl",
+    "openingHours": null,
+    "popularHours": "Likely open",
+    "price": "Expensive",
+    "rating": "8.8",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 30
+  },
+  {
+    "id": "554f82e6498e1edf55a78222",
+    "name": "Brouwerij Martinus",
+    "address": [
+      "Kostersgang 32",
+      "9711 CX Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.216210275738014,
+    "longitude": 6.573306798896977,
+    "categories": [
+      {
+        "name": "Brewery",
+        "pluralName": "Breweries",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/brewery_64.png"
+      },
+      {
+        "name": "Beer Bar",
+        "pluralName": "Beer Bars",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/pub_64.png"
+      }
+    ],
+    "url": "http://www.brouwerijmartinus.nl",
+    "openingHours": "Closed until 3:30 PM Thursday",
+    "popularHours": null,
+    "price": "Moderate",
+    "rating": "8.8",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 30
+  },
+  {
+    "id": "4b4df745f964a5206bdc26e3",
+    "name": "ACLO Sportcentrum",
+    "address": [
+      "Blauwborgje 16",
+      "9747 AC Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.237049761954204,
+    "longitude": 6.5313935623612025,
+    "categories": [
+      {
+        "name": "College Gym",
+        "pluralName": "College Gyms",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/building/gym_64.png"
+      },
+      {
+        "name": "University",
+        "pluralName": "Universities",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/education/default_64.png"
+      },
+      {
+        "name": "Martial Arts Dojo",
+        "pluralName": "Martial Arts Dojos",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/shops/gym_martialarts_64.png"
+      }
+    ],
+    "url": "http://www.aclosport.nl",
+    "openingHours": null,
+    "popularHours": null,
+    "price": null,
+    "rating": "8.8",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 30
+  },
+  {
+    "id": "5566492b498e3a0847de1ac4",
+    "name": "Bakkerij Blanche",
+    "address": [
+      "Brugstraat 28",
+      "9711 HZ Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.216517,
+    "longitude": 6.55991,
+    "categories": [
+      {
+        "name": "Bakery",
+        "pluralName": "Bakeries",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/bakery_64.png"
+      },
+      {
+        "name": "Café",
+        "pluralName": "Cafés",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/cafe_64.png"
+      }
+    ],
+    "url": "http://www.bakkerijblanche.nl",
+    "openingHours": "Open until 5:00 PM",
+    "popularHours": "Likely open",
+    "price": "Cheap",
+    "rating": "8.7",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 57
+  },
+  {
+    "id": "4b718b85f964a520604c2de3",
+    "name": "Osteria Da Vinci",
+    "address": [
+      "Turfsingel 33-1",
+      "Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.22197879861253,
+    "longitude": 6.567679089436908,
+    "categories": [
+      {
+        "name": "Italian Restaurant",
+        "pluralName": "Italian Restaurants",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/italian_64.png"
+      }
+    ],
+    "url": "http://www.osteriadavinci.nl",
+    "openingHours": null,
+    "popularHours": null,
+    "price": "Moderate",
+    "rating": "8.7",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 31
+  },
+  {
+    "id": "4c07f1e9ffb8c9b6ac776761",
+    "name": "De Kleine Moghul",
+    "address": [
+      "Nieuwe Boteringestraat 62",
+      "9712 PP Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.22409744888742,
+    "longitude": 6.559298639153468,
+    "categories": [
+      {
+        "name": "Indian Restaurant",
+        "pluralName": "Indian Restaurants",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/indian_64.png"
+      }
+    ],
+    "url": "http://www.moghul.nl",
+    "openingHours": null,
+    "popularHours": null,
+    "price": "Moderate",
+    "rating": "8.7",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 24
+  },
+  {
+    "id": "58d231ea5a5869661fe5e117",
+    "name": "Block & Barrels",
+    "address": [
+      "Hoogstraatje 3-5",
+      "9711 LN Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.21687321920012,
+    "longitude": 6.56772020073211,
+    "categories": [
+      {
+        "name": "Gastropub",
+        "pluralName": "Gastropubs",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/gastropub_64.png"
+      }
+    ],
+    "url": "http://www.blockandbarrels.nl",
+    "openingHours": "Open until 2:00 AM",
+    "popularHours": null,
+    "price": "Expensive",
+    "rating": "8.7",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 15
+  },
+  {
+    "id": "4c35a14266e40f47146ecb8b",
+    "name": "Groninger Forum",
+    "address": [
+      "Hereplein 73",
+      "9711 GD Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.21397312687615,
+    "longitude": 6.569480402413318,
+    "categories": [
+      {
+        "name": "Movie Theater",
+        "pluralName": "Movie Theaters",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/movietheater_64.png"
+      },
+      {
+        "name": "Café",
+        "pluralName": "Cafés",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/cafe_64.png"
+      }
+    ],
+    "url": "http://www.groningerforum.nl",
+    "openingHours": null,
+    "popularHours": null,
+    "price": null,
+    "rating": "8.7",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 82
+  },
+  {
+    "id": "4b669933f964a52024252be3",
+    "name": "De Oosterpoort",
+    "address": [
+      "Trompsingel 27",
+      "9724 DA Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.21419,
+    "longitude": 6.5756,
+    "categories": [
+      {
+        "name": "Theater",
+        "pluralName": "Theaters",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/performingarts_theater_64.png"
+      },
+      {
+        "name": "Concert Hall",
+        "pluralName": "Concert Halls",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_64.png"
+      }
+    ],
+    "url": "http://www.de-oosterpoort.nl",
+    "openingHours": null,
+    "popularHours": null,
+    "price": null,
+    "rating": "8.7",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 173
+  },
+  {
+    "id": "4eb41f7d775b544c26b7780e",
+    "name": "Houdt van Eten",
+    "address": [
+      "Herestraat 96",
+      "9711 LM Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.21458566000149,
+    "longitude": 6.569038772879481,
+    "categories": [
+      {
+        "name": "French Restaurant",
+        "pluralName": "French Restaurants",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/food/french_64.png"
+      }
+    ],
+    "url": "http://www.houdtvaneten.nl",
+    "openingHours": "Open until 10:00 PM",
+    "popularHours": null,
+    "price": "Expensive",
+    "rating": "8.6",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 20
+  },
+  {
+    "id": "4bbb1c5298c7ef3b78b93302",
+    "name": "Vismarkt",
+    "address": [
+      "Vismarkt",
+      "9711 Groningen",
+      "Nederland"
+    ],
+    "latitude": 53.2171094082167,
+    "longitude": 6.564545631408691,
+    "categories": [
+      {
+        "name": "Plaza",
+        "pluralName": "Plazas",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/plaza_64.png"
+      },
+      {
+        "name": "Market",
+        "pluralName": "Markets",
+        "icon": "https://ss3.4sqi.net/img/categories_v2/shops/market_64.png"
+      }
+    ],
+    "url": "http://www.vismarkt-groningen.nl",
+    "openingHours": null,
+    "popularHours": null,
+    "price": null,
+    "rating": "8.6",
+    "ratingColor": "73CF42",
+    "peopleNow": "0",
+    "likes": 131
+  }
+]

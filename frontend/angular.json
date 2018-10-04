@@ -20,8 +20,7 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/assets",
-              "src/index.php",
-              "src/api/venues"
+              "src/index.php"
             ],
             "styles": [
                 "src/styles.css"
@@ -51,6 +50,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "proxyConfig": "proxy.conf.json",
             "browserTarget": "FrontEnd:build"
           },
           "configurations": {
