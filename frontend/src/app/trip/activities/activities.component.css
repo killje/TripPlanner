@@ -1,0 +1,14 @@
+.activitybox {
+    background-color: #F0F0F0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.titlebox {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    color: white;
+}

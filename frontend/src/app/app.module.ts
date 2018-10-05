@@ -17,6 +17,8 @@ import {InfoBoxComponent} from './map/map-view/info-box/info-box.component';
 import {LabelInputComponent} from './form/label-input/label-input.component';
 import {OnlyNumberDirective} from './form/only-number.directive';
 import {TripComponent} from './trip/trip.component';
+import {ActivitiesComponent} from './trip/activities/activities.component';
+import {ButtonComponent} from './form/button/button.component';
 
 const appRoutes: Routes = [
     {path: '', component: FrontPageComponent},
@@ -38,7 +40,9 @@ const appRoutes: Routes = [
         InfoBoxComponent,
         LabelInputComponent,
         OnlyNumberDirective,
-        TripComponent
+        TripComponent,
+        ActivitiesComponent,
+        ButtonComponent
     ],
     imports: [
         RouterModule.forRoot(

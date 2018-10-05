@@ -28,53 +28,8 @@
 </div>
 
 <div class="activity-container" *ngIf="trip">
-    <div class="container rounded">
-        <h1>Selected activities</h1>
-    </div>
-    <div class="container activitybox rounded" *ngFor="let venue of trip.venues" >
-         <div class="row">
-            <div class="col-sm-7">
-                <figure class="figure">
-                    <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded" />
-                    <figcaption class="figure-caption">Picture taken by <mark>Benjamin Bannister</mark>.</figcaption>
-                </figure>
-            </div>
-            <div class="col-sm-5">
-                <div class="titlebox bg-primary">
-                    <h2>{{venue.name}}</h2>
-                </div>
-                <div *ngIf="venue.address" class="venue-address">
-                    <p *ngFor="let addressLine of venue.address">
-                        {{addressLine}}
-                </p>
-            </div>
-            <button class="btn btn-danger" (click)="removeVenue(venue)">Remove Activity</button>
-        </div>
-    </div>
-</div>
-<div class="container rounded">
-    <h1>Sugested activities</h1>
-</div>
-<div class="container activitybox rounded" *ngFor="let venue of venueSugestions">
-     <div class="row">
-        <div class="col-sm-7">
-            <figure class="figure">
-                <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded" />
-                <figcaption class="figure-caption">Picture taken by <mark>Benjamin Bannister</mark>.</figcaption>
-            </figure>
-        </div>
-        <div class="col-sm-5">
-            <div class="titlebox bg-primary">
-                <h2>{{venue.name}}</h2>
-            </div>
-            <div *ngIf="venue.address" class="venue-address">
-                <p *ngFor="let addressLine of venue.address">
-                    {{addressLine}}
-            </p>
-        </div>
-        <button class="btn btn-primary" (click)="addVenue(venue)">Add Activity</button>
-    </div>
-</div>
+    <app-activities title="Selected activities" [venues]="trip.venues" (buttonClick)="removeVenue($event)"></app-activities>
+    <app-activities title="Suggested activities" [venues]="venueSugestions" [addButton]="true" (buttonClick)="addVenue($event)"></app-activities>
 </div>
 <!-- OLD ---------------
 <div class="container activitybox rounded">
@@ -267,4 +222,3 @@
     </div>
 </div>
 -->
-</div>
