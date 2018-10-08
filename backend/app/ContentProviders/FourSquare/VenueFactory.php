@@ -11,6 +11,7 @@ namespace App\ContentProviders\FourSquare;
 use App\ContentProviders\FourSquare;
 use App\Venue;
 use App\VenueCategory;
+use App\VenueImage;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -97,13 +98,16 @@ class VenueFactory
      */
     public function createVenueFromAPIResponse($object): Venue
     {
+        //dd($object->photos->groups[1]->items);
         $venue = new Venue();
         $venue->setId($object->id);
         $venue->setName($object->name);
+        $venue->setDescription($object->description);
         $venue->setAddressHumanReadable($object->location->formattedAddress);
         $venue->setLatitude($object->location->lat);
         $venue->setLongitude($object->location->lng);
         $this->setVenueCategories($object->categories, $venue);
+        $this->setVenueImages($object->photos->groups[1]->items, $venue);
         if(isset($object->url)) $venue->setURL($object->url);
         if(isset($object->hours)) $venue->setOpeningHours($object->hours->status);
         if(isset($object->popular->status)) $venue->setPopularHours($object->popular->status);
@@ -144,6 +148,23 @@ class VenueFactory
             $newCategory->setName($category->name);
             $newCategory->setPluralName($category->pluralName);
             array_push($venue->categories, $newCategory);
+        }
+    }
+
+    /**
+     * @param $images
+     * @param Venue $venue
+     */
+    private function setVenueImages($images, Venue $venue)
+    {
+        foreach($images as $image) {
+            $newImage = new VenueImage();
+            $newImage->setShotAt(\Carbon\Carbon::createFromTimestamp($image->createdAt)->toCookieString());
+            $newImage->setPhotographer(ucfirst($image->user->firstName) . " " . ucfirst($image->user->lastName));
+            $newImage->setPhotographerImage($image->user->photo->prefix . "250x250" . $image->user->photo->suffix);
+            $newImage->setHorizontalRectangleURL($image->prefix . "800x344" . $image->suffix);
+            $newImage->setSquareURL($image->prefix . min($image->width, $image->height) . "x" . min($image->width, $image->height) . $image->suffix);
+            array_push($venue->images, $newImage);
         }
     }
 

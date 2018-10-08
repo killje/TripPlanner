@@ -19,14 +19,15 @@
 
 #front-page-header-container {
     padding-bottom: 0;
-    padding-top: 32px;
+    padding-top: 0;
+    margin-bottom: 0;
 }
 
-#mapButtonContainer {
-    margin-bottom: 26px;
+.mapButtonContent {
+    padding-bottom: 2em;
 }
 
-#mapButtonContainer button {
+button {
     width:100%;
 }
 

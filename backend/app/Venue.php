@@ -26,6 +26,13 @@ class Venue
     protected $name;
 
     /**
+     * A Description of what this venue is about
+     * Example: Serving up the best dumplings, noodles and sesame pancakes in New York City www.vanessas.com
+     * @var string
+     */
+    protected $description;
+
+    /**
      * Full Address
      * Example:
      * "[180 Orchard St (btwn Houston & Stanton St)", "New York, NY 10002", "United Stated"]
@@ -52,6 +59,12 @@ class Venue
      * @var array
      */
     public $categories = [];
+
+    /**
+     * Venue Images
+     * @var array
+     */
+    public $images = [];
 
     /**
      * URL with more information about this venue
@@ -107,10 +120,12 @@ class Venue
         return array(
             "id" => $this->getId(),
             "name" => $this->getName(),
+            "description" => $this->getDescription(),
             "address" => $this->getAddressHumanReadable(),
             "latitude" => $this->getLatitude(),
             "longitude" => $this->getLongitude(),
             "categories" => $this->getCategoriesAsArray(),
+            "images" => $this->getImagesAsArray(),
             "url" => $this->URL,
             "openingHours" => $this->openingHours,
             "popularHours" => $this->popularHours,
@@ -126,6 +141,14 @@ class Venue
         $arr = [];
         foreach($this->categories as $category) {
             array_push($arr, $category->getAsArray());
+        }
+        return $arr;
+    }
+
+    public function getImagesAsArray() {
+        $arr = [];
+        foreach ($this->images as $image) {
+            array_push($arr, $image->getAsArray());
         }
         return $arr;
     }
@@ -352,6 +375,38 @@ class Venue
     public function setLongitude(float $longitude): void
     {
         $this->longitude = $longitude;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return array
+     */
+    public function getImages(): array
+    {
+        return $this->images;
+    }
+
+    /**
+     * @param array $images
+     */
+    public function setImages(array $images): void
+    {
+        $this->images = $images;
     }
 
 
