@@ -1,27 +1,25 @@
+.activitybox {
+    background-color: #F0F0F0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
 
-
-#frontPageContainer {
-    background-color: #CCCCCC;
-    padding: 16px;
+.titlebox {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    color: white;
 }
 
 #header {
     background-color: #3a90e0;
 }
 
-#frontPageContent {
-    max-width:850px;
-    background-color: #FFFFFF;
-    margin: 0 auto;
-    padding: 26px 0;
-    -webkit-box-shadow: -10px -5px 22px -6px rgba(0,0,0,0.75);
-    -moz-box-shadow: -10px -5px 22px -6px rgba(0,0,0,0.75);
-    box-shadow: -10px -5px 22px -6px rgba(0,0,0,0.75);
-}
-
-#frontPageContent > div {
-    padding: 0 26px;
-    margin-bottom: 26px;
+#front-page-header-container {
+    padding-bottom: 0;
+    padding-top: 32px;
 }
 
 #mapButtonContainer {
@@ -32,24 +30,10 @@
     width:100%;
 }
 
-#title {
-    margin-bottom: 26px;
-    text-align: center;
-}
+@media (max-width: 991.98px) { 
 
-
-@media (max-width: 767.98px) { 
-    #frontPageContainer {
-        background-color: #FFFFFF;
-        padding: 16px 0;
+    #front-page-header-container {
+        padding-top: 64px;
     }
-    #frontPageContent {
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
 
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
 }

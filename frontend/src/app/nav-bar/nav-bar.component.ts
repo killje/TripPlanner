@@ -1,7 +1,5 @@
-import {Component, OnInit, AfterViewInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, AfterViewInit} from '@angular/core';
 
-import {NavItem} from './nav-item';
 import {NavBarService} from './nav-bar.service';
 
 @Component({
@@ -9,25 +7,9 @@ import {NavBarService} from './nav-bar.service';
     templateUrl: './nav-bar.component.html',
     styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent implements OnInit, AfterViewInit {
+export class NavBarComponent implements AfterViewInit {
 
-    ngOnInit(): void {
-    }
-
-    private navItems: NavItem[] = [];
-    private currentItem: NavItem;
-
-    constructor(private navBarService: NavBarService, private router: Router) {
-        this.navItems.push(new NavItem("Home", "/"));
-        this.navItems.push(new NavItem("Trip", '/trip'));
-        this.navItems.push(new NavItem("Map", "/map"));
-        
-        for (let navItem of this.navItems) {
-            if (navItem.getLink() == router.url) {
-                this.currentItem = navItem;
-                break;
-            }
-        }
+    constructor(private navBarService: NavBarService) {
     }
 
     ngAfterViewInit() {
