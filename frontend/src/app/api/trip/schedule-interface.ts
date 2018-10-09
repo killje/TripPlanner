@@ -1,9 +1,8 @@
 import {Venue} from "../venue/venue";
 
 export interface ScheduleInterface {
-    day: string,
+    day: number|"unsorted",
     items: {
-        parrentId?: string,
         id: number,
         venue: Venue
     }[];

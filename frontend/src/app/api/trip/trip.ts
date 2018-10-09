@@ -78,7 +78,7 @@ export class Trip implements TripInterface {
         });
     }
     
-    getSceduleByDay(day: string): Schedule {
+    getSceduleByDay(day: number|"unsorted"): Schedule {
         for (var schedule of this.schedule) {
             if (schedule.day == day) {
                 return schedule;

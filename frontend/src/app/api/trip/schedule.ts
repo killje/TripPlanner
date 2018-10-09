@@ -3,7 +3,7 @@ import {Venue} from "../venue/venue";
 
 export class Schedule implements ScheduleInterface {
 
-    day: string;
+    day: number|"unsorted";
     items: {
         parrentId?: string,
         id: number,
