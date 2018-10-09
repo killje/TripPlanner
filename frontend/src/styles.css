@@ -8,12 +8,24 @@ body, html {
     background-color: #3a90e0;
 }
 
-.bg-primary {
-    background-color: #3a90e0 !important;
+.btn-light {
+    background-color: #6cb8ff;
+    border-color: #4299ea;
+    color: white;
+}
+
+.btn-light:hover, .btn-light:focus, .btn-light:active, .btn-light.active, .open>.dropdown-toggle.btn-light {
+    background-color: #97cbfb;
+    border-color: #97cbfb;
+    color: white;
 }
 
 .bg-dark {
     background-color: #254563!important;
+}
+
+.bg-primary {
+    background-color: #3a90e0 !important;
 }
 
 .card {

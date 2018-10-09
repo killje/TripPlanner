@@ -1,6 +1,7 @@
 export interface VenueInterface {
     id: string,
     name: string,
+    description?: string,
     address: string[],
     latitude: number,
     longitude: number,
@@ -9,12 +10,19 @@ export interface VenueInterface {
         pluralName: string;
         icon: string;
     }[],
-    url: string,
-    openingHours: string,
-    popularHours: string,
-    price: string,
-    rating: string,
-    ratingColor: string,
+    images: {
+        shotAt: string;
+        photographer: string;
+        photographerImage: string;
+        horizontalRectangleURL: string;
+        squareURL: string;
+    }[],
+    url?: string,
+    openingHours?: string,
+    popularHours?: string,
+    price?: string,
+    rating?: string,
+    ratingColor?: string,
     peopleNow: string,
     likes: number;
 }

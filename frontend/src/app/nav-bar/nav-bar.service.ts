@@ -22,7 +22,7 @@ export class NavBarService {
     constructor(private router: Router) {
         this.addNavItem(new NavItem("Home", "/", true));
         this.addNavItem(new NavItem("Trip", '/trip'));
-        this.addNavItem(new NavItem("Map", "/map"));
+        this.addNavItem(new NavItem("Browse Activities", "/map"));
     };
 
     public toggleMenu(): void {

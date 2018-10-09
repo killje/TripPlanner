@@ -4,6 +4,7 @@ import {VenueInterface} from "./venue-interface";
 export class Venue implements VenueInterface{
     id: string;
     name: string;
+    description?: string;
     address: string[];
     latitude: number;
     longitude: number;
@@ -12,12 +13,19 @@ export class Venue implements VenueInterface{
         pluralName: string;
         icon: string;
     }[];
-    url: string;
-    openingHours: string;
-    popularHours: string;
-    price: string;
-    rating: string;
-    ratingColor: string;
+    images: {
+        shotAt: string;
+        photographer: string;
+        photographerImage: string;
+        horizontalRectangleURL: string;
+        squareURL: string;
+    }[];
+    url?: string;
+    openingHours?: string;
+    popularHours?: string;
+    price?: string;
+    rating?: string;
+    ratingColor?: string;
     peopleNow: string;
     likes: number;
 
@@ -28,10 +36,12 @@ export class Venue implements VenueInterface{
         
         this.id = intf.id;
         this.name = intf.name;
+        this.description = intf.description;
         this.address = intf.address;
         this.latitude = intf.latitude;
         this.longitude = intf.longitude;
         this.categories = intf.categories;
+        this.images = intf.images;
         this.url = intf.url;
         this.openingHours = intf.openingHours;
         this.popularHours = intf.popularHours;

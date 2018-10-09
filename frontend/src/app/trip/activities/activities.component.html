@@ -1,23 +1,47 @@
 <div class="container rounded">
     <h1>{{title}}</h1>
 </div>
-<div class="container activitybox rounded" *ngFor="let venue of venues" >
-     <div class="row">
-        <div class="col-sm-7">
-            <figure class="figure">
-                <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded" />
-                <figcaption class="figure-caption">Picture taken by <mark>Benjamin Bannister</mark>.</figcaption>
-            </figure>
+<div *ngIf="venues">
+    <div class="container activitybox rounded" *ngFor="let venue of venues" >
+         <div class="row">
+            <div class="col-sm-7">
+                <figure class="figure">
+                    <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded" />
+                    <figcaption class="figure-caption">Picture taken by <mark>Benjamin Bannister</mark>.</figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-5">
+                <div class="titlebox bg-primary">
+                    <h2>{{venue.name}}</h2>
+                </div>
+                <div *ngIf="venue.address" class="venue-address">
+                    <p *ngFor="let addressLine of venue.address">{{addressLine}}</p>
+                </div>
+                <app-button text="Add Activity" buttonClass="btn-primary" *ngIf="addButton" (buttonClick)="buttonClicked(venue)"></app-button>
+                <app-button text="Remove Activity" buttonClass="btn-danger" *ngIf="!addButton" (buttonClick)="buttonClicked(venue)"></app-button>
+            </div>
         </div>
-        <div class="col-sm-5">
-            <div class="titlebox bg-primary">
-                <h2>{{venue.name}}</h2>
+    </div>
+</div>
+<div *ngIf="schedule">
+    <div class="container activitybox rounded" *ngFor="let item of schedule.items" >
+         <div class="row">
+            <div class="col-sm-7">
+                <figure class="figure">
+                    <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded" />
+                    <figcaption class="figure-caption">Picture taken by <mark>Benjamin Bannister</mark>.</figcaption>
+                </figure>
             </div>
-            <div *ngIf="venue.address" class="venue-address">
-                <p *ngFor="let addressLine of venue.address">{{addressLine}}</p>
+            <div class="col-sm-5">
+                <div class="titlebox bg-primary">
+                    <h2>{{item.venue.name}}</h2>
+                </div>
+                <div *ngIf="item.venue.address" class="venue-address">
+                    <p *ngFor="let addressLine of item.venue.address">{{addressLine}}</p>
+                </div>
+                <app-button text="Add Activity" buttonClass="btn-primary" *ngIf="addButton" (buttonClick)="buttonClicked(venue)"></app-button>
+                <app-button text="Remove Activity" buttonClass="btn-danger" *ngIf="!addButton" (buttonClick)="buttonClicked(venue)"></app-button>
             </div>
-            <app-button text="Add Activity" buttonClass="btn-primary" *ngIf="addButton" (buttonClick)="buttonClicked(venue)"></app-button>
-            <app-button text="Remove Activity" buttonClass="btn-danger" *ngIf="!addButton" (buttonClick)="buttonClicked(venue)"></app-button>
         </div>
     </div>
 </div>

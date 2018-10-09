@@ -19,21 +19,26 @@
 
 #front-page-header-container {
     padding-bottom: 0;
-    padding-top: 32px;
+    padding-top: 0;
+    margin-bottom: 0;
 }
 
-#mapButtonContainer {
-    margin-bottom: 26px;
+#frontPageContainer {
+    margin-bottom: 0;
 }
 
-#mapButtonContainer button {
+.mapButtonContent {
+    padding-bottom: 2em;
+}
+
+button {
     width:100%;
 }
 
 @media (max-width: 991.98px) { 
 
-    #front-page-header-container {
-        padding-top: 64px;
+    #frontPageContainer {
+        margin-top: 64px;
     }
 
 }
