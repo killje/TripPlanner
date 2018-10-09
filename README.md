@@ -33,7 +33,7 @@ Now, you can access the website by going to http://yourlocalwebsitename.test whi
 - DELETE `/trips/destroy` with arguments: uuid. Example: `/trips/destroy?uuid=f60e6d5f-772c-47a1-a81f-e06709671cc7`
 - POST `/trips/venues/add` with arguments: uuid. Example: `/trips/venues/add?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f&venue_id=412d2800f964a520df0c1fe3`
 - DELETE `/trips/venues/remove` with arguments: uuid, venue_id. Example: `/trips/venues/remove?uuid=1e5289a9-1d30-44cf-bfbe-0e4ec61f4138&venue_id=4a942a25f964a520972020e3`
-- GET `/trips/venues/list` with arguments: uuid. Example: `/trips/venues/list?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f`
+- GET `/trips/show` with arguments: uuid. Example: `/trips/show?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f`
 - GET `/trips/schedule` with arguments: uuid=..., generate=0/1. Example: `/trips/schedule?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f&generate=1`
 
 # Frontend
