@@ -16,7 +16,7 @@ export interface VenueInterface {
         photographerImage: string;
         horizontalRectangleURL: string;
         squareURL: string;
-    },
+    }[],
     url: string,
     openingHours: string,
     popularHours: string,
