@@ -1,8 +1,12 @@
+import {EventEmitter} from "@angular/core";
+
 import {TripInterface} from "./trip-interface";
 import {Venue} from "../venue/venue";
+import {TripService} from "../trip.service";
+import {Schedule} from "./schedule";
 
 export class Trip implements TripInterface {
-    
+
     id: string;
     uuid: string;
     name: string;
@@ -10,9 +14,12 @@ export class Trip implements TripInterface {
     created_by: string;
     created_at: string;
     updated_at: string;
-    venues: Venue[];
-    
-    constructor(intf?: TripInterface) {
+    schedule: Schedule[];
+
+    public venueAdded: EventEmitter<Venue> = new EventEmitter<Venue>();
+    public venueRemoved: EventEmitter<Venue> = new EventEmitter<Venue>();
+
+    constructor(private tripService: TripService, intf?: TripInterface) {
         if (intf == undefined) {
             return;
         }
@@ -23,9 +30,13 @@ export class Trip implements TripInterface {
         this.created_by = intf.created_by;
         this.created_at = intf.created_at;
         this.updated_at = intf.updated_at;
-        this.venues = intf.venues;
+        var schedule: Schedule[] = [];
+        for (var scheduleInterface of intf.schedule) {
+            schedule.push(new Schedule(scheduleInterface));
+        }
+        this.schedule = schedule;
     }
-    
+
     public getDaysFormatted(): string {
         if (this.number_of_days == 1) {
             return this.number_of_days.toString() + " day";
@@ -33,5 +44,47 @@ export class Trip implements TripInterface {
             return this.number_of_days.toString() + " days";
         }
     }
+
+    addVenue(venue: Venue): void {
+        this.tripService.addVenue(this.uuid, venue.id).subscribe((success) => {
+            if (success) {
+                var schedule = this.getSceduleByDay("unsorted");
+                if (schedule == null) {
+                    schedule = new Schedule();
+                    schedule.day = "unsorted";
+                }
+                schedule.push(venue);
+                this.venueAdded.emit(venue);
+            }
+        });
+    }
+
+    removeVenue(venue: Venue): void {
+        this.tripService.removeVenue(this.uuid, venue.id).subscribe((success) => {
+            if (success) {
+                for (var schedule of this.schedule) {
+                    if (schedule.removeVenue(venue)){
+                        this.venueRemoved.emit(venue);
+                        break;
+                    }
+                }
+            }
+        });
+    }
     
+    generateSchedule(): void {
+        this.tripService.scheduleTrip(this.uuid, true).subscribe((schedule: Schedule[]) => {
+            
+        });
+    }
+    
+    getSceduleByDay(day: number|"unsorted"): Schedule {
+        for (var schedule of this.schedule) {
+            if (schedule.day == day) {
+                return schedule;
+            }
+        }
+        return null;
+    }
+
 }

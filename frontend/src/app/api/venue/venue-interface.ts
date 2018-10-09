@@ -1,7 +1,7 @@
 export interface VenueInterface {
     id: string,
     name: string,
-    description: string,
+    description?: string,
     address: string[],
     latitude: number,
     longitude: number,
@@ -17,12 +17,12 @@ export interface VenueInterface {
         horizontalRectangleURL: string;
         squareURL: string;
     }[],
-    url: string,
-    openingHours: string,
-    popularHours: string,
-    price: string,
-    rating: string,
-    ratingColor: string,
+    url?: string,
+    openingHours?: string,
+    popularHours?: string,
+    price?: string,
+    rating?: string,
+    ratingColor?: string,
     peopleNow: string,
     likes: number;
 }

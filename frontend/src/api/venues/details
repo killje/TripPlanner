@@ -1,0 +1,36 @@
+{{
+    "id":"412d2800f964a520df0c1fe3",
+    "name":"Central Park",
+    "description":"Central Park is the 843-acre green heart of Manhattan and is maintained by the Central Park Conservancy. It was designed in the 19th century by Frederick Law Olmsted and Calvert Vaux as an urban escape for New Yorkers, and now receives over 40 million visits per year.",
+    "address":[
+        "59th St to 110th St (5th Ave to Central Park West)",
+        "New York, NY 10028",
+        "United States"
+    ],
+    "latitude":40.78408342593807134335293085314333438873291015625,
+    "longitude":-73.9648532867431640625,
+    "categories":[
+        {
+            "name":"Park",
+            "pluralName":"Parks",
+            "icon":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/park_64.png"
+        }
+    ],
+    "images":[
+        {
+            "shotAt":"Sunday, 10-Mar-2013 00:21:55 UTC",
+            "photographer":"Benjamin Bannister",
+            "photographerImage":"https:\/\/igx.4sqi.net\/img\/user\/250x250\/655018-SOLGBBXDKHVPRIPM.jpg",
+            "horizontalRectangleURL":"https:\/\/igx.4sqi.net\/img\/general\/800x344\/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg",
+            "squareURL":"https:\/\/igx.4sqi.net\/img\/general\/612x612\/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg"
+        }
+    ],
+    "url":"http:\/\/www.centralparknyc.org",
+    "openingHours":"Closed until 6:00 AM",
+    "popularHours":null,
+    "price":null,
+    "rating":"9.8",
+    "ratingColor":"00B551",
+    "peopleNow":"0",
+    "likes":20260
+}}
