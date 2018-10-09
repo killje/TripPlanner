@@ -30,7 +30,7 @@ class Venue
      * Example: Serving up the best dumplings, noodles and sesame pancakes in New York City www.vanessas.com
      * @var string
      */
-    protected $description;
+    protected $description = "";
 
     /**
      * Full Address

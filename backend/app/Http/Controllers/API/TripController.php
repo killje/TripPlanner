@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\ContentProviders\ContentProvider;
 use App\Http\Controllers\Controller;
+use App\Scheduler;
 use App\Trip;
 use App\TripVenue;
 use Illuminate\Http\Request;
@@ -191,13 +192,6 @@ class TripController extends Controller
             ], 422);
         }
 
-        $venuesJSON = [];
-        foreach($trip->venues()->get() as $venue)
-        {
-            $venue = $contentProvider->getVenueById($venue->venue_id)->getAsSimpleArray();
-            array_push($venuesJSON, $venue);
-        }
-
         return response()->json([
             'status' => 'success',
             'data' => [
@@ -208,7 +202,7 @@ class TripController extends Controller
                 'created_by' => $trip->created_by,
                 'created_at' => $trip->created_at->toCookieString(),
                 'updated_at' => $trip->updated_at->toCookieString(),
-                'venues' => $venuesJSON
+                'schedule' => $trip->generateSchedule($contentProvider, false, true),
             ]
         ]);
     }
@@ -217,6 +211,7 @@ class TripController extends Controller
      * Input argument: uuid=.... regenerate=0/1
      * @param ContentProvider $contentProvider
      * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getSchedule(ContentProvider $contentProvider, Request $request)
     {
@@ -232,7 +227,7 @@ class TripController extends Controller
         }
 
         return response()->json([
-            'data' => $contentProvider->getSchedule($validatedData['uuid'], $generate, true)
+            'schedule' => $contentProvider->getSchedule($validatedData['uuid'], $generate, true)
         ]);
     }
 }

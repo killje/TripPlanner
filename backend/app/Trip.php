@@ -49,6 +49,7 @@ class Trip extends Model
         foreach($this->venues()->get() as $detailedVenue) {
             array_push($detailedVenues, $contentProvider->getVenueById($detailedVenue->venue_id));
         }
+
         return $detailedVenues;
     }
 
