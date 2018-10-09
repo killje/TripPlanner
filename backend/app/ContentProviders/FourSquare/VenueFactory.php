@@ -102,7 +102,7 @@ class VenueFactory
         $venue = new Venue();
         $venue->setId($object->id);
         $venue->setName($object->name);
-        $venue->setDescription($object->description);
+        if(isset($object->description)) $venue->setDescription($object->description);
         $venue->setAddressHumanReadable($object->location->formattedAddress);
         $venue->setLatitude($object->location->lat);
         $venue->setLongitude($object->location->lng);
