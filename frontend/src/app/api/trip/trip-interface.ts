@@ -1,4 +1,4 @@
-import {Venue} from "../venue/venue";
+import {ScheduleInterface} from "./schedule-interface";
 
 export interface TripInterface {
     
@@ -9,6 +9,6 @@ export interface TripInterface {
     created_by: string,
     created_at: string,
     updated_at: string,
-    venues: Venue[];
+    schedule: ScheduleInterface[];
     
 }

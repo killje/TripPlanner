@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 import {Venue} from '../../api/venue/venue';
+import {Schedule} from '../../api/trip/schedule';
 
 @Component({
     selector: 'app-activities',
@@ -9,15 +10,20 @@ import {Venue} from '../../api/venue/venue';
 })
 export class ActivitiesComponent implements OnInit {
 
-    @Input() venues: Venue[];
+    @Input() venues?: Venue[];
+    @Input() schedule?: Schedule;
     @Input() title: string;
     @Input() addButton?: boolean = false;
     
     @Output() buttonClick: EventEmitter<Venue> = new EventEmitter<Venue>();
 
-    constructor() {}
+    constructor() {
+    }
 
     ngOnInit() {
+        if (this.venues == undefined && this.schedule == undefined) {
+            throw new Error("Venues and schedule cant be both empty");
+        }
     }
     
     buttonClicked(venue: Venue) {

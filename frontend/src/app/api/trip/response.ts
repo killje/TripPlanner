@@ -5,11 +5,11 @@ export interface CreateTripResponse {
     uuid: string;
 }
 
-export interface AddVenueResonse {
+export interface VenuesAddResponse {
     status: string;
 }
 
-export interface RemoveVenueResonse {
+export interface VenuesRemoveResponse {
     status: string;
 }
 

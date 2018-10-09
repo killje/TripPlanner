@@ -28,8 +28,10 @@
 </div>
 
 <div class="activity-container" *ngIf="trip">
-    <app-activities title="Selected activities" [venues]="trip.venues" (buttonClick)="removeVenue($event)"></app-activities>
-    <app-activities title="Suggested activities" [venues]="venueSugestions" [addButton]="true" (buttonClick)="addVenue($event)"></app-activities>
+    <div *ngFor="let schedule of trip.schedule">
+        <app-activities [title]="schedule.day" [schedule]="schedule" (buttonClick)="schedule.removeVenue($event)"></app-activities>
+    </div>
+    <app-activities title="Suggested activities" [venues]="venueSugestions" [addButton]="true" (buttonClick)="trip.addVenue($event)"></app-activities>
 </div>
 <!-- OLD ---------------
 <div class="container activitybox rounded">

@@ -30,13 +30,18 @@ export class TripComponent implements OnInit {
         if (id) {
             this.tripService.getTrip(id).subscribe((trip: Trip) => {
                 this.trip = trip;
+                trip.venueAdded.subscribe((venue: Venue) => {
+                    var index = this.venueSugestions.indexOf(venue);
+                    if (index > -1) {
+                        this.venueSugestions.splice(index, 1);
+                    }
+                });
                 this.venueService.getFeaturedByLocation(trip.name);
                 this.venueService.venuesUpdated.subscribe((venues: Venue[]) => {
                     this.venueSugestions = venues;
                 });
             });
         }
-         
     }
 
     createTrip(): void {
@@ -53,6 +58,12 @@ export class TripComponent implements OnInit {
         // Create the trip. Once created set the trip
         this.tripService.createTrip(this.destination, this.days).subscribe((trip: Trip) => {
             this.trip = trip;
+            trip.venueAdded.subscribe((venue: Venue) => {
+                var index = this.venueSugestions.indexOf(venue);
+                if (index > -1) {
+                    this.venueSugestions.splice(index, 1);
+                }
+            });
             this.venueService.getFeaturedByLocation(trip.name);
             this.venueService.venuesUpdated.subscribe((venues: Venue[]) => {
                 this.venueSugestions = venues;
@@ -69,29 +80,6 @@ export class TripComponent implements OnInit {
         if (this.days) {
             this.daysError = false;
         }
-    }
-    
-    addVenue(venue: Venue):void {
-        this.tripService.addVenue(this.trip.uuid, venue.id).subscribe((success) => {
-            if (success) {
-                this.trip.venues.push(venue);
-                var index = this.venueSugestions.indexOf(venue);
-                if (index > -1) {
-                    this.venueSugestions.splice(index, 1);
-                }
-            }
-        });
-    }
-    
-    removeVenue(venue: Venue):void {
-        this.tripService.removeVenue(this.trip.uuid, venue.id).subscribe((success) => {
-            if (success) {
-                var index = this.trip.venues.indexOf(venue);
-                if (index > -1) {
-                    this.trip.venues.splice(index, 1);
-                }
-            }
-        });
     }
     
 }
