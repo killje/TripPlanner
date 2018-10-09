@@ -14,7 +14,7 @@ class VenueOrder extends Migration
     public function up()
     {
         Schema::table('trip_venues', function (Blueprint $table) {
-            $table->string('parent_venue_id')->default('');
+            $table->integer('order')->default(0);
         });
     }
 
@@ -26,7 +26,7 @@ class VenueOrder extends Migration
     public function down()
     {
         Schema::table('trip_venues', function (Blueprint $table) {
-            $table->dropColumn('parent_venue_id');
+            $table->dropColumn('order');
         });
     }
 }

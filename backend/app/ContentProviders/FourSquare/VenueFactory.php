@@ -102,7 +102,7 @@ class VenueFactory
         $venue = new Venue();
         $venue->setId($object->id);
         $venue->setName($object->name);
-        $venue->setDescription($object->description);
+        if(isset($object->description)) $venue->setDescription($object->description);
         $venue->setAddressHumanReadable($object->location->formattedAddress);
         $venue->setLatitude($object->location->lat);
         $venue->setLongitude($object->location->lng);
@@ -160,7 +160,10 @@ class VenueFactory
         foreach($images as $image) {
             $newImage = new VenueImage();
             $newImage->setShotAt(\Carbon\Carbon::createFromTimestamp($image->createdAt)->toCookieString());
-            $newImage->setPhotographer(ucfirst($image->user->firstName) . " " . ucfirst($image->user->lastName));
+            if(isset($image->user->lastName))
+                $newImage->setPhotographer(ucfirst($image->user->firstName) . " " . ucfirst($image->user->lastName));
+            else
+                $newImage->setPhotographer(ucfirst($image->user->firstName));
             $newImage->setPhotographerImage($image->user->photo->prefix . "250x250" . $image->user->photo->suffix);
             $newImage->setHorizontalRectangleURL($image->prefix . "800x344" . $image->suffix);
             $newImage->setSquareURL($image->prefix . min($image->width, $image->height) . "x" . min($image->width, $image->height) . $image->suffix);
