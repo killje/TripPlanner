@@ -23,6 +23,10 @@
     margin-bottom: 0;
 }
 
+#frontPageContainer {
+    margin-bottom: 0;
+}
+
 .mapButtonContent {
     padding-bottom: 2em;
 }
@@ -33,8 +37,8 @@ button {
 
 @media (max-width: 991.98px) { 
 
-    #front-page-header-container {
-        padding-top: 64px;
+    #frontPageContainer {
+        margin-top: 64px;
     }
 
 }
