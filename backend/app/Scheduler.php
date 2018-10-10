@@ -102,7 +102,7 @@ class Scheduler
             if($numberOfActivitiesOnDay > $max)
                 $max = $numberOfActivitiesOnDay;
         }
-        if($min / $max <= 0.5)
+        if($min / $max < 0.5)
             return false;
 
         return true;
