@@ -129,6 +129,11 @@ class TripController extends Controller
             ], 422);
         }
 
+        // abort if it's already added
+        if($trip->venues()->where('venue_id', '=', $validatedData['venue_id'])->count() != 0) {
+            return response()->json(['status' => 'failed']);
+        }
+
         $venue = new TripVenue();
         $venue->venue_id = $validatedData['venue_id'];
         $trip->venues()->save($venue);
@@ -229,5 +234,27 @@ class TripController extends Controller
         return response()->json([
             'schedule' => $contentProvider->getSchedule($validatedData['uuid'], $generate, true)
         ]);
+    }
+
+    /**
+     * Input arguments: Trip ID, TripVenue ID, New Day Number, New Order Number
+     * @param ContentProvider $contentProvider
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function changeVenueOrder(ContentProvider $contentProvider, Request $request)
+    {
+        $validatedData = $request->validate([
+            'uuid' => 'required|exists:trips,uuid',
+            'tripvenueid' => 'required|exists:trip_venues,id|integer',
+            'day_number' => 'required|integer',
+            'order_number' => 'required|integer'
+        ]);
+
+        $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
+
+        $trip->updateVenueOrder($validatedData['tripvenueid'], $validatedData['day_number'], $validatedData['order_number']);
+
+        return response()->json(['status' => 'success']);
     }
 }
