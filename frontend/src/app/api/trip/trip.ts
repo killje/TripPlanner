@@ -54,7 +54,7 @@ export class Trip implements TripInterface {
             scheduleItem.day = "unsorted";
         }
         newSchedule.push(scheduleItem);
-        
+
         this.schedule = newSchedule;
         
     }
@@ -94,12 +94,12 @@ export class Trip implements TripInterface {
             }
         });
     }
-    
+
     hasVenues(): boolean {
         if (this.schedule.length == 0) {
             return false;
         }
-        for(var schedule of this.schedule) {
+        for (var schedule of this.schedule) {
             if (schedule.items.length != 0) {
                 return true;
             }
@@ -123,8 +123,29 @@ export class Trip implements TripInterface {
         return null;
     }
 
-    itemsReordered(): void {
-        console.log(this.schedule);
+    itemsReordered(changedVenue: Venue): void {
+        var day: number | "unsorted";
+        var order: number;
+        var index: number; 
+        var found: boolean = false;
+        for (var schedule of this.schedule) {
+            index = 1;
+            for (var item of schedule.items) {
+                if (item == changedVenue) {
+                    day = schedule.day;
+                    order = index;
+                    found = true;
+                    break;
+                }
+            }
+            if (found) {
+                break;
+            }
+        }
+        if (!found) {
+            return;
+        }
+        this.tripService.changeOrderVenue(this.uuid, changedVenue.id, day, order);
     }
 
 }

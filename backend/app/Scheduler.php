@@ -245,8 +245,7 @@ class Scheduler
             // if array format
             if ($array) {
                 $planning[$activity->day_number]['day'] = ($activity->day_number == 0 ? "unsorted" : $activity->day_number);
-                $planning[$activity->day_number]["items"][$activity->order-1]['id'] = $activity->id;
-                $planning[$activity->day_number]["items"][$activity->order-1]['venue'] = $contentProvider->getVenueById($activity->venue_id)->getAsSimpleArray();
+                $planning[$activity->day_number]["items"][$activity->order-1] = $contentProvider->getVenueById($activity->venue_id)->getAsSimpleArray();
             } else
                 $planning[$activity->day_number][] = $contentProvider->getVenueById($activity->venue_id);
         }

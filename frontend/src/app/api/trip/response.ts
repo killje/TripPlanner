@@ -22,3 +22,7 @@ export interface GetTripResponse {
 export interface ScheduleResponse {
     schedule: ScheduleInterface[];
 }
+
+export interface VenuesChangeOrderResponse {
+    status: string;
+}

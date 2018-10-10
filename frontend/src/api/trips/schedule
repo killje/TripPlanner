@@ -1,419 +1,354 @@
 {
-  "schedule": [
-    {
-      "day": "unsorted",
-      "items": []
-    },
-    {
-      "day": 1,
-      "items": [
-        {
-          "id": 5,
-          "venue": {
-            "id": "4b40c455f964a520e0ba25e3",
-            "name": "Noorderplantsoen",
-            "description": "Het Noorderplantsoen ligt op de plaats waar in de 17e eeuw de verdedigingswallen van de stad werden gebouwd. De grachten zijn vervangen door vijvers en op de plaats waar de wallen stonden, ligt nu een park in Engelse stijl met hoogteverschillen. Het park is erg lang maar ook erg smal.",
-            "address": [
-              "Leliesingel (Kruissingel)",
-              "Groningen",
-              "Nederland"
-            ],
-            "latitude": 53.223407913752894,
-            "longitude": 6.5554235978050786,
-            "categories": [
-              {
-                "name": "Park",
-                "pluralName": "Parks",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_64.png"
-              },
-              {
-                "name": "Playground",
-                "pluralName": "Playgrounds",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/playground_64.png"
-              }
-            ],
-            "images": [
-              {
-                "shotAt": "Friday, 03-May-2013 07:03:13 UTC",
-                "photographer": "Kevin De Vette",
-                "photographerImage": "https://igx.4sqi.net/img/user/250x250/J2GX21PED51YHQHR.jpg",
-                "horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/9379039_X34Ke-4F6vO7rFelqj2vEPEPi03zZnUiASDAWgGrBjw.jpg",
-                "squareURL": "https://igx.4sqi.net/img/general/612x612/9379039_X34Ke-4F6vO7rFelqj2vEPEPi03zZnUiASDAWgGrBjw.jpg"
-              }
-            ],
-            "url": "http://www.noorderplantsoen.nl",
-            "openingHours": null,
-            "popularHours": null,
-            "price": null,
-            "rating": "9.6",
-            "ratingColor": "00B551",
-            "peopleNow": "0",
-            "likes": 134
-          }
-        },
-        {
-          "id": 9,
-          "venue": {
-            "id": "4fa4fd84e4b0e7038aefa7d9",
-            "name": "Pure Groningen",
-            "description": "Frozen Yoghurt, Slagroomijs, Milkshakes, Donuts, Brownies, Tosti's,Sappen en overheerlijke Koeken.",
-            "address": [
-              "Vismarkt 10 (Koude Gat)",
-              "9711 KS Groningen",
-              "Nederland"
-            ],
-            "latitude": 53.217708031885536,
-            "longitude": 6.566397252621049,
-            "categories": [
-              {
-                "name": "Frozen Yogurt Shop",
-                "pluralName": "Frozen Yogurt Shops",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/food/frozenyogurt_64.png"
-              },
-              {
-                "name": "Ice Cream Shop",
-                "pluralName": "Ice Cream Shops",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/food/icecream_64.png"
-              },
-              {
-                "name": "Bakery",
-                "pluralName": "Bakeries",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/food/bakery_64.png"
-              }
-            ],
-            "images": [
-              {
-                "shotAt": "Monday, 19-Jan-2015 18:12:11 UTC",
-                "photographer": "Pure Groningen",
-                "photographerImage": "https://igx.4sqi.net/img/user/250x250/33850000-3QYXYAOKR0LLXQHZ.png",
-                "horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/33850000__Mqu5bqNVBwQA-ZLfJurM86UTbRVFpONPfWopT-uPIE.jpg",
-                "squareURL": "https://igx.4sqi.net/img/general/2912x2912/33850000__Mqu5bqNVBwQA-ZLfJurM86UTbRVFpONPfWopT-uPIE.jpg"
-              }
-            ],
-            "url": "http://www.puregroningen.nl",
-            "openingHours": "Closed until 9:00 AM tomorrow",
-            "popularHours": "Likely open",
-            "price": "Cheap",
-            "rating": "9.1",
-            "ratingColor": "00B551",
-            "peopleNow": "0",
-            "likes": 30
-          }
-        }
-      ]
-    },
-    {
-      "day": 2,
-      "items": [
-        {
-          "id": 10,
-          "venue": {
-            "id": "4c94ed6358d4b60c422c2d29",
-            "name": "Oosterpoort Grote Zaal",
-            "description": "",
-            "address": [
-              "De Oosterpoort (Trompsingel 27)",
-              "9724 DA",
-              "Nederland"
-            ],
-            "latitude": 53.213976505139115,
-            "longitude": 6.576705023625482,
-            "categories": [
-              {
-                "name": "Theater",
-                "pluralName": "Theaters",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/performingarts_theater_64.png"
-              },
-              {
-                "name": "Arts & Crafts Store",
-                "pluralName": "Arts & Crafts Stores",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/shops/artstore_64.png"
-              }
-            ],
-            "images": [
-              {
-                "shotAt": "Friday, 15-Feb-2013 19:16:30 UTC",
-                "photographer": "Bram Willemse",
-                "photographerImage": "https://igx.4sqi.net/img/user/250x250/30158-0JV4YCOKXTW4405Z.jpg",
-                "horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/30158_VVF7xaXadpBxkumjc-3zMiEaswsEB6JEBl-6cetrMjA.jpg",
-                "squareURL": "https://igx.4sqi.net/img/general/584x584/30158_VVF7xaXadpBxkumjc-3zMiEaswsEB6JEBl-6cetrMjA.jpg"
-              }
-            ],
-            "url": "http://www.de-oosterpoort.nl",
-            "openingHours": null,
-            "popularHours": null,
-            "price": null,
-            "rating": "9.1",
-            "ratingColor": "00B551",
-            "peopleNow": "0",
-            "likes": 39
-          }
-        },
-        {
-          "id": 12,
-          "venue": {
-            "id": "4b22a1dcf964a520a44a24e3",
-            "name": "De Pintelier",
-            "description": "",
-            "address": [
-              "Kleine Kromme Elleboog 9",
-              "9718BS Groningen",
-              "Nederland"
-            ],
-            "latitude": 53.21860684682149,
-            "longitude": 6.56177324583391,
-            "categories": [
-              {
-                "name": "Bar",
-                "pluralName": "Bars",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/pub_64.png"
-              },
-              {
-                "name": "Beer Garden",
-                "pluralName": "Beer Gardens",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/beergarden_64.png"
-              }
-            ],
-            "images": [
-              {
-                "shotAt": "Thursday, 13-Sep-2012 15:20:02 UTC",
-                "photographer": "Remi Van Beekum",
-                "photographerImage": "https://igx.4sqi.net/img/user/250x250/0TAT1QVW01ATTRYF.jpg",
-                "horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/lLHLduGN_d2bybzzyxL8hzTUL10IJflzfm3-qFDcBjc.jpg",
-                "squareURL": "https://igx.4sqi.net/img/general/406x406/lLHLduGN_d2bybzzyxL8hzTUL10IJflzfm3-qFDcBjc.jpg"
-              }
-            ],
-            "url": "http://www.depintelier.nl",
-            "openingHours": "Closed until 3:00 PM",
-            "popularHours": null,
-            "price": "Moderate",
-            "rating": "9",
-            "ratingColor": "00B551",
-            "peopleNow": "0",
-            "likes": 135
-          }
-        }
-      ]
-    },
-    {
-      "day": 3,
-      "items": [
-        {
-          "id": 6,
-          "venue": {
-            "id": "4b669a95f964a5204e252be3",
-            "name": "Stadsschouwburg",
-            "description": "",
-            "address": [
-              "Turfsingel 86",
-              "9711 VX Groningen",
-              "Nederland"
-            ],
-            "latitude": 53.22073317505104,
-            "longitude": 6.571736180665293,
-            "categories": [
-              {
-                "name": "Theater",
-                "pluralName": "Theaters",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/performingarts_theater_64.png"
-              },
-              {
-                "name": "Music Venue",
-                "pluralName": "Music Venues",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_64.png"
-              },
-              {
-                "name": "Concert Hall",
-                "pluralName": "Concert Halls",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_64.png"
-              }
-            ],
-            "images": [
-              {
-                "shotAt": "Thursday, 30-May-2013 19:22:09 UTC",
-                "photographer": "Rianne Boven",
-                "photographerImage": "https://igx.4sqi.net/img/user/250x250/UO0PHAA3LECU1BKD.jpg",
-                "horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/10817715_tW5L6GW0jOSCTNTqnsd2SgJErPYMq7ubyUHCLRWiSx8.jpg",
-                "squareURL": "https://igx.4sqi.net/img/general/541x541/10817715_tW5L6GW0jOSCTNTqnsd2SgJErPYMq7ubyUHCLRWiSx8.jpg"
-              }
-            ],
-            "url": "http://www.de-oosterpoort.nl",
-            "openingHours": null,
-            "popularHours": null,
-            "price": null,
-            "rating": "9.2",
-            "ratingColor": "00B551",
-            "peopleNow": "0",
-            "likes": 86
-          }
-        },
-        {
-          "id": 11,
-          "venue": {
-            "id": "4ff169c5e4b05df964b17ce4",
-            "name": "Black & Bloom",
-            "description": "The latstes coffee sensation in Groningen! Keywords: Synesso, brewbar, artisan coffee, baked goods, coffeenerds, StarWars, RetroF1 and good music! See you soon!",
-            "address": [
-              "Oude Kijk In T Jatstraat 32",
-              "9712EK Groningen",
-              "Nederland"
-            ],
-            "latitude": 53.219432522691065,
-            "longitude": 6.56182459107847,
-            "categories": [
-              {
-                "name": "Coffee Shop",
-                "pluralName": "Coffee Shops",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_64.png"
-              }
-            ],
-            "images": [
-              {
-                "shotAt": "Thursday, 08-Nov-2012 15:38:06 UTC",
-                "photographer": "Dennis",
-                "photographerImage": "https://igx.4sqi.net/img/user/250x250/WQZAENXTA0YR2ZHD.jpg",
-                "horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/38553056_ea5FvvJgaoytM1Bbxe94kt_NgzJk336-obukB2T__VY.jpg",
-                "squareURL": "https://igx.4sqi.net/img/general/540x540/38553056_ea5FvvJgaoytM1Bbxe94kt_NgzJk336-obukB2T__VY.jpg"
-              }
-            ],
-            "url": "http://www.blackandbloom.nl",
-            "openingHours": "Open until 6:30 PM",
-            "popularHours": "Likely open",
-            "price": "Cheap",
-            "rating": "9",
-            "ratingColor": "00B551",
-            "peopleNow": "0",
-            "likes": 147
-          }
-        }
-      ]
-    },
-    {
-      "day": 4,
-      "items": [
-        {
-          "id": 14,
-          "venue": {
-            "id": "54246121498e3f417c94ac47",
-            "name": "Gustatio",
-            "description": "",
-            "address": [
-              "Oosterstraat 3",
-              "Groningen",
-              "Nederland"
-            ],
-            "latitude": 53.21825016984567,
-            "longitude": 6.569116861256406,
-            "categories": [
-              {
-                "name": "Italian Restaurant",
-                "pluralName": "Italian Restaurants",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/food/italian_64.png"
-              }
-            ],
-            "images": [
-              {
-                "shotAt": "Sunday, 26-Aug-2018 15:32:19 UTC",
-                "photographer": "Robin ♓ Ketelaars",
-                "photographerImage": "https://igx.4sqi.net/img/user/250x250/MKYV01YP31XIHSNK.jpg",
-                "horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/858011_X-_eM22NtsnqABZXDmny8LXis2ZXtfb5e1fzP6NxKaQ.jpg",
-                "squareURL": "https://igx.4sqi.net/img/general/1280x1280/858011_X-_eM22NtsnqABZXDmny8LXis2ZXtfb5e1fzP6NxKaQ.jpg"
-              }
-            ],
-            "url": null,
-            "openingHours": null,
-            "popularHours": null,
-            "price": "Moderate",
-            "rating": "9",
-            "ratingColor": "00B551",
-            "peopleNow": "0",
-            "likes": 22
-          }
-        },
-        {
-          "id": 15,
-          "venue": {
-            "id": "4b8d6721f964a520a4f932e3",
-            "name": "Café De Koffer",
-            "description": "Beer Bar near the city centre of Groningen with 230+ beers on the menu (Belgian and Dutch beers, but also great beers from the UK and the US!).",
-            "address": [
-              "Nieuwe Blekerstraat 1",
-              "9718 ED Groningen",
-              "Nederland"
-            ],
-            "latitude": 53.21624758430439,
-            "longitude": 6.555468152985574,
-            "categories": [
-              {
-                "name": "Beer Garden",
-                "pluralName": "Beer Gardens",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/beergarden_64.png"
-              }
-            ],
-            "images": [
-              {
-                "shotAt": "Tuesday, 07-Jan-2014 01:35:52 UTC",
-                "photographer": "Café De Koffer",
-                "photographerImage": "https://igx.4sqi.net/img/user/250x250/75504876-MNQTESZ0UYN1OL03.png",
-                "horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/75504876_a_OhY6u9a2MvC9yeq8lSlYWOsawlAL6sh3vNUchc-is.jpg",
-                "squareURL": "https://igx.4sqi.net/img/general/1098x1098/75504876_a_OhY6u9a2MvC9yeq8lSlYWOsawlAL6sh3vNUchc-is.jpg"
-              }
-            ],
-            "url": "http://www.dekoffer.nl",
-            "openingHours": "Closed until 4:00 PM",
-            "popularHours": null,
-            "price": "Cheap",
-            "rating": "9",
-            "ratingColor": "00B551",
-            "peopleNow": "0",
-            "likes": 55
-          }
-        }
-      ]
-    },
-    {
-      "day": 5,
-      "items": [
-        {
-          "id": 13,
-          "venue": {
-            "id": "4b4f4ce7f964a520530027e3",
-            "name": "Der Witz",
-            "description": "",
-            "address": [
-              "Grote Markt 47",
-              "9711 LX Groningen",
-              "Nederland"
-            ],
-            "latitude": 53.218258656922416,
-            "longitude": 6.567053706384058,
-            "categories": [
-              {
-                "name": "Bar",
-                "pluralName": "Bars",
-                "icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/pub_64.png"
-              }
-            ],
-            "images": [
-              {
-                "shotAt": "Sunday, 27-Feb-2011 12:44:51 UTC",
-                "photographer": "Robin Oudendijk",
-                "photographerImage": "https://igx.4sqi.net/img/user/250x250/HGF51353ORJC1YWZ.jpg",
-                "horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/SCX0FZ52EWIFBW52EXBANJC3PUJ10RC0FZJM1EB4ERQWL4SN.jpg",
-                "squareURL": "https://igx.4sqi.net/img/general/537x537/SCX0FZ52EWIFBW52EXBANJC3PUJ10RC0FZJM1EB4ERQWL4SN.jpg"
-              }
-            ],
-            "url": "http://www.derwitz.nl",
-            "openingHours": "Open until 3:00 AM",
-            "popularHours": null,
-            "price": "Moderate",
-            "rating": "9.1",
-            "ratingColor": "00B551",
-            "peopleNow": "0",
-            "likes": 45
-          }
-        }
-      ]
-    }
-  ]
+	"schedule": [{
+			"day": "unsorted",
+			"items": []
+		},
+		{
+			"day": 1,
+			"items": [{
+					"id": "4b40c455f964a520e0ba25e3",
+					"name": "Noorderplantsoen",
+					"description": "Het Noorderplantsoen ligt op de plaats waar in de 17e eeuw de verdedigingswallen van de stad werden gebouwd. De grachten zijn vervangen door vijvers en op de plaats waar de wallen stonden, ligt nu een park in Engelse stijl met hoogteverschillen. Het park is erg lang maar ook erg smal.",
+					"address": [
+						"Leliesingel (Kruissingel)",
+						"Groningen",
+						"Nederland"
+					],
+					"latitude": 53.223407913752894,
+					"longitude": 6.5554235978050786,
+					"categories": [{
+							"name": "Park",
+							"pluralName": "Parks",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_64.png"
+						},
+						{
+							"name": "Playground",
+							"pluralName": "Playgrounds",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/playground_64.png"
+						}
+					],
+					"images": [{
+						"shotAt": "Friday, 03-May-2013 07:03:13 UTC",
+						"photographer": "Kevin De Vette",
+						"photographerImage": "https://igx.4sqi.net/img/user/250x250/J2GX21PED51YHQHR.jpg",
+						"horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/9379039_X34Ke-4F6vO7rFelqj2vEPEPi03zZnUiASDAWgGrBjw.jpg",
+						"squareURL": "https://igx.4sqi.net/img/general/612x612/9379039_X34Ke-4F6vO7rFelqj2vEPEPi03zZnUiASDAWgGrBjw.jpg"
+					}],
+					"url": "http://www.noorderplantsoen.nl",
+					"openingHours": null,
+					"popularHours": null,
+					"price": null,
+					"rating": "9.6",
+					"ratingColor": "00B551",
+					"peopleNow": "0",
+					"likes": 134
+				},
+				{
+					"id": "4fa4fd84e4b0e7038aefa7d9",
+					"name": "Pure Groningen",
+					"description": "Frozen Yoghurt, Slagroomijs, Milkshakes, Donuts, Brownies, Tosti's,Sappen en overheerlijke Koeken.",
+					"address": [
+						"Vismarkt 10 (Koude Gat)",
+						"9711 KS Groningen",
+						"Nederland"
+					],
+					"latitude": 53.217708031885536,
+					"longitude": 6.566397252621049,
+					"categories": [{
+							"name": "Frozen Yogurt Shop",
+							"pluralName": "Frozen Yogurt Shops",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/food/frozenyogurt_64.png"
+						},
+						{
+							"name": "Ice Cream Shop",
+							"pluralName": "Ice Cream Shops",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/food/icecream_64.png"
+						},
+						{
+							"name": "Bakery",
+							"pluralName": "Bakeries",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/food/bakery_64.png"
+						}
+					],
+					"images": [{
+						"shotAt": "Monday, 19-Jan-2015 18:12:11 UTC",
+						"photographer": "Pure Groningen",
+						"photographerImage": "https://igx.4sqi.net/img/user/250x250/33850000-3QYXYAOKR0LLXQHZ.png",
+						"horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/33850000__Mqu5bqNVBwQA-ZLfJurM86UTbRVFpONPfWopT-uPIE.jpg",
+						"squareURL": "https://igx.4sqi.net/img/general/2912x2912/33850000__Mqu5bqNVBwQA-ZLfJurM86UTbRVFpONPfWopT-uPIE.jpg"
+					}],
+					"url": "http://www.puregroningen.nl",
+					"openingHours": "Closed until 9:00 AM tomorrow",
+					"popularHours": "Likely open",
+					"price": "Cheap",
+					"rating": "9.1",
+					"ratingColor": "00B551",
+					"peopleNow": "0",
+					"likes": 30
+				}
+			]
+		},
+		{
+			"day": 2,
+			"items": [{
+					"id": "4c94ed6358d4b60c422c2d29",
+					"name": "Oosterpoort Grote Zaal",
+					"description": "",
+					"address": [
+						"De Oosterpoort (Trompsingel 27)",
+						"9724 DA",
+						"Nederland"
+					],
+					"latitude": 53.213976505139115,
+					"longitude": 6.576705023625482,
+					"categories": [{
+							"name": "Theater",
+							"pluralName": "Theaters",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/performingarts_theater_64.png"
+						},
+						{
+							"name": "Arts & Crafts Store",
+							"pluralName": "Arts & Crafts Stores",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/shops/artstore_64.png"
+						}
+					],
+					"images": [{
+						"shotAt": "Friday, 15-Feb-2013 19:16:30 UTC",
+						"photographer": "Bram Willemse",
+						"photographerImage": "https://igx.4sqi.net/img/user/250x250/30158-0JV4YCOKXTW4405Z.jpg",
+						"horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/30158_VVF7xaXadpBxkumjc-3zMiEaswsEB6JEBl-6cetrMjA.jpg",
+						"squareURL": "https://igx.4sqi.net/img/general/584x584/30158_VVF7xaXadpBxkumjc-3zMiEaswsEB6JEBl-6cetrMjA.jpg"
+					}],
+					"url": "http://www.de-oosterpoort.nl",
+					"openingHours": null,
+					"popularHours": null,
+					"price": null,
+					"rating": "9.1",
+					"ratingColor": "00B551",
+					"peopleNow": "0",
+					"likes": 39
+				},
+				{
+					"id": "4b22a1dcf964a520a44a24e3",
+					"name": "De Pintelier",
+					"description": "",
+					"address": [
+						"Kleine Kromme Elleboog 9",
+						"9718BS Groningen",
+						"Nederland"
+					],
+					"latitude": 53.21860684682149,
+					"longitude": 6.56177324583391,
+					"categories": [{
+							"name": "Bar",
+							"pluralName": "Bars",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/pub_64.png"
+						},
+						{
+							"name": "Beer Garden",
+							"pluralName": "Beer Gardens",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/beergarden_64.png"
+						}
+					],
+					"images": [{
+						"shotAt": "Thursday, 13-Sep-2012 15:20:02 UTC",
+						"photographer": "Remi Van Beekum",
+						"photographerImage": "https://igx.4sqi.net/img/user/250x250/0TAT1QVW01ATTRYF.jpg",
+						"horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/lLHLduGN_d2bybzzyxL8hzTUL10IJflzfm3-qFDcBjc.jpg",
+						"squareURL": "https://igx.4sqi.net/img/general/406x406/lLHLduGN_d2bybzzyxL8hzTUL10IJflzfm3-qFDcBjc.jpg"
+					}],
+					"url": "http://www.depintelier.nl",
+					"openingHours": "Closed until 3:00 PM",
+					"popularHours": null,
+					"price": "Moderate",
+					"rating": "9",
+					"ratingColor": "00B551",
+					"peopleNow": "0",
+					"likes": 135
+				}
+			]
+		},
+		{
+			"day": 3,
+			"items": [{
+					"id": "4b669a95f964a5204e252be3",
+					"name": "Stadsschouwburg",
+					"description": "",
+					"address": [
+						"Turfsingel 86",
+						"9711 VX Groningen",
+						"Nederland"
+					],
+					"latitude": 53.22073317505104,
+					"longitude": 6.571736180665293,
+					"categories": [{
+							"name": "Theater",
+							"pluralName": "Theaters",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/performingarts_theater_64.png"
+						},
+						{
+							"name": "Music Venue",
+							"pluralName": "Music Venues",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_64.png"
+						},
+						{
+							"name": "Concert Hall",
+							"pluralName": "Concert Halls",
+							"icon": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_64.png"
+						}
+					],
+					"images": [{
+						"shotAt": "Thursday, 30-May-2013 19:22:09 UTC",
+						"photographer": "Rianne Boven",
+						"photographerImage": "https://igx.4sqi.net/img/user/250x250/UO0PHAA3LECU1BKD.jpg",
+						"horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/10817715_tW5L6GW0jOSCTNTqnsd2SgJErPYMq7ubyUHCLRWiSx8.jpg",
+						"squareURL": "https://igx.4sqi.net/img/general/541x541/10817715_tW5L6GW0jOSCTNTqnsd2SgJErPYMq7ubyUHCLRWiSx8.jpg"
+					}],
+					"url": "http://www.de-oosterpoort.nl",
+					"openingHours": null,
+					"popularHours": null,
+					"price": null,
+					"rating": "9.2",
+					"ratingColor": "00B551",
+					"peopleNow": "0",
+					"likes": 86
+				},
+				{
+					"id": "4ff169c5e4b05df964b17ce4",
+					"name": "Black & Bloom",
+					"description": "The latstes coffee sensation in Groningen! Keywords: Synesso, brewbar, artisan coffee, baked goods, coffeenerds, StarWars, RetroF1 and good music! See you soon!",
+					"address": [
+						"Oude Kijk In T Jatstraat 32",
+						"9712EK Groningen",
+						"Nederland"
+					],
+					"latitude": 53.219432522691065,
+					"longitude": 6.56182459107847,
+					"categories": [{
+						"name": "Coffee Shop",
+						"pluralName": "Coffee Shops",
+						"icon": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_64.png"
+					}],
+					"images": [{
+						"shotAt": "Thursday, 08-Nov-2012 15:38:06 UTC",
+						"photographer": "Dennis",
+						"photographerImage": "https://igx.4sqi.net/img/user/250x250/WQZAENXTA0YR2ZHD.jpg",
+						"horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/38553056_ea5FvvJgaoytM1Bbxe94kt_NgzJk336-obukB2T__VY.jpg",
+						"squareURL": "https://igx.4sqi.net/img/general/540x540/38553056_ea5FvvJgaoytM1Bbxe94kt_NgzJk336-obukB2T__VY.jpg"
+					}],
+					"url": "http://www.blackandbloom.nl",
+					"openingHours": "Open until 6:30 PM",
+					"popularHours": "Likely open",
+					"price": "Cheap",
+					"rating": "9",
+					"ratingColor": "00B551",
+					"peopleNow": "0",
+					"likes": 147
+				}
+			]
+		},
+		{
+			"day": 4,
+			"items": [{
+					"id": "54246121498e3f417c94ac47",
+					"name": "Gustatio",
+					"description": "",
+					"address": [
+						"Oosterstraat 3",
+						"Groningen",
+						"Nederland"
+					],
+					"latitude": 53.21825016984567,
+					"longitude": 6.569116861256406,
+					"categories": [{
+						"name": "Italian Restaurant",
+						"pluralName": "Italian Restaurants",
+						"icon": "https://ss3.4sqi.net/img/categories_v2/food/italian_64.png"
+					}],
+					"images": [{
+						"shotAt": "Sunday, 26-Aug-2018 15:32:19 UTC",
+						"photographer": "Robin ♓ Ketelaars",
+						"photographerImage": "https://igx.4sqi.net/img/user/250x250/MKYV01YP31XIHSNK.jpg",
+						"horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/858011_X-_eM22NtsnqABZXDmny8LXis2ZXtfb5e1fzP6NxKaQ.jpg",
+						"squareURL": "https://igx.4sqi.net/img/general/1280x1280/858011_X-_eM22NtsnqABZXDmny8LXis2ZXtfb5e1fzP6NxKaQ.jpg"
+					}],
+					"url": null,
+					"openingHours": null,
+					"popularHours": null,
+					"price": "Moderate",
+					"rating": "9",
+					"ratingColor": "00B551",
+					"peopleNow": "0",
+					"likes": 22
+				},
+				{
+					"id": "4b8d6721f964a520a4f932e3",
+					"name": "Café De Koffer",
+					"description": "Beer Bar near the city centre of Groningen with 230+ beers on the menu (Belgian and Dutch beers, but also great beers from the UK and the US!).",
+					"address": [
+						"Nieuwe Blekerstraat 1",
+						"9718 ED Groningen",
+						"Nederland"
+					],
+					"latitude": 53.21624758430439,
+					"longitude": 6.555468152985574,
+					"categories": [{
+						"name": "Beer Garden",
+						"pluralName": "Beer Gardens",
+						"icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/beergarden_64.png"
+					}],
+					"images": [{
+						"shotAt": "Tuesday, 07-Jan-2014 01:35:52 UTC",
+						"photographer": "Café De Koffer",
+						"photographerImage": "https://igx.4sqi.net/img/user/250x250/75504876-MNQTESZ0UYN1OL03.png",
+						"horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/75504876_a_OhY6u9a2MvC9yeq8lSlYWOsawlAL6sh3vNUchc-is.jpg",
+						"squareURL": "https://igx.4sqi.net/img/general/1098x1098/75504876_a_OhY6u9a2MvC9yeq8lSlYWOsawlAL6sh3vNUchc-is.jpg"
+					}],
+					"url": "http://www.dekoffer.nl",
+					"openingHours": "Closed until 4:00 PM",
+					"popularHours": null,
+					"price": "Cheap",
+					"rating": "9",
+					"ratingColor": "00B551",
+					"peopleNow": "0",
+					"likes": 55
+				}
+			]
+		},
+		{
+			"day": 5,
+			"items": [{
+				"id": "4b4f4ce7f964a520530027e3",
+				"name": "Der Witz",
+				"description": "",
+				"address": [
+					"Grote Markt 47",
+					"9711 LX Groningen",
+					"Nederland"
+				],
+				"latitude": 53.218258656922416,
+				"longitude": 6.567053706384058,
+				"categories": [{
+					"name": "Bar",
+					"pluralName": "Bars",
+					"icon": "https://ss3.4sqi.net/img/categories_v2/nightlife/pub_64.png"
+				}],
+				"images": [{
+					"shotAt": "Sunday, 27-Feb-2011 12:44:51 UTC",
+					"photographer": "Robin Oudendijk",
+					"photographerImage": "https://igx.4sqi.net/img/user/250x250/HGF51353ORJC1YWZ.jpg",
+					"horizontalRectangleURL": "https://igx.4sqi.net/img/general/800x344/SCX0FZ52EWIFBW52EXBANJC3PUJ10RC0FZJM1EB4ERQWL4SN.jpg",
+					"squareURL": "https://igx.4sqi.net/img/general/537x537/SCX0FZ52EWIFBW52EXBANJC3PUJ10RC0FZJM1EB4ERQWL4SN.jpg"
+				}],
+				"url": "http://www.derwitz.nl",
+				"openingHours": "Open until 3:00 AM",
+				"popularHours": null,
+				"price": "Moderate",
+				"rating": "9.1",
+				"ratingColor": "00B551",
+				"peopleNow": "0",
+				"likes": 45
+			}]
+		}
+	]
 }
