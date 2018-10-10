@@ -23,7 +23,8 @@
               "src/index.php"
             ],
             "styles": [
-                "src/styles.css"
+                "src/styles.css",
+                "node_modules/ng2-dnd/bundles/style.css"
             ],
             "scripts": []
           },
