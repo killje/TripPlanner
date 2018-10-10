@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 import {Trip} from './trip/trip';
-import {CreateTripResponse, GetTripResponse, VenuesAddResponse, VenuesRemoveResponse} from './trip/response';
+import {CreateTripResponse, GetTripResponse, VenuesAddResponse, VenuesRemoveResponse, ScheduleResponse} from './trip/response';
 import {Venue} from './venue/venue';
 import {Schedule} from './trip/schedule';
 import {ScheduleInterface} from './trip/schedule-interface';
@@ -32,7 +32,7 @@ export class TripService {
             trip.name = destination;
             trip.number_of_days = days;
             trip.schedule = [];
-            trip.initSchedule();
+            trip.prettifySchedule();
             tripResponse.emit(trip);
         });
 
@@ -105,10 +105,10 @@ export class TripService {
             "generate": (generate == null || !generate) ? "0" : "1"
         };
         
-        this.http.post<ScheduleInterface[]>(url, params).subscribe((planning: ScheduleInterface[]) => {
+        this.http.post<ScheduleResponse>(url, params).subscribe((planning: ScheduleResponse) => {
             var schedule: Schedule[] = [];
-            for (var si of planning) {
-                schedule.push(new Schedule(si));
+            for (let item of planning.schedule) {
+                schedule.push(new Schedule(item));
             }
             response.emit(schedule);
         });

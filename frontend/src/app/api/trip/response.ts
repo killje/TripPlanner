@@ -1,4 +1,5 @@
 import {TripInterface} from "./trip-interface";
+import {ScheduleInterface} from "./schedule-interface";
 
 export interface CreateTripResponse {
     status: string;
@@ -15,5 +16,9 @@ export interface VenuesRemoveResponse {
 
 export interface GetTripResponse {
     status: string;
-    data: TripInterface
+    data: TripInterface;
+}
+
+export interface ScheduleResponse {
+    schedule: ScheduleInterface[];
 }

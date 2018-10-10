@@ -35,10 +35,10 @@ export class Trip implements TripInterface {
             schedule.push(new Schedule(scheduleInterface));
         }
         this.schedule = schedule;
-        this.initSchedule();
+        this.prettifySchedule();
     }
 
-    initSchedule() {
+    prettifySchedule() {
         var newSchedule: Schedule[] = [];
         for (var i = 1; i <= this.number_of_days; i++) {
             var scheduleItem = this.getScheduleByDay(i);
@@ -94,10 +94,23 @@ export class Trip implements TripInterface {
             }
         });
     }
+    
+    hasVenues(): boolean {
+        if (this.schedule.length == 0) {
+            return false;
+        }
+        for(var schedule of this.schedule) {
+            if (schedule.items.length != 0) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     generateSchedule(): void {
         this.tripService.scheduleTrip(this.uuid, true).subscribe((schedule: Schedule[]) => {
-
+            this.schedule = schedule;
+            this.prettifySchedule();
         });
     }
 
@@ -113,6 +126,5 @@ export class Trip implements TripInterface {
     itemsReordered(): void {
         console.log(this.schedule);
     }
-
 
 }
