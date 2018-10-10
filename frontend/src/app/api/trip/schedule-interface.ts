@@ -1,10 +1,7 @@
-import {Venue} from "../venue/venue";
+import {VenueInterface} from "../venue/venue-interface";
 
 export interface ScheduleInterface {
     day: number|"unsorted",
-    items: {
-        id: number,
-        venue: Venue
-    }[];
+    items: VenueInterface[];
 
 }

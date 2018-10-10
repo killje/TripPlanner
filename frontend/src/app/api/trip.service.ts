@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 import {Trip} from './trip/trip';
-import {CreateTripResponse, GetTripResponse, VenuesAddResponse, VenuesRemoveResponse, ScheduleResponse} from './trip/response';
+import {CreateTripResponse, GetTripResponse, VenuesAddResponse, VenuesRemoveResponse, ScheduleResponse, VenuesChangeOrderResponse} from './trip/response';
 import {Venue} from './venue/venue';
 import {Schedule} from './trip/schedule';
 import {ScheduleInterface} from './trip/schedule-interface';
@@ -114,6 +114,26 @@ export class TripService {
         });
         
         return response;
+    }
+    
+    changeOrderVenue(tripId: string, venueId: string, day: number | "unsorted", order: number): Observable<boolean> {
+        
+        var url = "api/trips/venues/changeorder";
+        
+        let success = new EventEmitter<boolean>();
+        
+        let params: {[param: string]: string} = {
+            "uuid": tripId,
+            "tripvenueid": venueId,
+            "day_number": day == "unsorted" ? "0": day.toString(),
+            "order_number": order.toString()
+        };
+        
+        this.http.post<VenuesChangeOrderResponse>(url, params).subscribe((response: VenuesChangeOrderResponse) => {
+            success.emit(true);
+        });
+        
+        return success;
     }
 
 }

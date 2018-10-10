@@ -11,80 +11,68 @@
         "schedule": [{
             "day": 1,
             "items": [{
-                "id": 0,
-                "venue": {
-                    "id": "1",
-                    "name": "Test",
-                    "address": ["abc", "def"],
-                    "latitude": 12.2,
-                    "longitude": 34.4,
-                    "categories": [],
-                    "url": "http://example.com",
-                    "openingHours": "9-17",
-                    "popularHours": "12-14",
-                    "price": "4",
-                    "rating": "4",
-                    "ratingColor": "blue",
-                    "peopleNow": true,
-                    "likes": 5
-                }
+                "id": "1",
+                "name": "Test",
+                "address": ["abc", "def"],
+                "latitude": 12.2,
+                "longitude": 34.4,
+                "categories": [],
+                "url": "http://example.com",
+                "openingHours": "9-17",
+                "popularHours": "12-14",
+                "price": "4",
+                "rating": "4",
+                "ratingColor": "blue",
+                "peopleNow": true,
+                "likes": 5
             }, {
-                "id": 1,
-                "venue": {
-                    "id": "2",
-                    "name": "Test 2",
-                    "address": ["abc", "def"],
-                    "latitude": 12.2,
-                    "longitude": 34.4,
-                    "categories": [],
-                    "url": "http://example.com",
-                    "openingHours": "9-17",
-                    "popularHours": "12-14",
-                    "price": "4",
-                    "rating": "4",
-                    "ratingColor": "blue",
-                    "peopleNow": true,
-                    "likes": 5
-                }
+                "id": "2",
+                "name": "Test 2",
+                "address": ["abc", "def"],
+                "latitude": 12.2,
+                "longitude": 34.4,
+                "categories": [],
+                "url": "http://example.com",
+                "openingHours": "9-17",
+                "popularHours": "12-14",
+                "price": "4",
+                "rating": "4",
+                "ratingColor": "blue",
+                "peopleNow": true,
+                "likes": 5
             }]
         }, {
             "day": "unsorted",
             "items": [{
-                "id": 0,
-                "venue": {
-                    "id": "3",
-                    "name": "Test 2",
-                    "address": ["abc", "def"],
-                    "latitude": 12.2,
-                    "longitude": 34.4,
-                    "categories": [],
-                    "url": "http://example.com",
-                    "openingHours": "9-17",
-                    "popularHours": "12-14",
-                    "price": "4",
-                    "rating": "4",
-                    "ratingColor": "blue",
-                    "peopleNow": true,
-                    "likes": 5
-                }
+                "id": "3",
+                "name": "Test 2",
+                "address": ["abc", "def"],
+                "latitude": 12.2,
+                "longitude": 34.4,
+                "categories": [],
+                "url": "http://example.com",
+                "openingHours": "9-17",
+                "popularHours": "12-14",
+                "price": "4",
+                "rating": "4",
+                "ratingColor": "blue",
+                "peopleNow": true,
+                "likes": 5
             }, {
-                "id": 1,
-                "venue": {
-                    "id": "4",
-                    "name": "Test 2",
-                    "address": ["abc", "def"],
-                    "latitude": 12.2,
-                    "longitude": 34.4,
-                    "categories": [],
-                    "url": "http://example.com",
-                    "openingHours": "9-17",
-                    "popularHours": "12-14",
-                    "price": "4",
-                    "rating": "4",
-                    "ratingColor": "blue",
-                    "peopleNow": true,
-                    "likes": 5
-                }
+                "id": "4",
+                "name": "Test 2",
+                "address": ["abc", "def"],
+                "latitude": 12.2,
+                "longitude": 34.4,
+                "categories": [],
+                "url": "http://example.com",
+                "openingHours": "9-17",
+                "popularHours": "12-14",
+                "price": "4",
+                "rating": "4",
+                "ratingColor": "blue",
+                "peopleNow": true,
+                "likes": 5
             }]
         }]
     }
