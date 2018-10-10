@@ -5,10 +5,9 @@ export class Schedule implements ScheduleInterface {
 
     day: number|"unsorted";
     items: {
-        parrentId?: string,
         id: number,
         venue: Venue
-    }[];
+    }[] = [];
     
     constructor(intf?: ScheduleInterface) {
         if (intf == undefined) {
@@ -36,12 +35,25 @@ export class Schedule implements ScheduleInterface {
     }
     
     push(venue: Venue): void {
-        var lastItem = this.items[this.items.length - 1];
+        
+        var max: number = 0;
+        for (let item of this.items) {
+            if (item.id > max) {
+                max = item.id;
+            }
+        }
         
         this.items.push({
-            parrentId: lastItem.venue.id,
-            id: lastItem.id + 1,
+            id: max + 1,
             venue: venue
         });
     }
+    
+    getTitleName(): string {
+        if (this.day == 'unsorted') {
+            return "Not yet planned in";
+        }
+        return "Planning for day " + this.day.toString();
+    }
+    
 }

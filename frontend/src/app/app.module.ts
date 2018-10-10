@@ -5,6 +5,7 @@ import {AngularOpenlayersModule} from 'ngx-openlayers';
 import {NgbModule, NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import {DndModule} from 'ng2-dnd';
 
 import {AppComponent} from './app.component';
 import {MapComponent} from './map/map.component';
@@ -52,6 +53,7 @@ const appRoutes: Routes = [
         BrowserModule,
         FormsModule,
         HttpClientModule,
+        DndModule.forRoot(),
         NgbModule,
         AngularOpenlayersModule,
         NgbCollapseModule

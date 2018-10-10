@@ -27,10 +27,8 @@
     </div>
 </div>
 
-<div class="activity-container" *ngIf="trip">
-    <div *ngFor="let schedule of trip.schedule">
-        <app-activities [title]="schedule.day" [schedule]="schedule" (buttonClick)="schedule.removeVenue($event)"></app-activities>
-    </div>
+<div class="activity-container" *ngIf="trip" >
+    <app-activities *ngFor="let schedule of trip.schedule" [title]="schedule.getTitleName()" [schedule]="schedule" (buttonClick)="schedule.removeVenue($event)" [trip]="trip"></app-activities>
     <app-activities title="Suggested activities" [venues]="venueSugestions" [addButton]="true" (buttonClick)="trip.addVenue($event)"></app-activities>
 </div>
 <!-- OLD ---------------
