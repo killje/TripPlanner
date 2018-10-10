@@ -213,7 +213,7 @@ class Scheduler
         $trip = Trip::whereId($id)->firstOrFail(); // Obtain trip
         $i = 0;
         $currday = -1;
-        foreach ($trip->venues()->orderBy('day_number')->get() as $tripvenue) {
+        foreach ($trip->venues()->orderBy('day_number')->orderBy('order')->get() as $tripvenue) {
             if($currday != $tripvenue->day_number) {
                 $currday = $tripvenue->day_number;
                 $i = 1;
@@ -234,6 +234,7 @@ class Scheduler
      */
     private static function getDayPlanning(ContentProvider $contentProvider, $id, $array): array
     {
+        self::SetTripVenueOrder($id);
         // Now, return the day planning
         $trip = Trip::whereId($id)->firstOrFail(); // Obtain trip
         $activities = $trip->venues()->orderBy('day_number')->orderBy('order')->get();
