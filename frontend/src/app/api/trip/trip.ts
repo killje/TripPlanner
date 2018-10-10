@@ -35,6 +35,28 @@ export class Trip implements TripInterface {
             schedule.push(new Schedule(scheduleInterface));
         }
         this.schedule = schedule;
+        this.initSchedule();
+    }
+
+    initSchedule() {
+        var newSchedule: Schedule[] = [];
+        for (var i = 1; i <= this.number_of_days; i++) {
+            var scheduleItem = this.getScheduleByDay(i);
+            if (scheduleItem == null) {
+                scheduleItem = new Schedule();
+                scheduleItem.day = i;
+            }
+            newSchedule.push(scheduleItem);
+        }
+        var scheduleItem = this.getScheduleByDay("unsorted");
+        if (scheduleItem == null) {
+            scheduleItem = new Schedule();
+            scheduleItem.day = "unsorted";
+        }
+        newSchedule.push(scheduleItem);
+        
+        this.schedule = newSchedule;
+        
     }
 
     public getDaysFormatted(): string {
@@ -48,10 +70,11 @@ export class Trip implements TripInterface {
     addVenue(venue: Venue): void {
         this.tripService.addVenue(this.uuid, venue.id).subscribe((success) => {
             if (success) {
-                var schedule = this.getSceduleByDay("unsorted");
+                var schedule = this.getScheduleByDay("unsorted");
                 if (schedule == null) {
                     schedule = new Schedule();
                     schedule.day = "unsorted";
+                    this.schedule.push(schedule);
                 }
                 schedule.push(venue);
                 this.venueAdded.emit(venue);
@@ -63,7 +86,7 @@ export class Trip implements TripInterface {
         this.tripService.removeVenue(this.uuid, venue.id).subscribe((success) => {
             if (success) {
                 for (var schedule of this.schedule) {
-                    if (schedule.removeVenue(venue)){
+                    if (schedule.removeVenue(venue)) {
                         this.venueRemoved.emit(venue);
                         break;
                     }
@@ -71,14 +94,14 @@ export class Trip implements TripInterface {
             }
         });
     }
-    
+
     generateSchedule(): void {
         this.tripService.scheduleTrip(this.uuid, true).subscribe((schedule: Schedule[]) => {
-            
+
         });
     }
-    
-    getSceduleByDay(day: number|"unsorted"): Schedule {
+
+    getScheduleByDay(day: number | "unsorted"): Schedule {
         for (var schedule of this.schedule) {
             if (schedule.day == day) {
                 return schedule;
@@ -86,5 +109,10 @@ export class Trip implements TripInterface {
         }
         return null;
     }
+
+    itemsReordered(): void {
+        console.log(this.schedule);
+    }
+
 
 }

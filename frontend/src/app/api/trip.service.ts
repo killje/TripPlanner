@@ -13,8 +13,6 @@ import {ScheduleInterface} from './trip/schedule-interface';
 })
 export class TripService {
 
-    private currentTrip: Trip;
-
     constructor(private http: HttpClient) {
     }
 
@@ -34,6 +32,7 @@ export class TripService {
             trip.name = destination;
             trip.number_of_days = days;
             trip.schedule = [];
+            trip.initSchedule();
             tripResponse.emit(trip);
         });
 
@@ -116,18 +115,5 @@ export class TripService {
         
         return response;
     }
-
-    removeCurrentTrip(): void {
-        this.currentTrip = null;
-    }
-
-    setCurrentTrip(trip: Trip): void {
-        this.currentTrip = trip;
-    }
-
-    getCurrentTrip(): Trip {
-        return this.currentTrip;
-    }
-
 
 }
