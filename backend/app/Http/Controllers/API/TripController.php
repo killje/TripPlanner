@@ -237,14 +237,24 @@ class TripController extends Controller
     }
 
     /**
-     * Input arguments: Venue ID, New Day Number, New Order Number
+     * Input arguments: Trip ID, TripVenue ID, New Day Number, New Order Number
      * @param ContentProvider $contentProvider
      * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function changeVenueOrder(ContentProvider $contentProvider, Request $request)
     {
         $validatedData = $request->validate([
-            ''
+            'uuid' => 'required|exists:trips,uuid',
+            'tripvenueid' => 'required|exists:trip_venues,id|integer',
+            'day_number' => 'required|integer',
+            'order_number' => 'required|integer'
         ]);
+
+        $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
+
+        $trip->updateVenueOrder($validatedData['tripvenueid'], $validatedData['day_number'], $validatedData['order_number']);
+
+        return response()->json(['status' => 'success']);
     }
 }

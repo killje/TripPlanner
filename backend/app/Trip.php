@@ -62,4 +62,23 @@ class Trip extends Model
     {
         return Scheduler::algorithm($contentProvider, $this->id, $this->number_of_days, $this->detailedVenues($contentProvider), $generate, $array);
     }
+
+    public function updateVenueOrder(int $venue_id, int $day_number, int $order_number)
+    {
+        // First, set the order of other venues in the new day +1
+        $this->venues()->where('day_number', '=', $day_number)->where('order', '>=', $order_number)->increment('order');
+
+        // Now, get the venue
+        $tripvenue = TripVenue::where('id', '=', $venue_id)->firstOrFail();
+        $oldDay = $tripvenue->day_number;
+        $oldOrder = $tripvenue->order;
+
+        // Update the venue
+        $tripvenue->day_number = $day_number;
+        $tripvenue->order = $order_number;
+        $tripvenue->save();
+
+        // Now, update the old venues
+        $this->venues()->where('day_number', '=', $oldDay)->where('order', '>=', $oldOrder)->decrement('order');
+    }
 }

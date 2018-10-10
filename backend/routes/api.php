@@ -27,3 +27,4 @@ Route::post('/trips/venues/add', 'API\TripController@addVenue')->name('trips.add
 Route::delete('/trips/venues/remove', 'API\TripController@removeVenue')->name('trips.removevenue');
 Route::get('/trips/show', 'API\TripController@show')->name('trips.show');
 Route::get('/trips/schedule', 'API\TripController@getSchedule')->name('trips.schedule');
+Route::post('/trips/venues/changeorder', 'API\TripController@changeVenueOrder')->name('trips.changevenueorder');
