@@ -15,10 +15,10 @@ export class MapListComponent implements OnInit {
     private venues: Venue[];
 
     constructor(private venueService: VenueService) {
-        this.venues = this.venueService.getVenues();
     }
 
     ngOnInit() {
+        this.venues = this.venueService.getVenues();
     }
 
     openMenu() {
