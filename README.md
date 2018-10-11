@@ -35,7 +35,7 @@ Now, you can access the website by going to http://yourlocalwebsitename.test whi
 - DELETE `/trips/venues/remove` with arguments: uuid, venue_id. Example: `/trips/venues/remove?uuid=1e5289a9-1d30-44cf-bfbe-0e4ec61f4138&venue_id=4a942a25f964a520972020e3`
 - GET `/trips/venues/list` with arguments: uuid. Example: `/trips/venues/list?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f`
 - GET `/trips/schedule` with arguments: uuid=..., generate=0/1. Example: `/trips/schedule?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f&generate=1`
-- POST `/trips/venues/changeorder` with arguments: uuid=..., tripvenueid=(integer), day_number=(integer), order_number=(integer) Example: `/trips/venues/changeorder?uuid=3700fd70-6743-4c03-ab04-2ddb66157c4c&tripvenueid=7&day_number=2&order_number=2`
+- POST `/trips/venues/changeorder` with arguments: uuid=..., tripvenueid=(4sq venue id), day_number=(integer), order_number=(integer) Example: `/trips/venues/changeorder?uuid=3700fd70-6743-4c03-ab04-2ddb66157c4c&tripvenueid=7&day_number=2&order_number=2`
 
 # Frontend
 ## Installation instructions
