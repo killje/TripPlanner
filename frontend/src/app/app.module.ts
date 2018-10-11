@@ -26,6 +26,8 @@ const appRoutes: Routes = [
     {path: 'trip', component: TripComponent},
     {path: 'trip/:id', component: TripComponent},
     {path: 'map', component: MapComponent},
+    {path: 'map/:id', component: MapComponent},
+    {path: 'map/:id/:day', component: MapComponent},
     {path: '**', component: FrontPageComponent}
 ];
 

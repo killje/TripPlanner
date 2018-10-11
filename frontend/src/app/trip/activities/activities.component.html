@@ -1,7 +1,7 @@
-<div class="container rounded">
-    <h1>{{title}}</h1>
-</div>
 <div *ngIf="venues">
+    <div class="container rounded">
+        <h1>{{title}}</h1>
+    </div>
     <div class="container activitybox rounded" *ngFor="let venue of venues">
          <div class="row">
             <div class="col-sm-7">
@@ -24,6 +24,13 @@
     </div>
 </div>
 <div *ngIf="schedule" dnd-sortable-container [sortableData]="schedule.items" class="sortable-container">
+    <div class="container rounded">
+        <h1>
+            {{title}}
+            <small><a *ngIf="schedule.items.length != 0" class="float-right" [routerLink]="'/map/' + trip.uuid + '/' + (schedule.day == 'unsorted' ? 'unsorted' : schedule.day.toString()) " routerLinkActive="true">Show on map</a></small>
+        </h1>
+        
+    </div>
     <div class="container activitybox rounded" 
         *ngFor="let venue of schedule.items; let i = index"
         dnd-sortable 

@@ -1,10 +1,12 @@
-import {Component, AfterViewInit, OnInit, ViewChild} from '@angular/core';
+import {Component, AfterViewInit, OnInit, ViewChild, Input} from '@angular/core';
+import {Observable} from 'rxjs';
 import {events, interaction, Map, MapEvent, proj, Sphere, Overlay, geom, layer, Feature} from 'openlayers';
 import {MapComponent} from 'ngx-openlayers';
 
 import {VenueService} from '../../api/venue.service';
 import {NavBarService} from '../../nav-bar/nav-bar.service';
 import {Venue} from '../../api/venue/venue';
+import {Trip} from '../../api/trip/trip';
 
 @Component({
     selector: 'app-map-view',
@@ -19,8 +21,12 @@ export class MapViewComponent implements OnInit, AfterViewInit {
 
     private venues: Venue[];
 
-    lat: number = 727640.686966983;
-    lng: number = 7027557.9083128;
+    @Input() tripId?: string;
+    @Input() day?: number | "unsorted";
+    @Input() trip?: Observable<Trip>;
+    
+    lat: number = 53.2234079137528937053502886556088924407958984375;
+    lng: number = 6.55542359780507855049336285446770489215850830078125;
     vectorLayer: layer.Vector;
 
     @ViewChild(MapComponent) mapComponent: MapComponent;
@@ -33,10 +39,49 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     });
 
     constructor(private navBarService: NavBarService, private venueService: VenueService) {
-        this.venues = venueService.getVenues();
     }
 
     ngOnInit(): void {
+        this.venues = this.venueService.getVenues();
+        if (this.tripId == undefined) {
+            return;
+        }
+        var minX: number;
+        var maxX: number;
+        var minY: number;
+        var maxY: number;
+        this.trip.subscribe((trip: Trip) => {
+            this.venues = [];
+            for (var schedule of trip.schedule) {
+                if (this.day == undefined || this.day == schedule.day) {
+                    this.venues = this.venues.concat(schedule.items);
+                }
+            }
+            if (this.venues.length == 0) {
+                return;
+            }
+            
+            this.venueService.setVenues(this.venues);
+            minX = maxX = this.venues[0].longitude;
+            minY = maxY = this.venues[0].latitude;
+            for (var venue of this.venues) {
+                if (venue.longitude < minX) {
+                    minX = venue.longitude;
+                }
+                if (venue.longitude > maxX) {
+                    maxX = venue.longitude;
+                }
+                if (venue.latitude < minY) {
+                    minY = venue.latitude;
+                }
+                if (venue.latitude > maxY) {
+                    maxY = venue.latitude;
+                }
+            }
+            this.lng = (minX+maxX)/2;
+            this.lat = (minY+maxY)/2;
+        });
+        
     }
 
     ngAfterViewInit(): void {
@@ -93,7 +138,6 @@ export class MapViewComponent implements OnInit, AfterViewInit {
         });
         
         this.selectClick.on('select', () => {
-            
             for (let selected of this.selectClick.getFeatures().getArray()) {
                 let match: RegExpMatchArray = selected.getId().toString().match(/venue-([0-9a-f]*)/);
                 if (match == null) {
@@ -124,6 +168,9 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     }
 
     onMoveEnd(event: MapEvent) {
+        if (this.tripId != undefined) {
+            return;
+        }
         let map = event.map;
         let view = map.getView();
 
@@ -143,6 +190,9 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     }
     
     getVenueById(id: string): Feature {
+        if (!this.vectorLayer.getSource()) {
+            return null;
+        }
         return this.vectorLayer.getSource().getFeatureById("venue-" + id);
     }
 

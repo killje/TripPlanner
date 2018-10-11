@@ -1,9 +1,13 @@
 <div id="mapContainer">
     <app-nav-bar></app-nav-bar>
     <div id="flexContainer">
-        <div id="viewContainer">
+        <div id="viewContainer" *ngIf="!id">
             <app-map-list></app-map-list>
             <app-map-view></app-map-view>
+        </div>
+        <div id="viewContainer" *ngIf="id">
+            <app-map-list></app-map-list>
+            <app-map-view [tripId]="id" [trip]="trip" [day]="day"></app-map-view>
         </div>
     </div>
 </div>

@@ -33,41 +33,11 @@ export class VenueService {
         };
 
         this.http.get<Venue[]>(url, {params: params}).subscribe((venues: VenueInterface[]) => {
-            while (this.venues.length > 0) {
-                this.venues.pop();
-            }
+            var newVenues: Venue[] = [];
             venues.forEach((venueInterface: VenueInterface) => {
-                let venue = new Venue(venueInterface);
-                venue.stateUpdate.subscribe((event: VenueStateEvent) => {
-                    if (event.getEmitedState() == "active") {
-                        if (event.getEmitedValue()) {
-                            if (this.selectedVenue != null) {
-                                this.selectedVenue.setActive(false);
-                                this.venueDeSelected.emit(this.selectedVenue);
-                            }
-                            this.selectedVenue = event.getVenue();
-                            this.venueSelected.emit(this.selectedVenue);
-                        } else if (this.selectedVenue = event.getVenue()) {
-                            this.venueDeSelected.emit(this.selectedVenue);
-                            this.selectedVenue = null;
-                        }
-                    } else if (event.getEmitedState() == "hovered") {
-                        if (event.getEmitedValue()) {
-                            if (this.hoveredVenue != null) {
-                                this.hoveredVenue.setHovered(false);
-                                this.venueDeHovered.emit(this.hoveredVenue);
-                            }
-                            this.hoveredVenue = event.getVenue();
-                            this.venueHovered.emit(this.hoveredVenue);
-                        } else if (this.hoveredVenue = event.getVenue()) {
-                            this.venueDeHovered.emit(this.hoveredVenue);
-                            this.hoveredVenue = null;
-                        }
-                    }
-                });
-                this.venues.push(venue);
+                newVenues.push(new Venue(venueInterface));
             });
-            this.venuesUpdated.emit(this.venues);
+            this.setVenues(newVenues);
         });
     }
     
@@ -79,44 +49,51 @@ export class VenueService {
         };
 
         this.http.get<Venue[]>(url, {params: params}).subscribe((venues: VenueInterface[]) => {
-            while (this.venues.length > 0) {
-                this.venues.pop();
-            }
+            var newVenues: Venue[] = [];
             venues.forEach((venueInterface: VenueInterface) => {
-                let venue = new Venue(venueInterface);
-                venue.stateUpdate.subscribe((event: VenueStateEvent) => {
-                    if (event.getEmitedState() == "active") {
-                        if (event.getEmitedValue()) {
-                            if (this.selectedVenue != null) {
-                                this.selectedVenue.setActive(false);
-                                this.venueDeSelected.emit(this.selectedVenue);
-                            }
-                            this.selectedVenue = event.getVenue();
-                            this.venueSelected.emit(this.selectedVenue);
-                        } else if (this.selectedVenue = event.getVenue()) {
-                            this.venueDeSelected.emit(this.selectedVenue);
-                            this.selectedVenue = null;
-                        }
-                    } else if (event.getEmitedState() == "hovered") {
-                        if (event.getEmitedValue()) {
-                            if (this.hoveredVenue != null) {
-                                this.hoveredVenue.setHovered(false);
-                                this.venueDeHovered.emit(this.hoveredVenue);
-                            }
-                            this.hoveredVenue = event.getVenue();
-                            this.venueHovered.emit(this.hoveredVenue);
-                        } else if (this.hoveredVenue = event.getVenue()) {
-                            this.venueDeHovered.emit(this.hoveredVenue);
-                            this.hoveredVenue = null;
-                        }
-                    }
-                });
-                this.venues.push(venue);
+                newVenues.push(new Venue(venueInterface));
             });
-            this.venuesUpdated.emit(this.venues);
+            this.setVenues(newVenues);
         });
     }
 
+    setVenues(venues: Venue[]):void {
+        while (this.venues.length > 0) {
+            this.venues.pop();
+        }
+        venues.forEach((venue: Venue) => {
+            venue.stateUpdate.subscribe((event: VenueStateEvent) => {
+                if (event.getEmitedState() == "active") {
+                    if (event.getEmitedValue()) {
+                        if (this.selectedVenue != null) {
+                            this.selectedVenue.setActive(false);
+                            this.venueDeSelected.emit(this.selectedVenue);
+                        }
+                        this.selectedVenue = event.getVenue();
+                        this.venueSelected.emit(this.selectedVenue);
+                    } else if (this.selectedVenue = event.getVenue()) {
+                        this.venueDeSelected.emit(this.selectedVenue);
+                        this.selectedVenue = null;
+                    }
+                } else if (event.getEmitedState() == "hovered") {
+                    if (event.getEmitedValue()) {
+                        if (this.hoveredVenue != null) {
+                            this.hoveredVenue.setHovered(false);
+                            this.venueDeHovered.emit(this.hoveredVenue);
+                        }
+                        this.hoveredVenue = event.getVenue();
+                        this.venueHovered.emit(this.hoveredVenue);
+                    } else if (this.hoveredVenue = event.getVenue()) {
+                        this.venueDeHovered.emit(this.hoveredVenue);
+                        this.hoveredVenue = null;
+                    }
+                }
+            });
+            this.venues.push(venue);
+        });
+        this.venuesUpdated.emit(this.venues);
+    }
+    
     getVenues(): Venue[] {
         return this.venues;
     }
