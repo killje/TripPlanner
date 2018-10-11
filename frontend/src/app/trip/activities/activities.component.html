@@ -25,13 +25,13 @@
 </div>
 <div *ngIf="schedule" dnd-sortable-container [sortableData]="schedule.items" class="sortable-container">
     <div class="container activitybox rounded" 
-        *ngFor="let item of schedule.items; let i = index"
+        *ngFor="let venue of schedule.items; let i = index"
         dnd-sortable 
         [sortableIndex]="i" 
         [dragEnabled]="true" 
-        (onDropSuccess)="trip.itemsReordered()"
+        (onDropSuccess)="trip.itemsReordered(venue)"
         >
-        <div class="row">
+         <div class="row">
             <div class="col-sm-7">
                 <figure class="figure">
                     <img src="https://igx.4sqi.net/img/general/700x300/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg" alt="Central Park" class="figure-img img-fluid rounded" />
@@ -40,13 +40,13 @@
             </div>
             <div class="col-sm-5">
                 <div class="titlebox bg-primary">
-                    <h2>{{item.venue.name}}</h2>
+                    <h2>{{venue.name}}</h2>
                 </div>
-                <div *ngIf="item.venue.address" class="venue-address">
-                    <p *ngFor="let addressLine of item.venue.address">{{addressLine}}</p>
+                <div *ngIf="venue.address" class="venue-address">
+                    <p *ngFor="let addressLine of venue.address">{{addressLine}}</p>
                 </div>
-                <app-button text="Add Activity" buttonClass="btn-primary" *ngIf="addButton" (buttonClick)="buttonClicked(item.venue)"></app-button>
-                <app-button text="Remove Activity" buttonClass="btn-danger" *ngIf="!addButton" (buttonClick)="buttonClicked(item.venue)"></app-button>
+                <app-button text="Add Activity" buttonClass="btn-primary" *ngIf="addButton" (buttonClick)="buttonClicked(venue)"></app-button>
+                <app-button text="Remove Activity" buttonClass="btn-danger" *ngIf="!addButton" (buttonClick)="buttonClicked(venue)"></app-button>
             </div>
         </div>
     </div>
