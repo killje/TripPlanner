@@ -241,10 +241,15 @@ class Scheduler
         $planning = [];
         $planning[0]['day'] = "unsorted";
         $planning[0]['items'] = [];
+        if ($array) {
+            for($i = 1; $i <= $trip->number_of_days; $i++) {
+                $planning[$i]['day'] = $i;
+                $planning[$i]['items'] = [];
+            }
+        }
         foreach ($activities as $activity) {
             // if array format
             if ($array) {
-                $planning[$activity->day_number]['day'] = ($activity->day_number == 0 ? "unsorted" : $activity->day_number);
                 $planning[$activity->day_number]["items"][$activity->order-1] = $contentProvider->getVenueById($activity->venue_id)->getAsSimpleArray();
             } else
                 $planning[$activity->day_number][] = $contentProvider->getVenueById($activity->venue_id);
