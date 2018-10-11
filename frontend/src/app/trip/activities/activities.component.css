@@ -16,3 +16,29 @@
 .sortable-container {
     min-height: 20px;
 }
+
+.activity-description-container {
+    position: relative;
+    padding-bottom: 86px;
+}
+
+.activity-button-container {
+    position: absolute;
+    bottom: 30px;
+}
+
+.show-map {
+    float: right;
+}
+
+@media (min-width: 576px) {
+    .figure {
+        margin: 0;
+    }
+}
+@media (max-width: 991.98px) { 
+    .show-map {
+        float: none;
+        display: block;
+    }
+}
