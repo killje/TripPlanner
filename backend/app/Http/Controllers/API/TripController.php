@@ -246,7 +246,7 @@ class TripController extends Controller
     {
         $validatedData = $request->validate([
             'uuid' => 'required|exists:trips,uuid',
-            'tripvenueid' => 'required|exists:trip_venues,id|integer',
+            'tripvenueid' => 'required|exists:trip_venues,venue_id',
             'day_number' => 'required|integer',
             'order_number' => 'required|integer'
         ]);

@@ -69,7 +69,7 @@ class Trip extends Model
         $this->venues()->where('day_number', '=', $day_number)->where('order', '>=', $order_number)->increment('order');
 
         // Now, get the venue
-        $tripvenue = TripVenue::where('id', '=', $venue_id)->firstOrFail();
+        $tripvenue = $this->venues()->where('venue_id', '=', $venue_id)->firstOrFail();
         $oldDay = $tripvenue->day_number;
         $oldOrder = $tripvenue->order;
 
