@@ -63,15 +63,24 @@ class Trip extends Model
         return Scheduler::algorithm($contentProvider, $this->id, $this->number_of_days, $this->detailedVenues($contentProvider), $generate, $array);
     }
 
-    public function updateVenueOrder(int $venue_id, int $day_number, int $order_number)
+    public function updateVenueOrder(string $venue_id, int $day_number, int $order_number)
     {
-        // First, set the order of other venues in the new day +1
-        $this->venues()->where('day_number', '=', $day_number)->where('order', '>=', $order_number)->increment('order');
-
         // Now, get the venue
         $tripvenue = $this->venues()->where('venue_id', '=', $venue_id)->firstOrFail();
         $oldDay = $tripvenue->day_number;
         $oldOrder = $tripvenue->order;
+
+        if($day_number == $tripvenue->day_number && $tripvenue->order == $order_number)
+            return;
+
+        // First, set the order of other venues in the new day +1
+        if($oldDay == $day_number && $order_number < $oldOrder) {
+            $this->venues()->where('day_number', '=', $day_number)->where('order', '>=', $order_number)->where('order', '<=', $oldOrder)->increment('order');
+        } else if($oldDay == $day_number && $order_number > $oldOrder) {
+            $this->venues()->where('day_number', '=', $day_number)->where('order', '<=', $order_number)->where('order', '>=', $oldOrder)->decrement('order');
+        } else {
+            $this->venues()->where('day_number', '=', $day_number)->where('order', '>=', $order_number)->increment('order');
+        }
 
         // Update the venue
         $tripvenue->day_number = $day_number;
@@ -79,6 +88,8 @@ class Trip extends Model
         $tripvenue->save();
 
         // Now, update the old venues
-        $this->venues()->where('day_number', '=', $oldDay)->where('order', '>=', $oldOrder)->decrement('order');
+        if($oldDay != $day_number) {
+            $this->venues()->where('day_number', '=', $oldDay)->where('order', '>=', $oldOrder)->decrement('order');
+        }
     }
 }
