@@ -1,30 +1,10 @@
-.activitybox {
-    background-color: #F0F0F0;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    padding: 10px;
-}
-
-.titlebox {
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-bottom: 5px;
-    border-radius: 5px;
-    color: white;
-}
-
-#header {
-    background-color: #3a90e0;
-}
-
 #front-page-header-container {
     padding-bottom: 0;
     padding-top: 0;
     margin-bottom: 0;
-}
-
-#frontPageContainer {
-    margin-bottom: 0;
+    height: 100%;
+    background-color: #3a90e0;
+    flex: 1;
 }
 
 .mapButtonContent {
@@ -41,4 +21,16 @@ button {
         margin-top: 64px;
     }
 
+}
+
+#body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.button-caption {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0;
 }

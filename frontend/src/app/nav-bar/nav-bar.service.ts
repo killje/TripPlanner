@@ -21,6 +21,8 @@ export class NavBarService {
 
     constructor(private router: Router) {
         this.addNavItem(new NavItem("Home", "/", true));
+        this.addNavItem(new NavItem("About", "/about"));
+        this.addNavItem(new NavItem("Featured Trips", "/featured"));
         this.addNavItem(new NavItem("Trip", '/trip'));
         this.addNavItem(new NavItem("Browse Activities", "/map"));
     };

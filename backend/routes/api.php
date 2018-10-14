@@ -29,3 +29,4 @@ Route::get('/trips/show', 'API\TripController@show')->name('trips.show');
 Route::get('/trips/schedule', 'API\TripController@getSchedule')->name('trips.schedule');
 Route::post('/trips/schedule', 'API\TripController@getSchedule')->name('trips.schedule');
 Route::post('/trips/venues/changeorder', 'API\TripController@changeVenueOrder')->name('trips.changevenueorder');
+Route::get('/trips/featured', 'API\TripController@getFeaturedTrips')->name('trips.featured');
