@@ -47,6 +47,7 @@ class TripController extends Controller
         return response()->json([
             'status' => 'success',
             'uuid' => $trip->uuid,
+            'secret' => encrypt($trip->uuid)
         ]);
 
     }
@@ -84,12 +85,13 @@ class TripController extends Controller
     {
         // validate input
         $validatedData = $request->validate([
-            'uuid' => 'required',
+            'secret' => 'required',
         ]);
 
         // Delete the item from the database
         try {
-            $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
+            $uuid = decrypt($validatedData['secret']);
+            $trip = Trip::whereUuid($uuid)->firstOrFail();
             $trip->delete();
         } catch (\Exception $e) {
             return response()->json([
@@ -115,13 +117,14 @@ class TripController extends Controller
     {
         // Validate input
         $validatedData = $request->validate([
-            'uuid' => 'required',
+            'secret' => 'required',
             'venue_id' => 'required',
         ]);
 
         // Find the current trip
         try {
-            $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
+            $uuid = decrypt($validatedData['secret']);
+            $trip = Trip::whereUuid($uuid)->firstOrFail();
         } catch (\Exception $e) {
             return response()->json([
                 'status' => 'fail',
@@ -153,13 +156,14 @@ class TripController extends Controller
     {
         // Validate input
         $validatedData = $request->validate([
-            'uuid' => 'required',
+            'secret' => 'required',
             'venue_id' => 'required',
         ]);
 
         // Delete the venue from the trip
         try {
-            $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
+            $uuid = decrypt($validatedData['secret']);
+            $trip = Trip::whereUuid($uuid)->firstOrFail();
             $venue = $trip->venues()->where('venue_id', '=', $validatedData['venue_id'])->delete();
         } catch (\Exception $e) {
             dd($e);
@@ -183,13 +187,15 @@ class TripController extends Controller
     public function show(Request $request, ContentProvider $contentProvider)
     {
         // Validate input
-        $validatedData = $request->validate([
-            'uuid' => 'required'
-        ]);
+        if( $request->has('secret') ) {
+            $uuid = decrypt($request->input('secret'));
+        } else {
+            $uuid = $request->input('uuid');
+        }
 
         // Find the venues
         try {
-            $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
+            $trip = Trip::whereUuid($uuid)->firstOrFail();
         } catch (\Exception $e) {
             return response()->json([
                 'status' => 'fail',
@@ -222,7 +228,7 @@ class TripController extends Controller
     {
         // Validate input
         $validatedData = $request->validate([
-            'uuid' => 'required|exists:trips,uuid',
+            'secret' => 'required',
             'generate' => 'sometimes|required|boolean' // may not be present, but if it is, then it should be validated.
         ]);
 
@@ -230,9 +236,10 @@ class TripController extends Controller
         if(isset($validatedData["generate"])) {
             $generate = $request->input('generate');
         }
+        $uuid = decrypt($validatedData['secret']);
 
         return response()->json([
-            'schedule' => $contentProvider->getSchedule($validatedData['uuid'], $generate, true)
+            'schedule' => $contentProvider->getSchedule($uuid, $generate, true)
         ]);
     }
 
@@ -245,13 +252,14 @@ class TripController extends Controller
     public function changeVenueOrder(ContentProvider $contentProvider, Request $request)
     {
         $validatedData = $request->validate([
-            'uuid' => 'required|exists:trips,uuid',
+            'secret' => 'required|exists:trips,uuid',
             'tripvenueid' => 'required|exists:trip_venues,venue_id',
             'day_number' => 'required|integer',
             'order_number' => 'required|integer'
         ]);
 
-        $trip = Trip::whereUuid($validatedData['uuid'])->firstOrFail();
+        $uuid = decrypt($validatedData['secret']);
+        $trip = Trip::whereUuid($uuid)->firstOrFail();
 
         $trip->updateVenueOrder($validatedData['tripvenueid'], $validatedData['day_number'], $validatedData['order_number']);
 
