@@ -36,6 +36,7 @@ Now, you can access the website by going to http://yourlocalwebsitename.test whi
 - GET `/trips/venues/list` with arguments: uuid. Example: `/trips/venues/list?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f`
 - GET `/trips/schedule` with arguments: uuid=..., generate=0/1. Example: `/trips/schedule?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f&generate=1`
 - POST `/trips/venues/changeorder` with arguments: uuid=..., tripvenueid=(4sq venue id), day_number=(integer), order_number=(integer) Example: `/trips/venues/changeorder?uuid=3700fd70-6743-4c03-ab04-2ddb66157c4c&tripvenueid=7&day_number=2&order_number=2`
+- GET `/trips/featured`. Example: `/trips/featured`
 
 # Frontend
 ## Installation instructions
