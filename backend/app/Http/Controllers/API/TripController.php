@@ -203,7 +203,7 @@ class TripController extends Controller
             ], 422);
         }
 
-        return response()->json([
+        $retrunData = [
             'status' => 'success',
             'data' => [
                 'id' => $trip->id,
@@ -215,7 +215,11 @@ class TripController extends Controller
                 'updated_at' => $trip->updated_at->toCookieString(),
                 'schedule' => $trip->generateSchedule($contentProvider, false, true),
             ]
-        ]);
+        ];
+        if( $request->has('secret') ) {
+            $retrunData['data']['secret'] = encrypt($trip->uuid);
+        }
+        return response()->json($retrunData);
     }
 
     /**
