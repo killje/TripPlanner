@@ -4,9 +4,7 @@ import {Observable} from 'rxjs';
 
 import {Trip} from './trip/trip';
 import {CreateTripResponse, GetTripResponse, VenuesAddResponse, VenuesRemoveResponse, ScheduleResponse, VenuesChangeOrderResponse} from './trip/response';
-import {Venue} from './venue/venue';
 import {Schedule} from './trip/schedule';
-import {ScheduleInterface} from './trip/schedule-interface';
 
 @Injectable({
     providedIn: 'root'
@@ -52,7 +50,6 @@ export class TripService {
         }
         
         this.http.get<GetTripResponse>(url, {params: params}).subscribe((response: GetTripResponse) => {
-            
             tripResponse.emit(new Trip(this, response.data));
         });
 
@@ -60,7 +57,7 @@ export class TripService {
     }
 
     getTripWithSecret(secret: string): Observable<Trip> {
-        
+        console.log(secret);
         let tripResponse = new EventEmitter<Trip>();
         
         let url = "api/trips/show";
@@ -71,7 +68,6 @@ export class TripService {
         }
         
         this.http.get<GetTripResponse>(url, {params: params}).subscribe((response: GetTripResponse) => {
-            
             tripResponse.emit(new Trip(this, response.data));
         });
 

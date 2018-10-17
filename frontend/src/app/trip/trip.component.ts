@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {ActivatedRoute} from '@angular/router';
+import {Observable} from 'rxjs';
 
 import {TripService} from '../api/trip.service';
 import {Trip} from '../api/trip/trip';
@@ -28,7 +29,15 @@ export class TripComponent implements OnInit {
     ngOnInit() {
         let id = this.route.snapshot.paramMap.get('id');
         if (id) {
-            this.tripService.getTrip(id).subscribe((trip: Trip) => {
+            var getTrip: Observable<Trip> 
+            
+            if (id.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/)) {
+                getTrip =  this.tripService.getTrip(id);
+            } else {
+                getTrip = this.tripService.getTripWithSecret(id);
+            }
+            
+            getTrip.subscribe((trip: Trip) => {
                 this.trip = trip;
                 trip.venueAdded.subscribe((venue: Venue) => {
                     var index = this.venueSugestions.indexOf(venue);
@@ -69,7 +78,7 @@ export class TripComponent implements OnInit {
                 this.venueSugestions = venues;
             });
             // Update the location without navigation. This is so someone can go to the url again
-            this.location.go("trip/" + trip.uuid);
+            this.location.go("trip/" + encodeURIComponent(trip.secret));
         });
     }
 
