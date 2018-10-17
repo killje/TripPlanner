@@ -30,6 +30,7 @@ use Phpml\Exception\InvalidArgumentException;
  */
 class Trip extends Model
 {
+
     /**
      * Get all the venues that belong to this trip
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

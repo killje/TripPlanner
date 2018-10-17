@@ -265,4 +265,46 @@ class TripController extends Controller
 
         return response()->json(['status' => 'success']);
     }
+
+    /**
+     * Retrieve a list of featured trips that are in the system
+     * @param ContentProvider $contentProvider
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getFeaturedTrips(ContentProvider $contentProvider, Request $request)
+    {
+        $amount = 9;
+        $trips = Trip::inRandomOrder()->get();
+
+        $featuredTrips = [];
+        $locations_added = [];
+        $i = 0;
+        foreach($trips as $trip) {
+            // Do not add two the same locations twice.
+            if(in_array(strtolower($trip->name), $locations_added))
+                continue;
+
+            // If it has at least 2 venues
+            if($trip->venues()->get()->count() > 2) {
+                // Add the trip
+                $firstVenue = $trip->venues()->first()->getVenue();
+                $featuredTrips['trips'][$i]['uuid'] = $trip->uuid;
+                $featuredTrips['trips'][$i]['location'] = $trip->name;
+                $featuredTrips['trips'][$i]['image'] = $firstVenue->images[0]->squareURL;
+
+                array_push($locations_added, $trip->name);
+
+                $i++;
+            }
+            if($i == $amount)
+                break;
+        }
+        $featuredTrips['count'] = $i;
+
+        return response()->json([
+            'count' => $i,
+            'trips' => $featuredTrips
+        ]);
+    }
 }

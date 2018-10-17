@@ -4,6 +4,7 @@ export interface TripInterface {
     
     id: string,
     uuid: string,
+    secret: string,
     name: string,
     number_of_days: number,
     created_by: string,

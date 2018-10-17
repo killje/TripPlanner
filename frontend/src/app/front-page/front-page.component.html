@@ -1,44 +1,17 @@
-<div>
+<div id="body">
+    <app-nav-bar></app-nav-bar>
     <div class="jumbotron jumbotron-fluid" id="front-page-header-container">
-        <div id="header">
-            <div class="text-center">
-                <img class="img-fluid" src="assets/logo.png" />
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-0 col-md-4"></div>
-                    <div class="col-12 col-md-4 mapButtonContent">
-                        <button type="button" class="btn btn-light btn-lg" routerLink="/trip" routerLinkActive="active">Plan your own Trip! <i class="fas fa-arrow-alt-circle-right"></i></button>
-                    </div>
-                    <div class="col-0 col-md-4"></div>
-                </div>
-            </div>
+        <div class="text-center">
+            <img class="img-fluid" src="assets/logo.png" />
         </div>
-    </div>
-</div>
-<app-nav-bar></app-nav-bar>
-<div id="frontPageContainer">
-    <div class="container activitybox rounded">
-        <h2 class="titlebox bg-primary">
-            City Trip Planner
-        </h2>
-        <div class="row">
-            <div class="container-fluid">
-                <p>
-                    Ever thought about going to New York, London, Paris or Amsterdam and wanted to see everyting that city has to offer?
-                    If the answer is a resouding yes, then you know the struggle of planning all these different events and activities.
-                    With City Trip Planner you don't have to stress out about anything, we will help you with your planning.
-                </p>
-                <p>
-                    With our service you are able to plan city trips very easy by selecting different venues on our map.
-                    We will then make an optimized route for you on the map, so you can track which venues to go to next.
-                    We will also give you a list of venues for easy management and general information.
-                    Are you spending more days in a city, no problem out service will also be able to span the venues out over multiple days.
-                </p>
-                <p>
-                    Keeping track of places to visit and sites to see was never this easy.
-                    Now with City Trip Planner visiting new cities will be an absolute joy.
-                </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-0 col-md-4"></div>
+                <div class="col-12 col-md-4 mapButtonContent">
+                    <p class="button-caption">What are you waiting for?</p>
+                    <button type="button" class="btn btn-light btn-lg" routerLink="/trip" routerLinkActive="active">Plan your own Trip! <i class="fas fa-arrow-alt-circle-right"></i></button>
+                </div>
+                <div class="col-0 col-md-4"></div>
             </div>
         </div>
     </div>

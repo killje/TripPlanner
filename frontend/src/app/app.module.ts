@@ -20,9 +20,13 @@ import {OnlyNumberDirective} from './form/only-number.directive';
 import {TripComponent} from './trip/trip.component';
 import {ActivitiesComponent} from './trip/activities/activities.component';
 import {ButtonComponent} from './form/button/button.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { FeaturedTripsComponent } from './featured-trips/featured-trips.component';
 
 const appRoutes: Routes = [
     {path: '', component: FrontPageComponent},
+    {path: 'about', component: AboutPageComponent},
+    {path: 'featured', component: FeaturedTripsComponent},
     {path: 'trip', component: TripComponent},
     {path: 'trip/:id', component: TripComponent},
     {path: 'map', component: MapComponent},
@@ -45,7 +49,9 @@ const appRoutes: Routes = [
         OnlyNumberDirective,
         TripComponent,
         ActivitiesComponent,
-        ButtonComponent
+        ButtonComponent,
+        AboutPageComponent,
+        FeaturedTripsComponent
     ],
     imports: [
         RouterModule.forRoot(

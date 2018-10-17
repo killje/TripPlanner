@@ -9,6 +9,7 @@ export class Trip implements TripInterface {
 
     id: string;
     uuid: string;
+    secret: string;
     name: string;
     number_of_days: number;
     created_by: string;
@@ -25,6 +26,7 @@ export class Trip implements TripInterface {
         }
         this.id = intf.id;
         this.uuid = intf.uuid;
+        this.secret = intf.secret;
         this.name = intf.name;
         this.number_of_days = intf.number_of_days;
         this.created_by = intf.created_by;
@@ -68,7 +70,7 @@ export class Trip implements TripInterface {
     }
 
     addVenue(venue: Venue): void {
-        this.tripService.addVenue(this.uuid, venue.id).subscribe((success) => {
+        this.tripService.addVenue(this.secret, venue.id).subscribe((success) => {
             if (success) {
                 var schedule = this.getScheduleByDay("unsorted");
                 if (schedule == null) {
@@ -83,7 +85,7 @@ export class Trip implements TripInterface {
     }
 
     removeVenue(venue: Venue): void {
-        this.tripService.removeVenue(this.uuid, venue.id).subscribe((success) => {
+        this.tripService.removeVenue(this.secret, venue.id).subscribe((success) => {
             if (success) {
                 for (var schedule of this.schedule) {
                     if (schedule.removeVenue(venue)) {
@@ -108,7 +110,7 @@ export class Trip implements TripInterface {
     }
 
     generateSchedule(): void {
-        this.tripService.scheduleTrip(this.uuid, true).subscribe((schedule: Schedule[]) => {
+        this.tripService.scheduleTrip(this.secret, true).subscribe((schedule: Schedule[]) => {
             this.schedule = schedule;
             this.prettifySchedule();
         });
@@ -145,7 +147,7 @@ export class Trip implements TripInterface {
         if (!found) {
             return;
         }
-        this.tripService.changeOrderVenue(this.uuid, changedVenue.id, day, order);
+        this.tripService.changeOrderVenue(this.secret, changedVenue.id, day, order);
     }
 
 }

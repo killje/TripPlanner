@@ -29,6 +29,7 @@ export class TripService {
         this.http.post<CreateTripResponse>(url, params).subscribe((response: CreateTripResponse) => {
             let trip: Trip = new Trip(this);
             trip.uuid = response.uuid;
+            trip.secret = response.secret;
             trip.name = destination;
             trip.number_of_days = days;
             trip.schedule = [];
@@ -58,14 +59,33 @@ export class TripService {
         return tripResponse;
     }
 
-    addVenue(tripId: string, venueId: string): Observable<boolean> {
+    getTripWithSecret(secret: string): Observable<Trip> {
+        
+        let tripResponse = new EventEmitter<Trip>();
+        
+        let url = "api/trips/show";
+
+
+        let params: {[param: string]: string} = {
+            "secret": secret
+        }
+        
+        this.http.get<GetTripResponse>(url, {params: params}).subscribe((response: GetTripResponse) => {
+            
+            tripResponse.emit(new Trip(this, response.data));
+        });
+
+        return tripResponse;
+    }
+
+    addVenue(tripSecret: string, venueId: string): Observable<boolean> {
 
         let url = "api/trips/venues/add";
 
         let success = new EventEmitter<boolean>();
 
         let params: {[param: string]: string} = {
-            "uuid": tripId,
+            "secret": tripSecret,
             "venue_id": venueId
         };
 
@@ -76,14 +96,14 @@ export class TripService {
         return success;
     }
     
-    removeVenue(tripId: string, venueId: string): Observable<boolean> {
+    removeVenue(tripSecret: string, venueId: string): Observable<boolean> {
         
         let url = "api/trips/venues/remove";
 
         let success = new EventEmitter<boolean>();
 
         let params: {[param: string]: string} = {
-            "uuid": tripId,
+            "secret": tripSecret,
             "venue_id": venueId
         };
 
@@ -94,14 +114,14 @@ export class TripService {
         return success;
     }
     
-    scheduleTrip(tripId: string, generate?: boolean): Observable<Schedule[]> {
+    scheduleTrip(tripSecret: string, generate?: boolean): Observable<Schedule[]> {
         
         var url = "api/trips/schedule";
         
         let response = new EventEmitter<Schedule[]>();
         
         let params: {[param: string]: string} = {
-            "uuid": tripId,
+            "secret": tripSecret,
             "generate": (generate == null || !generate) ? "0" : "1"
         };
         
@@ -116,14 +136,14 @@ export class TripService {
         return response;
     }
     
-    changeOrderVenue(tripId: string, venueId: string, day: number | "unsorted", order: number): Observable<boolean> {
+    changeOrderVenue(tripSecret: string, venueId: string, day: number | "unsorted", order: number): Observable<boolean> {
         
         var url = "api/trips/venues/changeorder";
         
         let success = new EventEmitter<boolean>();
         
         let params: {[param: string]: string} = {
-            "uuid": tripId,
+            "secret": tripSecret,
             "tripvenueid": venueId,
             "day_number": day == "unsorted" ? "0": day.toString(),
             "order_number": order.toString()
