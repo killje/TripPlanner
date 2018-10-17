@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Location} from '@angular/common';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Params} from '@angular/router';
 import {Observable} from 'rxjs';
 
 import {TripService} from '../api/trip.service';
@@ -13,7 +13,7 @@ import {VenueService} from '../api/venue.service';
     templateUrl: './trip.component.html',
     styleUrls: ['./trip.component.css']
 })
-export class TripComponent implements OnInit {
+export class TripComponent {
 
     private destination: string = "";
     private days: number;
@@ -24,33 +24,32 @@ export class TripComponent implements OnInit {
     venueSugestions: Venue[] = [];
 
     constructor(private tripService: TripService, private venueService: VenueService, private route: ActivatedRoute, private location: Location) {
-    }
+        route.params.subscribe((val: Params) => {
+            let id = val["id"];
+            if (id) {
+                var getTrip: Observable<Trip> 
 
-    ngOnInit() {
-        let id = this.route.snapshot.paramMap.get('id');
-        if (id) {
-            var getTrip: Observable<Trip> 
-            
-            if (id.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/)) {
-                getTrip =  this.tripService.getTrip(id);
-            } else {
-                getTrip = this.tripService.getTripWithSecret(id);
+                if (id.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/)) {
+                    getTrip =  this.tripService.getTrip(id);
+                } else {
+                    getTrip = this.tripService.getTripWithSecret(id);
+                }
+
+                getTrip.subscribe((trip: Trip) => {
+                    this.trip = trip;
+                    trip.venueAdded.subscribe((venue: Venue) => {
+                        var index = this.venueSugestions.indexOf(venue);
+                        if (index > -1) {
+                            this.venueSugestions.splice(index, 1);
+                        }
+                    });
+                    this.venueService.getFeaturedByLocation(trip.name);
+                    this.venueService.venuesUpdated.subscribe((venues: Venue[]) => {
+                        this.venueSugestions = venues;
+                    });
+                });
             }
-            
-            getTrip.subscribe((trip: Trip) => {
-                this.trip = trip;
-                trip.venueAdded.subscribe((venue: Venue) => {
-                    var index = this.venueSugestions.indexOf(venue);
-                    if (index > -1) {
-                        this.venueSugestions.splice(index, 1);
-                    }
-                });
-                this.venueService.getFeaturedByLocation(trip.name);
-                this.venueService.venuesUpdated.subscribe((venues: Venue[]) => {
-                    this.venueSugestions = venues;
-                });
-            });
-        }
+        });
     }
 
     createTrip(): void {
