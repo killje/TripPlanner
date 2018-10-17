@@ -293,9 +293,9 @@ class TripController extends Controller
             if($trip->venues()->get()->count() > 2) {
                 // Add the trip
                 $firstVenue = $trip->venues()->first()->getVenue();
-                $featuredTrips['trips'][$i]['uuid'] = $trip->uuid;
-                $featuredTrips['trips'][$i]['location'] = $trip->name;
-                $featuredTrips['trips'][$i]['image'] = $firstVenue->images[0]->squareURL;
+                $featuredTrips[$i]['uuid'] = $trip->uuid;
+                $featuredTrips[$i]['location'] = $trip->name;
+                $featuredTrips[$i]['image'] = $firstVenue->images[0]->squareURL;
 
                 array_push($locations_added, $trip->name);
 
@@ -304,7 +304,6 @@ class TripController extends Controller
             if($i == $amount)
                 break;
         }
-        $featuredTrips['count'] = $i;
 
         return response()->json([
             'count' => $i,

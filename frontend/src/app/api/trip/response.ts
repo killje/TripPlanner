@@ -27,3 +27,12 @@ export interface ScheduleResponse {
 export interface VenuesChangeOrderResponse {
     status: string;
 }
+
+export interface FeaturedResponse {
+    count: number;
+    trips: {
+        uuid: string;
+        location: string;
+        image: string;
+    }[]
+}
