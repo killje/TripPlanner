@@ -19,8 +19,8 @@
                     <p *ngFor="let addressLine of venue.address">{{addressLine}}</p>
                 </div>
                 <div class="activity-button-container">
-                    <app-button text="Add Activity" buttonClass="btn-primary" *ngIf="addButton" (buttonClick)="buttonClicked(venue)"></app-button>
-                    <app-button text="Remove Activity" buttonClass="btn-danger" *ngIf="!addButton" (buttonClick)="buttonClicked(venue)"></app-button>
+                    <app-button text="Add Activity" buttonClass="btn-primary" *ngIf="addButton && trip.secret" (buttonClick)="buttonClicked(venue)"></app-button>
+                    <app-button text="Remove Activity" buttonClass="btn-danger" *ngIf="!addButton && trip.secret" (buttonClick)="buttonClicked(venue)"></app-button>
                 </div>
             </div>
         </div>
