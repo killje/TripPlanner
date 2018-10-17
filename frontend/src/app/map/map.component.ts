@@ -24,7 +24,12 @@ export class MapComponent implements OnInit {
         
         if (id) {
             this.id = id;
-            this.trip = this.tripService.getTrip(id);
+            if (id.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/)) {
+                this.trip = this.tripService.getTrip(id);
+            } else {
+                this.trip = this.tripService.getTripWithSecret(id);
+            }
+            
             
             var day = this.route.snapshot.paramMap.get('day');
             if (day == "unsorted") {

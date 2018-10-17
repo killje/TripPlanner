@@ -4,6 +4,7 @@ import {ScheduleInterface} from "./schedule-interface";
 export interface CreateTripResponse {
     status: string;
     uuid: string;
+    secret: string;
 }
 
 export interface VenuesAddResponse {

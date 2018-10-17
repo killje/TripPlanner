@@ -30,13 +30,14 @@ Now, you can access the website by going to http://yourlocalwebsitename.test whi
 - GET `/venues/featuredbyname` with arguments: query. Example: `/venues/featuredbyname?query=NYC`
 ### Trip
 - POST `/trips/store` with arguments: name, number_of_days. Example: `/trips/store?name=My New Trip&number_of_days=3`
-- DELETE `/trips/destroy` with arguments: uuid. Example: `/trips/destroy?uuid=f60e6d5f-772c-47a1-a81f-e06709671cc7`
-- POST `/trips/venues/add` with arguments: uuid. Example: `/trips/venues/add?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f&venue_id=412d2800f964a520df0c1fe3`
-- DELETE `/trips/venues/remove` with arguments: uuid, venue_id. Example: `/trips/venues/remove?uuid=1e5289a9-1d30-44cf-bfbe-0e4ec61f4138&venue_id=4a942a25f964a520972020e3`
+- DELETE `/trips/destroy` with arguments: secret. Example: `/trips/destroy?uuid=f60e6d5f-772c-47a1-a81f-e06709671cc7`
+- POST `/trips/venues/add` with arguments: secret. Example: `/trips/venues/add?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f&venue_id=412d2800f964a520df0c1fe3`
+- DELETE `/trips/venues/remove` with arguments: secret, venue_id. Example: `/trips/venues/remove?uuid=1e5289a9-1d30-44cf-bfbe-0e4ec61f4138&venue_id=4a942a25f964a520972020e3`
 - GET `/trips/venues/list` with arguments: uuid. Example: `/trips/venues/list?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f`
-- GET `/trips/schedule` with arguments: uuid=..., generate=0/1. Example: `/trips/schedule?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f&generate=1`
-- POST `/trips/venues/changeorder` with arguments: uuid=..., tripvenueid=(4sq venue id), day_number=(integer), order_number=(integer) Example: `/trips/venues/changeorder?uuid=3700fd70-6743-4c03-ab04-2ddb66157c4c&tripvenueid=7&day_number=2&order_number=2`
+- GET `/trips/schedule` with arguments: secret=..., generate=0/1. Example: `/trips/schedule?uuid=f5481dd1-3dda-4e8e-a3ba-af06821aa43f&generate=1`
+- POST `/trips/venues/changeorder` with arguments: secret=..., tripvenueid=(4sq venue id), day_number=(integer), order_number=(integer) Example: `/trips/venues/changeorder?uuid=3700fd70-6743-4c03-ab04-2ddb66157c4c&tripvenueid=7&day_number=2&order_number=2`
 - GET `/trips/featured`. Example: `/trips/featured`
+- GET `/trips/show` with arguments: secret OR uuid.
 
 # Frontend
 ## Installation instructions

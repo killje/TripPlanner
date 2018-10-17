@@ -22,6 +22,9 @@ app.use(bodyParser.json());
 app.all("*", function (req, res, next) {
     var parsedUrl = url.parse(req.url);
     console.log("Got request: ", req.method, parsedUrl.pathname, parsedUrl.query, req.body);
+    if (parsedUrl.pathname.match(/^\/?api\/trips\/show$/) && parsedUrl.query.match(/secret/)) {
+        parsedUrl.pathname += "Secret";
+    }
     var filePath = path.join(__dirname, parsedUrl.pathname.replace(/^\/?api/, ""));
     try {
         var fileContents = fs.readFileSync(filePath);
