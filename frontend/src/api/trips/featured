@@ -1,0 +1,50 @@
+{
+    "count": 9,
+    "trips": [
+        {
+            "uuid": "e2a45928-fe00-40be-8f4d-40c5c77b7862",
+            "location": "NYC",
+            "image": "https://igx.4sqi.net/img/general/612x612/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg"
+        },
+        {
+            "uuid": "3ed95519-6ee7-4150-8832-77b92d565162",
+            "location": "Groningen",
+            "image": "https://igx.4sqi.net/img/general/612x612/9379039_X34Ke-4F6vO7rFelqj2vEPEPi03zZnUiASDAWgGrBjw.jpg"
+        },
+        {
+            "uuid": "5b8b5f64-5307-4f2a-8969-9d03ad356c66",
+            "location": "Bucharest",
+            "image": "https://igx.4sqi.net/img/general/2848x2848/393901210_xM8m7bf83kvmUdhI3NNuBOqBUxqkgHDFNcoFBU-W8DY.jpg"
+        },
+        {
+            "uuid": "d9c812ba-423b-4b8c-b3c1-424b131fd680",
+            "location": "Groningen",
+            "image": "https://igx.4sqi.net/img/general/612x612/9379039_X34Ke-4F6vO7rFelqj2vEPEPi03zZnUiASDAWgGrBjw.jpg"
+        },
+        {
+            "uuid": "12964f27-89ff-45df-8cf2-c4ed3844a228",
+            "location": "nyc",
+            "image": "https://igx.4sqi.net/img/general/612x612/655018_Zp3vA90Sy4IIDApvfAo5KnDItoV0uEDZeST7bWT-qzk.jpg"
+        },
+        {
+            "uuid": "9b920012-296b-420f-97d4-3297bd5e3851",
+            "location": "Groningen",
+            "image": "https://igx.4sqi.net/img/general/612x612/9379039_X34Ke-4F6vO7rFelqj2vEPEPi03zZnUiASDAWgGrBjw.jpg"
+        },
+        {
+            "uuid": "4f9f19a6-3c2c-4a4f-82c6-8ba60ef52a20",
+            "location": "amsterdam",
+            "image": "https://igx.4sqi.net/img/general/612x612/48725880_3-g4pkFpcyr01pXAq5AAjft1oL0wQMXucoqKqIWzd9I.jpg"
+        },
+        {
+            "uuid": "dce4d851-8137-4b46-b96b-fad93def961a",
+            "location": "Cluj napoca",
+            "image": "https://igx.4sqi.net/img/general/612x612/byZWxr3xHI3gR_JkysG_6G4FofwtTw-z7ySEzoQLA1A.jpg"
+        },
+        {
+            "uuid": "78bb1f76-accf-4e23-8775-606f07f057fb",
+            "location": "Groningen",
+            "image": "https://igx.4sqi.net/img/general/612x612/9379039_X34Ke-4F6vO7rFelqj2vEPEPi03zZnUiASDAWgGrBjw.jpg"
+        }
+    ]
+}

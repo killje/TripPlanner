@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 import {Trip} from './trip/trip';
-import {CreateTripResponse, GetTripResponse, VenuesAddResponse, VenuesRemoveResponse, ScheduleResponse, VenuesChangeOrderResponse} from './trip/response';
+import {CreateTripResponse, GetTripResponse, VenuesAddResponse, VenuesRemoveResponse, ScheduleResponse, VenuesChangeOrderResponse, FeaturedResponse} from './trip/response';
 import {Schedule} from './trip/schedule';
 
 @Injectable({
@@ -150,6 +150,12 @@ export class TripService {
         });
         
         return success;
+    }
+    
+    getFeatured(): Observable<FeaturedResponse> {
+        var url = "api/trips/featured";
+        
+        return this.http.get<FeaturedResponse>(url);
     }
 
 }
