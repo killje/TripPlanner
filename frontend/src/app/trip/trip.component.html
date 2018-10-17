@@ -39,7 +39,7 @@
 
         <div class="activity-container" *ngIf="trip" >
             <app-activities *ngFor="let schedule of trip.schedule" [title]="schedule.getTitleName()" [schedule]="schedule" (buttonClick)="trip.removeVenue($event)" [trip]="trip"></app-activities>
-            <app-activities title="Suggested activities" [venues]="venueSugestions" [addButton]="true" (buttonClick)="trip.addVenue($event)"></app-activities>
+            <app-activities title="Suggested activities" [venues]="venueSugestions" [addButton]="true" (buttonClick)="trip.addVenue($event)" [trip]="trip"></app-activities>
         </div>
     </div>
     <app-footer></app-footer>
