@@ -290,14 +290,14 @@ class TripController extends Controller
                 continue;
 
             // If it has at least 2 venues
-            if($trip->venues()->get()->count() > 2) {
+            if($trip->venues()->get()->count() > 2 && $trip->venues()->where('day_number', '=', '0')->get()->count() == 0) {
                 // Add the trip
                 $firstVenue = $trip->venues()->first()->getVenue();
                 $featuredTrips[$i]['uuid'] = $trip->uuid;
                 $featuredTrips[$i]['location'] = $trip->name;
                 $featuredTrips[$i]['image'] = $firstVenue->images[0]->squareURL;
 
-                array_push($locations_added, $trip->name);
+                array_push($locations_added, strtolower($trip->name));
 
                 $i++;
             }
