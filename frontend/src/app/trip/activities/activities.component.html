@@ -30,7 +30,7 @@
     <div class="container rounded">
         <h1>
             {{title}}
-            <small class="show-map"><a *ngIf="schedule.items.length != 0" [routerLink]="'/map/' + trip.uuid + '/' + (schedule.day == 'unsorted' ? 'unsorted' : schedule.day.toString()) " routerLinkActive="true">Show on map</a></small>
+            <small class="show-map"><a *ngIf="schedule.items.length != 0" [routerLink]="['/map', trip.uuid, schedule.day == 'unsorted' ? 'unsorted' : schedule.day.toString()] " routerLinkActive="true">Show on map</a></small>
         </h1>
         
     </div>
