@@ -1,44 +1,48 @@
-<app-nav-bar></app-nav-bar>
-
-<div class="activity-top">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <div *ngIf="!trip">
-                <h1 class="display-4">Create your trip</h1>
-                <p class="lead">
-                    Start by setting your destination below
-                </p>
-                <hr class="my-4">
-                <p>Select your destination and how many days you want to go.</p>
-                <app-label-input [name]="'Destination'" [id]="'destination'" [(value)]="destination" [description]="'destination'" [error]="destinationError" (valueChange)="recheckInput()"></app-label-input>
-                <app-label-input [name]="'Days'" [id]="'days'" [(value)]="days" [description]="'days'" [type]="'number'" [OnlyNumber]="'true'" [error]="daysError" (valueChange)="recheckInput()"></app-label-input>
-                <button type="submit" class="btn btn-primary" (click)="createTrip()">Create your trip</button>
-            </div>
-            <div *ngIf="trip">
-                <h1 class="display-4">Select your activities</h1>
-                <p class="lead">
-                    Plan your trip in detail here below!
-                </p>
-                <hr class="my-4">
-                <p>You have selected <mark>{{trip.name}}</mark> for <mark>{{trip.number_of_days}}</mark></p>
-                <p>Select the activities you want to do below</p>
-                <div class="container" *ngIf="trip.hasVenues()">
-                    <div class="row">
-                        <div class="col-0 col-md-4"></div>
-                        <div class="col-12 col-md-4 mapButtonContent">
-                            <button type="button" class="btn btn-primary btn-lg" (click)="trip.generateSchedule()">Generate schedule</button>
+<div id="body">
+    <app-nav-bar></app-nav-bar>
+    <div class="main">
+        <div class="activity-top">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <div *ngIf="!trip">
+                        <h1 class="display-4">Create your trip</h1>
+                        <p class="lead">
+                            Start by setting your destination below
+                        </p>
+                        <hr class="my-4">
+                        <p>Select your destination and how many days you want to go.</p>
+                        <app-label-input [name]="'Destination'" [id]="'destination'" [(value)]="destination" [description]="'destination'" [error]="destinationError" (valueChange)="recheckInput()"></app-label-input>
+                        <app-label-input [name]="'Days'" [id]="'days'" [(value)]="days" [description]="'days'" [type]="'number'" [OnlyNumber]="'true'" [error]="daysError" (valueChange)="recheckInput()"></app-label-input>
+                        <button type="submit" class="btn btn-primary" (click)="createTrip()">Create your trip</button>
+                    </div>
+                    <div *ngIf="trip">
+                        <h1 class="display-4">Select your activities</h1>
+                        <p class="lead">
+                            Plan your trip in detail here below!
+                        </p>
+                        <hr class="my-4">
+                        <p>You have selected <mark>{{trip.name}}</mark> for <mark>{{trip.number_of_days}}</mark></p>
+                        <p>Select the activities you want to do below</p>
+                        <div class="container" *ngIf="trip.hasVenues()">
+                            <div class="row">
+                                <div class="col-0 col-md-4"></div>
+                                <div class="col-12 col-md-4 mapButtonContent">
+                                    <button type="button" class="btn btn-primary btn-lg" (click)="trip.generateSchedule()">Generate schedule</button>
+                                </div>
+                                <div class="col-0 col-md-4"></div>
+                            </div>
                         </div>
-                        <div class="col-0 col-md-4"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div class="activity-container" *ngIf="trip" >
-    <app-activities *ngFor="let schedule of trip.schedule" [title]="schedule.getTitleName()" [schedule]="schedule" (buttonClick)="trip.removeVenue($event)" [trip]="trip"></app-activities>
-    <app-activities title="Suggested activities" [venues]="venueSugestions" [addButton]="true" (buttonClick)="trip.addVenue($event)"></app-activities>
+        <div class="activity-container" *ngIf="trip" >
+            <app-activities *ngFor="let schedule of trip.schedule" [title]="schedule.getTitleName()" [schedule]="schedule" (buttonClick)="trip.removeVenue($event)" [trip]="trip"></app-activities>
+            <app-activities title="Suggested activities" [venues]="venueSugestions" [addButton]="true" (buttonClick)="trip.addVenue($event)"></app-activities>
+        </div>
+    </div>
+    <app-footer></app-footer>
 </div>
 <!-- OLD ---------------
 <div class="container activitybox rounded">
