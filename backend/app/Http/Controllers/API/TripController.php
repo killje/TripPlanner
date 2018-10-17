@@ -256,7 +256,7 @@ class TripController extends Controller
     public function changeVenueOrder(ContentProvider $contentProvider, Request $request)
     {
         $validatedData = $request->validate([
-            'secret' => 'required|exists:trips,uuid',
+            'secret' => 'required',
             'tripvenueid' => 'required|exists:trip_venues,venue_id',
             'day_number' => 'required|integer',
             'order_number' => 'required|integer'
