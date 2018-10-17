@@ -181,15 +181,17 @@ class VenueFactory
         $endpoint = "venues/explore";
         $result = $this->contentProvider->get($endpoint, "GET", [
             'near' => $query,
-            //'section' => 'topPicks',
+            'query' => 'Fun',
             'limit' => config('services.foursquare.venue_featured_limit'),
-            //'radius' => '5000'
+            'day' => 'Wednesday',
+            'time' => '11am'
         ]);
 
         if($this->contentProvider->checkResponse($endpoint, $result) == false)
             return [];
 
         // For each venue we obtain, create a venue object
+        shuffle($result->response->groups[0]->items);
         $venues = [];
         foreach ($result->response->groups[0]->items as $venue) {
             $newVenue = $this->getVenueById($venue->venue->id);
