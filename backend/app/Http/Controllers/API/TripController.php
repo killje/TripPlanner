@@ -256,7 +256,7 @@ class TripController extends Controller
     public function changeVenueOrder(ContentProvider $contentProvider, Request $request)
     {
         $validatedData = $request->validate([
-            'secret' => 'required|exists:trips,uuid',
+            'secret' => 'required',
             'tripvenueid' => 'required|exists:trip_venues,venue_id',
             'day_number' => 'required|integer',
             'order_number' => 'required|integer'
@@ -294,7 +294,7 @@ class TripController extends Controller
                 // Add the trip
                 $firstVenue = $trip->venues()->first()->getVenue();
                 $featuredTrips[$i]['uuid'] = $trip->uuid;
-                $featuredTrips[$i]['location'] = $trip->name;
+                $featuredTrips[$i]['location'] = ucwords($trip->name);
                 $featuredTrips[$i]['image'] = $firstVenue->images[0]->squareURL;
 
                 array_push($locations_added, strtolower($trip->name));
