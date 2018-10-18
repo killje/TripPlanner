@@ -191,7 +191,7 @@ class VenueFactory
             return [];
 
         // For each venue we obtain, create a venue object
-        shuffle($result->response->groups[0]->items);
+        //shuffle($result->response->groups[0]->items);
         $venues = [];
         foreach ($result->response->groups[0]->items as $venue) {
             $newVenue = $this->getVenueById($venue->venue->id);
